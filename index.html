@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+
+  <!-- my home page-->
+  <title>William Mairs</title>
+  <link href="index.css" rel="stylesheet"/>
+  <!-- Roboto google font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100|Roboto:100" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+  <div class="panel" id="panel1">
+    <h1>William Mairs</h1>
+    <img src="wwmairs.jpg" alt="Me and my cat Dennis" style="width:100%;height:100%">
+  </div>
+  <div class="panel" id="panel2">
+    <a class="buttons" href="bio.html" >Bio</a>
+  </div>
+  <div class="panel" id="panel3">
+    <a class="buttons" href="resume.html">Resume</a>
+  </div>
+
+
+  <footer>WWMairs -- 2017</footer>
+
+  <script>
+  $(".panel").height($(window).height());
+  $("#panel1").width($(window).width());
+  $("#panel1").height($(window).width());
+  </script>
+
+</body>
