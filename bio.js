@@ -14,6 +14,9 @@ $.get('weather.json', function(data) {
     forecast = JSON.parse(data);
     temp = forecast.currently.apparentTemperature;
     pressure = forecast.currently.pressure;
+    clouds = forecast.currently.cloudCover;
 
     $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
+    $('#where').css('background', rgba(0, 0, 255, 1 - clouds));
+    $('#where').css('color', rgba(0, 0, 0, clouds));
 });
