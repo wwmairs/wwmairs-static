@@ -25,6 +25,10 @@ p{
   /*left: 50%;*/
   /*transform: translate(-50%, -50%);*/
 }
+#poweredby {
+  font-size: 12px;
+  text-decoration: none;
+}
 
 .panel{
   color: white;
