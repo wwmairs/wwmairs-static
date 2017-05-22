@@ -11,7 +11,9 @@ $(document).scroll(function() {
 
 
 $.get('weather.json', function(data) {
-    console.log(data);
+    forecast = JSON.parse(data);
+    current_temp = forecast.currently.apparentTemperature;
+    pressure = forecast.cuttently.pressure;
 
-    $('#weather').append('Well hi there');
+    $('#weather').append(current_temp + 'degrees, and the barometric pressure is ' + pressure + 'milibars');
 });
