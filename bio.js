@@ -14,8 +14,7 @@ $.get('weather.json', function(data) {
     forecast = JSON.parse(data);
     temp = forecast.currently.apparentTemperature;
     pressure = forecast.currently.pressure;
-    // clouds = forecast.currently.cloudCover;
-    clouds = .5
+    clouds = forecast.currently.cloudCover;
     background_color = 'rgba(51, 153, 255, ' + (1 - clouds) + ')';
     color = 'rgba(0, 0, 0, ' + clouds + ')';
 
