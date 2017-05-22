@@ -15,5 +15,5 @@ $.get('weather.json', function(data) {
     temp = forecast.currently.apparentTemperature;
     pressure = forecast.currently.pressure;
 
-    $('#weather').append(temp + 'degrees, and the barometric pressure is ' + pressure + 'milibars');
+    $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
 });
