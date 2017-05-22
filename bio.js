@@ -9,8 +9,9 @@ $(document).scroll(function() {
     else $(".navbar").hide("blind")
 });
 
-console.log('hello');
 
 $.get('weather.json', function(data) {
     console.log(data);
+
+    $('#weather').append('Well hi there');
 });
