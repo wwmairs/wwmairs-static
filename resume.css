@@ -13,9 +13,18 @@ div{
   overflow:hidden;
 }
 
+.sub{
+  float: left;
+  margin: 7%;
+  /*margin-left: 5%;*/
+  /*margin-right: 5%;*/
+}
+
 .panel{
   position: relative;
   color: white;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 h1{
