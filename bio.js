@@ -10,7 +10,7 @@ $(document).scroll(function() {
 });
 
 
-$.get('weather.json', function(data) {
+$.get('weather.json', {pass: "sweetboy" }, function(data) {
     forecast = JSON.parse(data);
     temp = forecast.currently.apparentTemperature;
     pressure = forecast.currently.pressure;
