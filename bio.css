@@ -25,6 +25,11 @@ p{
   /*left: 50%;*/
   /*transform: translate(-50%, -50%);*/
 }
+
+.container-fluid{
+  padding:0;
+}
+
 #poweredby {
   font-size: 12px;
   text-decoration: none;
@@ -32,7 +37,7 @@ p{
   color:black;
 }
 
-.panel{
+.pane{
   color: white;
 }
 
@@ -50,57 +55,26 @@ p{
   color: black;
 }
 
-ul.navbar {
+/* formatting of navigation bar */
+ul.nav {
   /* starts hidden */
   display: none;
-  list-style-type: none;
+  /*list-style-type: none;*/
   position: fixed;
   bottom: 0;
-  /*top: 0;*/
   left: 0;
-  margin: 0;
-  padding: 0;
   width: 100%;
-  /*background-color: rgba(255, 0, 0, 0.7);*/
+  background-color: rgba(255, 0, 0, 0.7);
 }
 
-ul.navbar li {
-  float: left;
-  /*margin: auto;*/
-  /*width: 50%;*/
-}
-
-ul.navbar li a {
-  text-align: center;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-size: 30px;
-  font-weight: 100;
-  /*display: inline;*/
-  text-decoration: none;
+ul.nav li a {
+  font-size: 24px;
   color: white;
 }
 
-ul.navbar li.home {
-  /*float: right;*/
-}
 
-
-ul.navbar li a:link {
-  background-color: rgba(255, 0, 0, 0.7);
-}
-
-ul.navbar li a:visited {
-  background-color: rgba(255, 0, 0, 0.7);
-}
-
-ul.navbar li a:hover {
+ul.nav li a:hover {
   background-color: rgba(0, 0, 255, 0.7);
+  color: white;
   cursor: default;
-}
-
-
-ul.navbar li a:active {
-  background-color: rgba(255, 255, 0, 0.7);
-  color: black;
 }

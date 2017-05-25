@@ -9,7 +9,10 @@ body{
   letter-spacing: 2px;
 }
 
-.panel{
+.container-fluid{
+  padding:0;
+}
+.pane{
   position: relative;
 }
 
@@ -22,15 +25,15 @@ h1{
   letter-spacing: 10px;
   font-style: italic;
 }
-#panel1{
+#pane1{
 
 }
 
-#panel2 {
+#pane2 {
   background: rgba(255, 0, 0, 0.7);
 }
 
-#panel3{
+#pane3{
   background: rgba(0, 0, 255, 0.7);
 }
 
@@ -63,3 +66,6 @@ footer {
   color: white;
   background: rgba(0, 0, 255, 0.7);
 }
+
+
+

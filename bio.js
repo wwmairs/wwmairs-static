@@ -1,12 +1,12 @@
 // client-side javascript for bio page
 
-$(".panel").height($(window).height());
+$(".pane").height($(window).height());
 
 $(document).scroll(function() {
     if($(window).scrollTop() + $(window).height() == $(document).height()) {
-      $(".navbar").show("blind")
+      $(".nav").show("blind")
     }
-    else $(".navbar").hide("blind")
+    else $(".nav").hide("blind")
 });
 
 

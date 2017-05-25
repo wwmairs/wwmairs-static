@@ -13,14 +13,12 @@ div{
   overflow:hidden;
 }
 
-.sub{
-  float: left;
-  margin: 7%;
-  /*margin-left: 5%;*/
-  /*margin-right: 5%;*/
+.container-fluid{
+  padding:0;
 }
 
-.panel{
+
+.pane{
   position: relative;
   color: white;
   padding-left: 10%;
@@ -42,75 +40,47 @@ h1{
 h2{
   text-align: center;
   font-style: italic;
+  letter-spacing: 4px;
+}
+h3{
+  text-align: center;
+  font-style: italic;
 }
 #education{
   background: rgba(255, 0, 0, 0.7);
+  text-align: center;
 }
 
 #languages{
   background: rgba(0, 0, 255, 0.7);
+  text-align: center;
 }
 
 #experience{
   background: rgba(255, 255, 0, 0.7);
+  text-align: center;
   color: black;
 }
 /* formatting of navigation bar */
-ul.navbar {
+ul.nav {
   /* starts hidden */
   display: none;
-  list-style-type: none;
+  /*list-style-type: none;*/
   position: fixed;
   bottom: 0;
-  /*top: 0;*/
   left: 0;
-  margin: 0;
-  padding: 0;
   width: 100%;
-  /*background-color: rgba(255, 0, 0, 0.7);*/
+  background-color: rgba(255, 0, 0, 0.7);
 }
 
-ul.navbar li {
-  float: left;
-  /*margin: auto;*/
-  /*width: 50%;*/
-}
-
-ul.navbar li a {
-  text-align: center;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-size: 30px;
-  font-weight: 100;
-  /*display: inline;*/
-  text-decoration: none;
+ul.nav li a {
+  font-size: 24px;
   color: white;
 }
 
-ul.navbar li.home {
-  /*float: right;*/
-}
 
-
-ul.navbar li a:link {
-  background-color: rgba(255, 0, 0, 0.7);
-}
-
-ul.navbar li a:visited {
-  background-color: rgba(255, 0, 0, 0.7);
-}
-
-ul.navbar li a:hover {
+ul.nav li a:hover {
   background-color: rgba(0, 0, 255, 0.7);
+  color: white;
   cursor: default;
 }
-
-
-ul.navbar li a:active {
-  background-color: rgba(255, 255, 0, 0.7);
-  color: black;
-}
-
-/*ul.navbar li a.curr {
-  background-color: rgba(0, 0, 255, 0.7);
-}*/

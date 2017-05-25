@@ -1,42 +1,52 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-  <title>Bio</title>
-  <link href="bio.css" rel="stylesheet"/>
-  <!-- Roboto google font -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bio</title>
+	<!-- Roboto google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="bio.css" rel="stylesheet"/>
 </head>
 
 <body>
-  <div class='panel' id='things'>
-    <h2>Some of the things I like</h2>
-    <p>
-    coffee, cats, concise design, analog media, artificial languages, natural languages, wool coats, socks, niche grammar, sourdough bread, <a href="http://averyspratt.github.io">Dick Wolf</a> and cold soba.
-    </p>
-  </div>
-  <div class='panel' id='what'>
-    <h2>What I'm up to</h2>
-    <p>
-    </p>
-  </div>
-  <div class='panel' id='where'>
-    <h2>Where I am</h2>
-    <p id='weather'>Currently here in Sommerville it's
-    </p>
-    <a id='poweredby' href="https://darksky.net/poweredby/">Powered By Dark Sky</a>
-  </div>
+<div class="container-fluid">
+	<div class='pane' id='things'>
+		<h2>Some of the things I like</h2>
+		<p>
+		coffee, cats, concise design, analog media, artificial languages, natural languages, wool coats, socks, niche grammar, sourdough bread, <a href="http://averyspratt.github.io">Dick Wolf</a> and cold soba.
+		</p>
+	</div>
+	<div class='pane' id='what'>
+		<h2>What I'm up to</h2>
+		<p>
+		</p>
+	</div>
+	<div class='pane' id='where'>
+		<h2>Where I am</h2>
+		<p id='weather'>Currently here in Sommerville it's
+		</p>
+		<a id='poweredby' href="https://darksky.net/poweredby/">Powered By Dark Sky</a>
+	</div>
 
-  <ul class="navbar">
-  <li><a class="curr" href="bio.html">Bio</a></li>
-  <li><a href="resume.html">Resume</a> </li>
-  <li class="home"><a href="index.html">Home</a></li>
-  </ul>
+	<!-- navigation bar -->
+	<ul class="nav nav-pills">
+	<li role="presentation"><a href="bio.html">Bio</a></li>
+	<li role="presentation"><a class="curr" href="resume.html"
+			>Resume</a> </li>
+	<li role="presentation"><a  href="index.html"
+									 >Home</a></li>
+	</ul>
 
-  <script src="bio.js"></script>
-
+	<script src="bio.js"></script>
+</div>
 </body>
 
 </html>

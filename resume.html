@@ -1,95 +1,118 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- my resume -->
-  <title>Resume</title>
-  <link href="resume.css" rel="stylesheet"/>
-  <!-- Roboto google font -->
-  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono:400|Roboto:100|Roboto+Slab:100" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- my resume -->
+	<title>Resume</title>
+
+	<!-- Roboto google font -->
+	<link href="https://fonts.googleapis.com/css?family=Cutive+Mono:400|Roboto:100|Roboto+Slab:100" rel="stylesheet">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link href="resume.css" rel="stylesheet"/>
 
 </head>
 
 <body>
-  <div class='panel' id='title'>
-    <h1>William Mairs</h1>
-  </div>
+<div class='container-fluid'>
+	<div class='pane' id='title'>
+		<h1>William Mairs</h1>
+	</div>
 
-  <div class='panel' id='education'>
-    <h2>Education</h2>
-    <div class='sub'>
-      <h3>Tufts University</h3>
-      <p>
-        Medford, MA<br>
-        Class of 2018<br>
-        B.A. French<br>
-        B.A. Computer Science<br>
-      </p>
-    </div>
+	<div class='pane' id='education'>
+	<div class="row">
+		<h2>Education</h2>
+		<div class='col-md-6 col-sm-6 col-xs-12'>
+			<h3>Tufts University</h3>
+			<p>
+				Medford, MA<br>
+				Class of 2018<br>
+				B.A. French<br>
+				B.A. Computer Science<br>
+			</p>
+		</div>
 
-    <div class='sub'>
-      <h3>Friends Seminary<br>High School</h3>
-      <p>
-        New York, NY<br>
-        Class of 2014
-      </p>
-    </div>
-  </div>
-  <div class='panel' id='languages'>
-    <h2>Languages</h2>
-    <div class='sub'>
-      <p>
-        C<br>
-        C++<br>
-        x86 Assembler<br>
-        HTML<br>
-        CSS<br>
-        Javascript<br>
-        Python<br>
-        Impcore<br>
-        Scheme<br>
-        Standard ML<br>
-        Smalltalk<br>
-      </p>
-    </div>
-    <div class='sub'>
-      <p>
-        French<br>
-        Spanish<br>
-        Latin<br>
-        Attic Ionic
-      </p>
-    </div>
-  </div>
+		<div class='col-md-6 col-sm-6 col-xs-12'>
+			<h3>Friends Seminary<br>High School</h3>
+			<p>
+				New York, NY<br>
+				Class of 2014
+			</p>
+		</div>
+	</div>
+	</div>
+	<div class='pane' id='languages'>
+		<h2>Languages and paradigms</h2>
+		<div class='col-md-4 col-sm-4 col-xs-12'>
+			<h3>Human languages</h3>
+			<p>
+				French<br>
+				Spanish<br>
+				Latin<br>
+				Attic Ionic<br>
+			</p>
+		</div>
+		<div class='col-md-4 col-sm-4 col-xs-12'>
+			<h3>Machine languages</h3>
+			<p>
+				C<br>
+				C++<br>
+				Python<br>
+				Scheme<br>
+				Smalltalk<br>
+				Standard ML<br>
+				x86 Assembler<br>
+				Javascript<br>
+				HTML<br>
+				CSS<br>
+			</p>
+		</div>
+		<div class='col-md-4 col-sm-4 col-xs-12'>
+			<h3>Paradigms, frameworks, et c.</h3>
+			<p>
+				Node.js<br>
+				Express<br>
+				Bootstrap<br>
+				SQL<br>
+				MongoDB<br>
+			</p>
+		</div>
+	</div>
 
-  <div class='panel' id='experience'>
-    <h2>Professional Experience</h2>
-    <h3>Tamper Cafe</h3>
-    <p>Barista</p>
-  </div>
+	<div class='pane' id='experience'>
+		<h2>Professional Experience</h2>
+		<h3>Tamper Cafe</h3>
+		<p>Barista</p>
+	</div>
  
 
-  <!-- navigation bar -->
-  <ul class="navbar">
-  <li><a href="bio.html">Bio</a></li>
-  <li><a class="curr" href="resume.html"
-      >Resume</a> </li>
-  <li class="home"><a  href="index.html"
-                   >Home</a></li>
-  </ul>
-
-  <script>
-    $(".panel").height($(window).height());
-    $(document).scroll(function() {
-      if($(window).scrollTop() + $(window).height() == $(document).height()) {
-        $(".navbar").show("blind")
-      }
-      else $(".navbar").hide("blind")
-    });
-  </script>
+	<!-- navigation bar -->
+	<ul class="nav nav-pills">
+	<li role="presentation"><a href="bio.html">Bio</a></li>
+	<li role="presentation"><a class="curr" href="resume.html"
+			>Resume</a> </li>
+	<li role="presentation"><a  href="index.html"
+									 >Home</a></li>
+	</ul>
+</div>
+	<script>
+		$(".pane").height($(window).height());
+		$(document).scroll(function() {
+			if($(window).scrollTop() + $(window).height() == $(document).height()) {
+				$(".nav").show("blind")
+			}
+			else $(".nav").hide("blind")
+		});
+	</script>
 
 </body>
 
