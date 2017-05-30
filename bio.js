@@ -22,3 +22,9 @@ $.get('weather.json', {pass: "sweetboy" }, function(data) {
     $('#where').css('background', background_color);
     $('#where').css('color', color);
 });
+$.get('sun.json', function(data) {
+    json = JSON.parse(data);
+    sunrise = json.sunrise;
+    sunset = json.sunset;
+    console.log(sunrise.features[0].properties.quality);
+});
