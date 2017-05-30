@@ -31,20 +31,22 @@ $.get('sun.json', function(data) {
     switch (set_quality) {
         case "Poor" :
             console.log('poor sunset');
-            new_p += "Tonight the sunset isn't supposed to be great.. oh well."
+            new_p += "Tonight the sunset isn't supposed to be great.. oh well.";
             break;
         case "Fair" :
             console.log('fair sunset');
-            new_p += "Tonight's sunset should be OK too."
+            new_p += "Tonight's sunset should be OK too.";
             break;
         case "Good" :
-            new_p += "Tonight the sunset is gonna be good! Neat-o!"
+            new_p += "Tonight the sunset is gonna be good! Neat-o!";
             break;
         case "Great" :
-            new_p += "The sunset tonight is supposed to be FAB.  I'll be watching."
+            new_p += "The sunset tonight is supposed to be FAB.  I'll be watching.";
             break;
+        default :
+            new_p += "Whoops, there's a bug in my sunset predictor;";
 
-    }
+    };
     new_p += "</p>";
     $('content').append(new_p);
 });
