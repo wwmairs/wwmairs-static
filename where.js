@@ -27,7 +27,7 @@ $.get('sun.json', function(data) {
     sunset = data.sunset;
     rise_quality = sunrise.features[0].properties.quality;
     set_quality = sunset.features[0].properties.quality;
-    new_p = "<p> HERE COMES SOME INFO";
+    var new_p;
     switch (set_quality) {
         case "Poor" :
             console.log('poor sunset');
@@ -47,7 +47,5 @@ $.get('sun.json', function(data) {
             new_p += "Whoops, there's a bug in my sunset predictor;";
 
     };
-    new_p += "</p>";
-    console.log(new_p);
-    $('#content').append(new_p);
+    $('#sunset').append(new_p);
 });
