@@ -30,13 +30,13 @@ $.get('sun.json', function(data) {
     set_quality = sunset.features[0].properties.quality;
     switch (set_quality) {
         case "Poor" :
-            $('#sunset').append("Tonight the sunset isn't supposed to be great.. oh well.");
+            $('#sunset').append("Often there are beautiful sunsets here, but not tonight.");
             break;
         case "Fair" :
-            $('#sunset').append("Tonight's sunset should be OK too.");
+            $('#sunset').append("The sunset here is supposed to be OK tonight.");
             break;
         case "Good" :
-            $('#sunset').append("Tonight the sunset is gonna be good! Neat-o!");
+            $('#sunset').append("Tonight the sunset is gonna be a good one! Neat-o!");
             break;
         case "Great" :
             $('#sunset').append("The sunset tonight is supposed to be FAB.  I'll be watching.");
