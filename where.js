@@ -17,13 +17,13 @@ $.get('weather.json', {pass: "sweetboy" }, function(data) {
     background_color = 'rgba(51, 153, 255, ' + (1 - clouds) + ')';
     color = 'rgba(0, 0, 0, ' + clouds + ')';
 
-    $('#content').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
+    $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
     $('#where').css('background', background_color);
     $('#where').css('color', color);
 });
 $.get('sun.json', function(data) {
-    json = JSON.parse(data);
-    sunrise = json.sunrise;
-    sunset = json.sunset;
+    // json = JSON.parse(data);
+    sunrise = data.sunrise;
+    sunset = data.sunset;
     console.log(sunrise.features[0].properties.quality);
 });
