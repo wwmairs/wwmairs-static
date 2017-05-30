@@ -32,7 +32,7 @@ p{
 	padding:0;
 }
 
-#poweredby {
+.poweredby {
 	font-size: 12px;
 	text-decoration: none;
 	font-style:italic;
