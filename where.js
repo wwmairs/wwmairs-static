@@ -27,25 +27,21 @@ $.get('sun.json', function(data) {
     sunset = data.sunset;
     rise_quality = sunrise.features[0].properties.quality;
     set_quality = sunset.features[0].properties.quality;
-    var new_p;
     switch (set_quality) {
         case "Poor" :
-            console.log('poor sunset');
-            new_p += "Tonight the sunset isn't supposed to be great.. oh well.";
+            $('#sunset').append("Tonight the sunset isn't supposed to be great.. oh well.");
             break;
         case "Fair" :
-            console.log('fair sunset');
-            new_p += "Tonight's sunset should be OK too.";
+            $('#sunset').append("Tonight's sunset should be OK too.");
             break;
         case "Good" :
-            new_p += "Tonight the sunset is gonna be good! Neat-o!";
+            $('#sunset').append("Tonight the sunset is gonna be good! Neat-o!");
             break;
         case "Great" :
-            new_p += "The sunset tonight is supposed to be FAB.  I'll be watching.";
+            $('#sunset').append("The sunset tonight is supposed to be FAB.  I'll be watching.");
             break;
         default :
-            new_p += "Whoops, there's a bug in my sunset predictor;";
+            $('#sunset').append("Whoops, there's a bug in my sunset predictor;");
 
-    };
-    $('#sunset').append(new_p);
+    }
 });
