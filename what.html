@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bio</title>
+    <!-- Roboto google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <!-- vulf fonts -->
+    <link href="vulfface/font.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="what.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class='content'>
+        <h2>What I'm up to</h2>
+        <p>
+        </p>
+    </div>
+
+    <!-- navigation bar -->
+    <ul class="nav nav-pills">
+    <li role="presentation"><a href="bio.html">Bio</a></li>
+    <li role="presentation"><a href="what.html">What</a></li>
+    <li role="presentaiton"><a href="where.html">Where</a></li>
+    <li role="presentation"><a href="resume.html">Resume</a> </li>
+    <li role="presentation"><a  href="index.html">Home</a></li>
+    </ul>
+
+    <script 
+    $(document).scroll(function() {
+    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+      $(".nav").show("blind")
+    }
+    else $(".nav").hide("blind")
+});
+    ></script>
+</div>
+</body>
+
+</html>
