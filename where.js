@@ -48,5 +48,6 @@ $.get('sun.json', function(data) {
 
     };
     new_p += "</p>";
-    $('content').append(new_p);
+    console.log(new_p);
+    $('#content').append(new_p);
 });
