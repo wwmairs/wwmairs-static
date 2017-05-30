@@ -27,12 +27,14 @@ $.get('sun.json', function(data) {
     sunset = data.sunset;
     rise_quality = sunrise.features[0].properties.quality;
     set_quality = sunset.features[0].properties.quality;
-    new_p = "<p>";
+    new_p = "<p> HERE COMES SOME INFO";
     switch (set_quality) {
         case "Poor" :
+            console.log('poor sunset');
             new_p += "Tonight the sunset isn't supposed to be great.. oh well."
             break;
         case "Fair" :
+            console.log('fair sunset');
             new_p += "Tonight's sunset should be OK too."
             break;
         case "Good" :
