@@ -23,7 +23,6 @@ $.get('weather.json', {pass: "sweetboy" }, function(data) {
     $('.nav').css('color', color);
 });
 $.get('sun.json', function(data) {
-    console.log(data);
     sunrise = data.sunrise;
     sunset = data.sunset;
     rise_quality = sunrise.features[0].properties.quality;
