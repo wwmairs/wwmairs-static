@@ -2,85 +2,102 @@
  * stylesheet for resume.html
  */
 
-body{
-  font-family: 'Vulf Mono Light Italic';
-  margin:0;
-  font-size: 18px;
-  letter-spacing: 2px;
-}
-
-div{
-  overflow:hidden;
-}
-
-.container-fluid{
-  padding:0;
-}
-
-
-.pane{
-  position: relative;
-  color: white;
-  padding-left: 10%;
-  padding-right: 10%;
-}
 
 h1{
-  text-align: center;
-  font-style: italic;
-  color: black;
-  letter-spacing: 10px;
-  font-size: 25px;
+	font-family: 'Vulf Mono Light Italic';
+	text-align: center;
+	color: black;
+	letter-spacing: 10px;
+	font-size: 28px;
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
+
 h2{
-  text-align: center;
-  font-style: italic;
-  letter-spacing: 4px;
+	font-family: 'Vulf Mono Regular';
+	padding: 10px;
+	text-align: center;
+	letter-spacing: 4px;
+	font-size: 18px;
 }
 h3{
-  text-align: center;
-  font-style: italic;
-}
-#education{
-  background: rgba(255, 0, 0, 0.7);
-  text-align: center;
+	font-family: 'Vulf Mono Italic';
+	text-align: center;
+	font-style: italic;
+	font-size: 14px;
 }
 
-#languages{
-  background: rgba(0, 0, 255, 0.7);
-  text-align: center;
+
+body{
+	font-family: 'Vulf Mono Light Italic';
+	margin:0;
+	font-size: 12px;
+	letter-spacing: 2px;
+	background: rgba(128, 0, 128, 0.7);
 }
 
-#experience{
-  background: rgba(255, 255, 0, 0.7);
-  text-align: center;
-  color: black;
+
+.container-fluid{
+	padding:0;
 }
+
+
+.header{
+	position: relative;
+	color: black;
+
+	background-color: white;
+}
+
+.content{
+	padding: 20px;
+	color: white;
+}
+.row{
+	text-align: center;
+}
+
+.progress{
+	background: rgba(255, 255, 128, 0.0);
+	border: none;
+	box-shadow: 0 0 0 0;
+	border-radius: 40px;
+	height: 45px;
+}
+
+.progress-bar-custom{
+	font-family: 'Vulf Mono Regular';
+	/*background: rgba(0, 0, 255, 0.7);*/
+	border-radius: 40px;
+	box-shadow: 0 0 0 0;
+	/*color: rgba(128, 0, 128, 0.7);*/
+	color: white;
+	text-align: right;
+	padding-right: 10px;
+	padding-top: 13px;
+}
+
 /* formatting of navigation bar */
 ul.nav {
-  /* starts hidden */
-  display: none;
-  /*list-style-type: none;*/
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 0, 0, 0.7);
+	/* starts hidden */
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 }
 
 ul.nav li a {
-  font-size: 24px;
-  color: white;
+	font-size: 16px;
+	color: black;
 }
 
 
 ul.nav li a:hover {
-  background-color: rgba(0, 0, 255, 0.7);
-  color: white;
-  cursor: default;
+	background-color: rgba(0, 0, 255, 0.7);
+	color: white;
+	cursor: default;
 }
