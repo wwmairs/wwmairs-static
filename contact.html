@@ -56,15 +56,14 @@
     <li role="presentation"><a href="index.html">Home</a></li>
     </ul>
 
-    <script
-    $(document).scroll(function() {
-    if($(window).scrollTop() + $(window).height() == $(document).height()) {
-      $(".nav").show("blind")
-    }
-    else $(".nav").hide("blind")
-    });
+    <div id="theModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text</p>
+        </div>
+    </div>
 
-    ></script>
+    <script src='contact.js'></script>
 </div>
 </body>
 
