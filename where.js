@@ -19,7 +19,7 @@ $.get('weather.json', {pass: "sweetboy" }, function(data) {
 
     $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
     $('body').css('background', background_color);
-    $('body').css('color', color);
+    // $('body').css('color', color);
     $('.nav').css('color', color);
 });
 $.get('sun.json', function(data) {

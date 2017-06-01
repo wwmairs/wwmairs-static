@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>What</title>
+    <title>Get in touch</title>
     <link rel="icon" type="img/png" href="glasses.png">
     <!-- Roboto google font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
@@ -16,17 +16,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="what.css" rel="stylesheet"/>
+    <link href="contact.css" rel="stylesheet"/>
 </head>
 
 <body>
 <div class="container-fluid">
-    <div class='content'>
-        <h2>What I'm up to</h2>
-        <p>When I'm not making coffee or studying computational theory, I'm working on my homegrown server, a rad pine64 in my living room, and experimenting in web design.  Lastest additions include some interactive design thanks to the amazing <a href="https://darksky.net/dev">Dark Sky</a> api.  Check out my progress on <a href="https://github.com/wwmairs/server">Github</a>.
-        </p>
-        <p>Last spring I tossed together a (bug-prone) lil game about Kanye West with my good friends <a href="http://averyspratt.com">Avery</a> and <a href="https://akerch.com">Adam</a>.  <a href="http://kanyesinparis.com/">Check it out</a> and let me know if you find some funny bugs or get a highscore.
-        </p>
+    <div class='row'>
+    <div class='col-md-6 col-sm-6 col-xs-12'>
+        <h2>Send me a message</h2>
+        <form action="/send.php">
+        <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <input type="text" id="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <textarea id="message" name="message" 
+                      placeholder="Tell me something"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" id="submit" value="Send!">
+        </div>
+        </form>
+    </div>
+    <div class='col-md-4 col-sm-4 col-xs-12'>
+        <p>Or look at this map, this is where I am</p>
+        <p>Here's other ways to contact me</p>
+    </div>
     </div>
 
     <!-- navigation bar -->
@@ -36,16 +53,17 @@
     <li role="presentaiton"><a href="where.html">Where</a></li>
     <li role="presentation"><a href="resume.html">Resume</a></li>
     <li role="presentation"><a href="contact.html">Contact</a></li>
-    <li role="presentation"><a  href="index.html">Home</a></li>
+    <li role="presentation"><a href="index.html">Home</a></li>
     </ul>
 
-    <script 
+    <script
     $(document).scroll(function() {
     if($(window).scrollTop() + $(window).height() == $(document).height()) {
       $(".nav").show("blind")
     }
     else $(".nav").hide("blind")
-});
+    });
+
     ></script>
 </div>
 </body>

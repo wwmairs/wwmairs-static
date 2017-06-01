@@ -50,6 +50,10 @@ h1{
 #pane5{
 	background: rgba(128, 0, 128, 0.7);
 }
+#pane6{
+	background: rgba(255, 255, 0, 0.7);
+}
+
 
 a.buttons {
 	/*margin: auto;*/
@@ -69,7 +73,34 @@ a.buttons {
 	display: block;
 }
 
+
 a.buttons:hover{
+	background-color: white;
+	color: black;
+}
+
+
+a.buttons-light {
+	/*margin: auto;*/
+	/*width: 10%;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 3%;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 400px;
+	color: black;
+	font-size: 24px;
+	letter-spacing: 5px;
+	text-decoration: none;
+	display: block;
+}
+
+
+a.buttons-light:hover{
+	border: 2px solid white;
 	background-color: white;
 	color: black;
 }
@@ -79,7 +110,7 @@ footer {
 	text-align: center;
 	font-size: 10px;
 	color: black;
-	background: rgba(128, 0, 128, 0.7);
+	background: rgba(255, 255, 0, 0.7);
 }
 
 
