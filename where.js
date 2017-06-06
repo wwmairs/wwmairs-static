@@ -8,7 +8,7 @@ $.get('weather.json', {pass: "sweetboy" }, function(data) {
     color = 'rgba(0, 0, 0, ' + clouds + ')';
 
     $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
-    $('#content').css('background', background_color);
+    $('body').css('background', background_color);
     // $('body').css('color', color);
     // $('.nav').css('color', color);
 });
