@@ -1,10 +1,3 @@
-$(document).scroll(function() {
-    if($(window).scrollTop() + $(window).height() == $(document).height()) {
-        $(".nav").show("blind")
-    } else {
-        $(".nav").hide("blind");
-    }
-});
 
 var sent = getUrlParameter('sent');
 var modal = modal = document.getElementById('theModal');

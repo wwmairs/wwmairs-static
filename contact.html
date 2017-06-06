@@ -21,7 +21,30 @@
 
 <body>
 <div class="container-fluid">
+
+    <div class='navbar'>
+    <ul class="nav nav-pills nav-justified navbar-fixed-top">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" aria-label="Toggle menu"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="who.html">Who</a></li>
+                <li><a href="what.html">What</a></li>
+                <li><a href="where.html">Where</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        <li role="presentation"><a href="index.html">Home</a></li>
+
+    </ul>
+    </div>
+
     <div class='row'>
+    <div class='col-md-3 col-sm-3 col-xs-12'>
+        <h2>Get in touch</h2>
+        <p></p>
+    </div>
     <div class='col-md-6 col-sm-6 col-xs-12'>
         <h2>Send me a message</h2>
         <form action="/send">
@@ -40,21 +63,15 @@
         </div>
         </form>
     </div>
-    <div class='col-md-4 col-sm-4 col-xs-12'>
-        <p>Or look at this map, this is where I am</p>
-        <p>Here's other ways to contact me</p>
-    </div>
-    </div>
+    <div class='col-md-3 col-sm-3 col-xs-12'>
 
-    <!-- navigation bar -->
-    <ul class="nav nav-pills nav-justified">
-    <li role="presentation"><a href="who.html">Who</a></li>
-    <li role="presentation"><a href="what.html">What</a></li>
-    <li role="presentaiton"><a href="where.html">Where</a></li>
-    <li role="presentation"><a href="resume.html">Resume</a></li>
-    <li role="presentation"><a href="contact.html">Contact</a></li>
-    <li role="presentation"><a href="index.html">Home</a></li>
-    </ul>
+        <h2>Wanna visit?</h2>
+        <iframe width="100%" height="300px"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyABe3KDLu4G_cJ3QiFrzGSoN3hWnQs_F1o&q=28+Whitman,Somerville+MA&zoom=13" allowfullscreen>
+</iframe>
+    </div>
+    </div>
 
     <div id="theModal" class="modal">
         <div class="modal-content">

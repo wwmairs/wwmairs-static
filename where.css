@@ -14,9 +14,6 @@ body {
 	color: black;
 }
 
-div{
-	overflow:hidden;
-}
 
 p{
 	margin: auto;
@@ -37,24 +34,19 @@ p{
 }
 
 
+
 /* formatting of navigation bar */
 ul.nav {
-	/* starts hidden */
-	/*display: none;*/
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
+  background: white;
+  width: 100%;
 }
 
 ul.nav li a {
-	font-size: 16px;
-	color: black;
+  font-size: 16px;
+  color: black;
 }
 
 
 ul.nav li a:hover {
-	background-color: rgba(0, 0, 255, 0.7);
-	color: white;
-	cursor: default;
+  cursor: default;
 }

@@ -21,6 +21,24 @@
 
 <body>
 <div class="container-fluid">
+    <div class='navbar'>
+    <ul class="nav nav-pills nav-justified navbar-fixed-top">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" aria-label="Toggle menu"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="who.html">Who</a></li>
+                <li><a href="what.html">What</a></li>
+                <li><a href="where.html">Where</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        <li role="presentation"><a href="index.html">Home</a></li>
+
+    </ul>
+    </div>
+
     <div class='content'>
         <h2>What I'm up to</h2>
         <p>When I'm not making coffee or studying computational theory, I'm working on my homegrown server, a rad pine64 in my living room, and experimenting in web design.  Lastest additions include some interactive design thanks to the amazing <a href="https://darksky.net/dev">Dark Sky</a> api.  Check out my progress on <a href="https://github.com/wwmairs/server">Github</a>.
@@ -29,24 +47,6 @@
         </p>
     </div>
 
-    <!-- navigation bar -->
-    <ul class="nav nav-pills nav-justified">
-    <li role="presentation"><a href="who.html">Who</a></li>
-    <li role="presentation"><a href="what.html">What</a></li>
-    <li role="presentaiton"><a href="where.html">Where</a></li>
-    <li role="presentation"><a href="resume.html">Resume</a></li>
-    <li role="presentation"><a href="contact.html">Contact</a></li>
-    <li role="presentation"><a  href="index.html">Home</a></li>
-    </ul>
-
-    <script 
-    $(document).scroll(function() {
-    if($(window).scrollTop() + $(window).height() == $(document).height()) {
-      $(".nav").show("blind")
-    }
-    else $(".nav").hide("blind")
-});
-    ></script>
 </div>
 </body>
 

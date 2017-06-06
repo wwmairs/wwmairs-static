@@ -1,13 +1,3 @@
-// client-side javascript for bio page
-
-
-$(document).scroll(function() {
-    if($(window).scrollTop() + $(window).height() == $(document).height()) {
-      $(".nav").show("blind")
-    }
-    else $(".nav").hide("blind")
-});
-
 
 $.get('weather.json', {pass: "sweetboy" }, function(data) {
     forecast = JSON.parse(data);
@@ -18,9 +8,9 @@ $.get('weather.json', {pass: "sweetboy" }, function(data) {
     color = 'rgba(0, 0, 0, ' + clouds + ')';
 
     $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
-    $('body').css('background', background_color);
+    $('#content').css('background', background_color);
     // $('body').css('color', color);
-    $('.nav').css('color', color);
+    // $('.nav').css('color', color);
 });
 $.get('sun.json', function(data) {
     sunrise = data.sunrise;
