@@ -1,6 +1,7 @@
 
 var sent = getUrlParameter('sent');
-var modal = modal = document.getElementById('theModal');
+var modal = document.getElementById('theModal');
+var message = document.getElementById('modalMessage');
 var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
     modal.style.display = "none";
@@ -11,8 +12,10 @@ window.onclick = function (event) {
     }
 }
 if (sent == 'true') {
+    modalMessage.innerHTML = "Thanks! I'll get back to you soon on that one.";
     modal.style.display = "block";
 } else if (sent == 'false') {
+    modalMessage.innerHTML = "Whoops! Something went wrong with my javascript.";
     modal.style.display = "block";
 } else {
 
