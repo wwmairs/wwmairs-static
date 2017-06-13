@@ -85,8 +85,10 @@ ul.nav li a:hover {
 	background-color: #fefefe;
 	margin: 50% auto; /* 15% from the top and centered */
 	padding: 20px;
-	border: 1px solid #888;
+	border-radius: 0px;
+	border: none;
 	width: 80%; /* Could be more or less, depending on screen size */
+	box-shadow: 0 0;
 }
 
 @media (min-width: 700px) {
