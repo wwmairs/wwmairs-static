@@ -26,29 +26,45 @@
 </head>
 
 <body>
+<div id="sidebar-wrapper">
+	<h2>
+		<a href='index.html'>WWM</a>
+	</h2>
+	<ul class="sidebar-nav">
+	<li>
+		<a href='who.html'>WHO</a>
+	</li>
+	<li>
+		<a href='what.html'>WHAT</a>
+	</li>
+	<li>
+		<a href='where.html'>WHERE</a>
+	</li>
+	<li>
+		<a href='resume.html'>RESUME</a>
+		<ul class="internal-nav">
+		<li>
+			<a href="#edu">education</a>
+		</li>
+		<li>
+			<a href="#langs">languages</a>
+		</li>
+		<li>
+			<a href="#exp">experience</a>
+		</li>
+		</ul>
+	</li>
+	<li>
+		<a href='contact.html'>CONTACT</a>
+	</li>
+</div>
+	<!-- sigebar-wrapper -->
 <div class='container-fluid'>
-
-	<div class='navbar'>
-	<ul class="nav nav-pills nav-justified navbar-fixed-top">
-		<li role="presentation" class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" aria-label="Toggle menu"></span>
-			</a>
-			<ul class="dropdown-menu">
-				<li><a href="who.html">Who</a></li>
-				<li><a href="what.html">What</a></li>
-				<li><a href="where.html">Where</a></li>
-				<li><a href="resume.html">Resume</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="index.html">Home</a></li>
-			</ul>
-		<li role="presentation"><a href="index.html">Home</a></li>
-
-	</ul>
-	</div>
-
 	<div class='content'>
 		<div class="row">
-			<h2>Education</h2>
+			<h2>
+				<a name="edu">EDUCATION</a>
+			</h2>
 			<div class='col-md-6 col-sm-6 col-xs-12'>
 				<h3>Tufts University</h3>
 				<p>
@@ -68,7 +84,9 @@
 			</div>
 		</div>
 		<div class="row">
-			<h2>Languages</h2>
+			<h2>
+				<a name="langs">LANGUAGES</a>
+			</h2>
 			<div class='col-md-4 col-sm-4 col-xs-12'>
 				<h3>Human languages</h3>
 				<div class="progress">
@@ -81,17 +99,17 @@
 				</div>
 				<div class="progress">
 					<div class="progress-bar progress-bar-custom" 
-						 role="progressbar" aria-valuenow="50" 
+						 role="progressbar" aria-valuenow="65" 
 						 aria-valuemin="0" aria-valuemax="100" 
-						 style="width:50%">
+						 style="width:65%">
 						 Spanish
 					</div>
 				</div>
 				<div class="progress">
 					<div class="progress-bar progress-bar-custom" 
-						 role="progressbar" aria-valuenow="70" 
+						 role="progressbar" aria-valuenow="60" 
 						 aria-valuemin="0" aria-valuemax="100" 
-						 style="width:70%">
+						 style="width:60%">
 						 Latin
 					</div>
 				</div>
@@ -116,6 +134,14 @@
 				</div>
 				<div class="progress">
 					<div class="progress-bar progress-bar-custom" 
+						 role="progressbar" aria-valuenow="95" 
+						 aria-valuemin="0" aria-valuemax="100" 
+						 style="width:95%">
+						 Javascript
+					</div>
+				</div>
+				<div class="progress">
+					<div class="progress-bar progress-bar-custom" 
 						 role="progressbar" aria-valuenow="90" 
 						 aria-valuemin="0" aria-valuemax="100" 
 						 style="width:90%">
@@ -124,18 +150,26 @@
 				</div>
 				<div class="progress">
 					<div class="progress-bar progress-bar-custom" 
-						 role="progressbar" aria-valuenow="70" 
+						 role="progressbar" aria-valuenow="85" 
 						 aria-valuemin="0" aria-valuemax="100" 
-						 style="width:70%">
+						 style="width:85%">
 						 Python
 					</div>
 				</div>
 				<div class="progress">
 					<div class="progress-bar progress-bar-custom" 
-						 role="progressbar" aria-valuenow="85" 
+						 role="progressbar" aria-valuenow="80" 
 						 aria-valuemin="0" aria-valuemax="100" 
-						 style="width:85%">
+						 style="width:80%">
 						 Standard ML
+					</div>
+				</div>
+				<div class="progress">
+					<div class="progress-bar progress-bar-custom" 
+						 role="progressbar" aria-valuenow="80" 
+						 aria-valuemin="0" aria-valuemax="100" 
+						 style="width:80%">
+						 HTML &amp; CSS
 					</div>
 				</div>
 				<div class="progress">
@@ -146,27 +180,13 @@
 						 x86 Assembly
 					</div>
 				</div>
-				<div class="progress">
-					<div class="progress-bar progress-bar-custom" 
-						 role="progressbar" aria-valuenow="95" 
-						 aria-valuemin="0" aria-valuemax="100" 
-						 style="width:95%">
-						 Javascript
-					</div>
-				</div>
-				<div class="progress">
-					<div class="progress-bar progress-bar-custom" 
-						 role="progressbar" aria-valuenow="75" 
-						 aria-valuemin="0" aria-valuemax="100" 
-						 style="width:75%">
-						 HTML &amp; CSS
-					</div>
-				</div>
 			</div>
 		</div>
 
 		<div class="row">
-			<h2>Professional Experience</h2>
+			<h2>
+				<a name="exp">PROFESSIONAL EXPERIENCE</a>
+			</h2>
 			<div class='col-md-6 col-sm-6 col-xs-12'>
 				<h3>Tamper Cafe</h3>
 				<p>
@@ -181,7 +201,6 @@
 				</p>
 			</div>
 		</div>
-	</div>
 	</div>
  
 </div>

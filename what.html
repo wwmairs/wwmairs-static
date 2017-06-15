@@ -20,31 +20,43 @@
 </head>
 
 <body>
+<div id="sidebar-wrapper">
+    <h2>
+        <a href='index.html'>WWM</a>
+    </h2>
+    <ul class="sidebar-nav">
+    <li>
+        <a href='who.html'>WHO</a>
+    </li>
+    <li>
+        <a href='what.html'>WHAT</a>
+    </li>
+    <li>
+        <a href='where.html'>WHERE</a>
+    </li>
+    <li>
+        <a href='resume.html'>RESUME</a>
+    </li>
+    <li>
+        <a href='contact.html'>CONTACT</a>
+    </li>
+</div>
+    <!-- sigebar-wrapper -->
 <div class="container-fluid">
-    <div class='navbar'>
-    <ul class="nav nav-pills nav-justified navbar-fixed-top">
-        <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" aria-label="Toggle menu"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="who.html">Who</a></li>
-                <li><a href="what.html">What</a></li>
-                <li><a href="where.html">Where</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="index.html">Home</a></li>
-            </ul>
-        <li role="presentation"><a href="index.html">Home</a></li>
-
-    </ul>
-    </div>
-
     <div class='content'>
-        <h2>What I'm up to</h2>
-        <p>When I'm not making coffee or studying computational theory, I'm working on my homegrown server, a rad pine64 in my living room, and experimenting in web design.  Lastest additions include some interactive design thanks to the amazing <a href="https://darksky.net/dev">Dark Sky</a> api.  Check out my progress on <a href="https://github.com/wwmairs/server">Github</a>.
-        </p>
-        <p>Last spring I tossed together a (bug-prone) lil game about Kanye West with my good friends <a href="http://averyspratt.com">Avery</a> and <a href="https://akerch.com">Adam</a>.  <a href="http://kanyesinparis.com/">Check it out</a> and let me know if you find some funny bugs or get a highscore.
-        </p>
+        <h2>WHAT I'M UP TO</h2>
+        <div class='row'>
+            <div class='col-md-6 col-sm-6 col-xs-12'>
+                <p>When I'm not making coffee or studying computational theory, I'm working on my homegrown server, a rad pine64 in my living room, and experimenting in web design.  This whole site serves as an entry in my portfolio, showcasing trends in my current design work.  Lastest additions include some <a href='where.html'>interactive</a> features thanks to the amazing <a href="https://darksky.net/dev">Dark Sky</a> api.  I've got plans to integrate some more of that data into a little p5.js module, but you'll have to keep checking back here if you want to see it.  If you're interested, you can follow my progress on <a href="https://github.com/wwmairs/server">Github</a>.
+                </p>
+            </div>
+            <div class='col-md-6 col-sm-6 col-xs-12'>
+                <p>Last spring I tossed together a (bug-prone) lil game about Kanye West with my good friends <a href="http://averyspratt.com">Avery</a> and <a href="https://akerch.com">Adam</a>.  <a href="http://kanyesinparis.com/">Check it out</a> and let me know if you find some funny bugs or get a highscore.
+                </p>
+                <p>If you want to see the first site I ever smacked together, you can strut through this <a href="https://wwmairs.github.io">portfolio</a> that I put together for a project in the web programming class that got this all started.
+                </p>
+            </div>
+        </div>
     </div>
 
 </div>

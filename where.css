@@ -1,12 +1,17 @@
 /* bio.css*/
 
 h2{
-  font-family: 'Vulf Mono Italic';
-  padding: 10px;
+    font-family: 'Vulf Mono Light Italic';
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-align: center;
 }
+
 body {
 	font-family: 'Vulf Mono Light Italic';
-	font-size: 18px;
+	font-size: 14px;
 	letter-spacing: 2px;
 	margin: 0;
 	text-align: center;
@@ -24,6 +29,7 @@ p{
 
 .container-fluid{
 	padding:0;
+    padding-left:150px;
 }
 
 .poweredby {
@@ -34,19 +40,40 @@ p{
 }
 
 
-
-/* formatting of navigation bar */
-ul.nav {
-  background: white;
-  width: 100%;
+a{
+    text-decoration: none;
+    color: black;
 }
 
-ul.nav li a {
-  font-size: 16px;
-  color: black;
+a:hover {
+    cursor: default;
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px dashed black;
 }
 
+/* sidebar */
+#sidebar-wrapper{
+    text-align: left;
+    position: fixed;
+    width: 150px;
+    font-size: 12px;
+    /*height: 100%;*/
+}
+#sidebar-wrapper h2 {
+    font-family: 'Vulf Mono Light Italic';
+    letter-spacing: 4px;
+    text-align: center;
+    font-size: 18px;
+}
 
-ul.nav li a:hover {
-  cursor: default;
+.sidebar-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+}
+
+.sidebar-nav li {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
