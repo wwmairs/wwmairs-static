@@ -31,7 +31,7 @@ p{
 
 .container-fluid{
 	padding:0;
-	padding-left:150px;
+	padding-left:100px;
 }
 
 .content a{
@@ -58,7 +58,7 @@ a:visited {
 #sidebar-wrapper{
 	text-align: left;
 	position: fixed;
-	width: 150px;
+	width: 100px;
 	font-size: 12px;
 	/*height: 100%;*/
 }
@@ -78,4 +78,16 @@ a:visited {
 .sidebar-nav li {
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+#home-button{
+	padding: 10px;
+	margin: 20px;
+	margin-bottom: 0px;
+	border-radius: 1px;
+	border: 1px solid black;
+}
+
+#home-button a{
+	font-size: 14px;
 }

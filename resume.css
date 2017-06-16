@@ -34,10 +34,9 @@ body{
 	background: rgba(128, 0, 128, 0.7);
 }
 
-
 .container-fluid{
 	padding:0;
-	padding-left:150px;
+	padding-left:100px;
 }
 
 .content{
@@ -83,7 +82,7 @@ a:hover {
 /* sidebar */
 #sidebar-wrapper{
 	position: fixed;
-	width: 150px;
+	width: 100px;
 	/*height: 100%;*/
 }
 
@@ -108,4 +107,20 @@ a:hover {
 .internal-nav li {
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+.internal-nav a {
+	font-size: 10px;
+}
+
+#home-button{
+	padding: 10px;
+	margin: 20px;
+	margin-bottom: 0px;
+	border-radius: 1px;
+	border: 1px solid white;
+}
+
+#home-button a{
+	font-size: 14px;
 }
