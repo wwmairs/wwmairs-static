@@ -1,6 +1,6 @@
 new p5(); 
 
-preload(){
+function preload(){
 
     $.get('weather.json', {pass: "sweetboy" }, function(data) {
         forecast = JSON.parse(data);
