@@ -89,3 +89,7 @@ a:hover {
 #home-button a{
     font-size: 14px;
 }
+
+#defaultCanvas0{
+    display: none;
+}
