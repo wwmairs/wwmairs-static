@@ -4,8 +4,8 @@ $.get('weather.json', {pass: "sweetboy" }, function(data) {
     pressure = forecast.currently.pressure;
     clouds = forecast.currently.cloudCover;
     background_color = 'rgba(51, 153, 255, ' + (1 - clouds) + ')';
-    rise = forecast.daily.data[0].sunriseTime;
-    set  = forecast.daily.data[0].sunsetTime;
+    rise = forecast.daily.data[0].sunriseTime.getHours();
+    set  = forecast.daily.data[0].sunsetTime.getHours();
 
     $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
 
@@ -81,7 +81,7 @@ function Y(theta, height) {
     return height - (y * (height / 2));
 }
 
-
+console.dir($('#defaultCanvas0'));
 var src = ($('#defaultCanvas0')[0]).toDataURL("image/png");
 
 document.body.style.background = "url(" + src + ")";
