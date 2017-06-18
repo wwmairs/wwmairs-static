@@ -55,8 +55,6 @@ function setup() {
 
     var theta = Theta(time, riseTime, setTime);
 
-    console.log('time: ' + time + '\n rise: ' + riseTime + '\n set: ' + setTime);
-
     if ((time - riseTime) > 0 &&
         (setTime - time) > 0) {
         background(51, 153, 255);
@@ -89,7 +87,7 @@ function Y(theta, height) {
     return height - (y * (height / 2));
 }
 
-console.log($('#defaultCanvas0')[0]);
-var src = ($('#defaultCanvas0')[0]).toDataURL("image/png");
+// console.log($('#defaultCanvas0')[0]);
+// var src = ($('#defaultCanvas0')[0]).toDataURL("image/png");
 
-document.body.style.background = "url(" + src + ")";
+// document.body.style.background = "url(" + src + ")";
