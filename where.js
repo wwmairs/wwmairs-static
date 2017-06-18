@@ -53,7 +53,7 @@ function setup() {
 
     var theta = Theta(time, riseTime, setTime);
 
-    console.log('time: ' + time + '\n rise: ' + rise + '\n set: ' + set);
+    console.log('time: ' + time + '\n rise: ' + riseTime + '\n set: ' + setTime);
 
     if ((time - rise) > 0 &&
         (set - time) > 0) {
