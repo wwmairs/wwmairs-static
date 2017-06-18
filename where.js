@@ -1,7 +1,3 @@
-var rise = 0;
-var set = 0;
-var time = hour();
-
 $.get('weather.json', {pass: "sweetboy" }, function(data) {
     forecast = JSON.parse(data);
     temp = forecast.currently.apparentTemperature;
@@ -42,18 +38,12 @@ $.get('sun.json', function(data) {
 
 // p5.js ish
 
-new p5();
-
-const HEIGHT = windowHeight;
-const WIDTH = windowWidth;
-var startX = 0;
-var startY = HEIGHT;
-var endX   = WIDTH;
-var endY   = HEIGHT;
-var midX   = WIDTH / 2;
-var midY   = HEIGHT / 2;
-
 function setup() {
+    const HEIGHT = windowHeight;
+    const WIDTH = windowWidth;
+    var rise = 0;
+    var set = 0;
+    var time = hour();
     createCanvas(WIDTH, HEIGHT);
     var params = getURLParams();
 
@@ -64,7 +54,7 @@ function setup() {
         background(51, 153, 255);
         fill(255, 204, 0);
         noStroke();
-        ellipse(X(theta), Y(theta), 100, 100); 
+        ellipse(X(theta, WIDTH), Y(theta, HEIGHT), 100, 100); 
     } else {
         background('#262673');
     }
@@ -78,17 +68,17 @@ function Theta(t, r, s) {
     return theta;
 }
 
-function X(theta) {
+function X(theta, width) {
     var x = cos(theta);
     // x ranging from 1 to -1
     x = x + 1;
     // x ranging from 0 to 2
-    return WIDTH - ((x / 2) * WIDTH);
+    return width - ((x / 2) * width);
 }
 
-function Y(theta) {
+function Y(theta, height) {
     var y = sin(theta);
-    return HEIGHT - (y * midY);
+    return height - (y * (height / 2));
 }
 
 var dataUrl = $('#defaultCanvas0').toDataURL();
