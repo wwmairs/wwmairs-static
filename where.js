@@ -1,5 +1,5 @@
-var rise = 0;
-var set = 0;
+var riseTime = 0;
+var setTime = 0;
 
 $.get('weather.json', {pass: "sweetboy" }, function(data) {
     forecast = JSON.parse(data);
@@ -9,10 +9,8 @@ $.get('weather.json', {pass: "sweetboy" }, function(data) {
     background_color = 'rgba(51, 153, 255, ' + (1 - clouds) + ')';
     riseDate = new Date(forecast.daily.data[0].sunriseTime * 1000);
     setDate  = new Date(forecast.daily.data[0].sunsetTime * 1000);
-    console.log(riseDate);
-    console.log(setDate);
-    rise = riseDate.getHours();
-    set = setDate.getHours();
+    riseTime = riseDate.getHours();
+    setTime = setDate.getHours();
 
     $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
 
@@ -44,6 +42,7 @@ $.get('sun.json', function(data) {
 });
 
 // p5.js ish
+new p5;
 
 function setup() {
     const HEIGHT = windowHeight;
@@ -52,7 +51,7 @@ function setup() {
     createCanvas(WIDTH, HEIGHT);
     var params = getURLParams();
 
-    var theta = Theta(time, rise, set);
+    var theta = Theta(time, riseTime, setTime);
 
     console.log('time: ' + time + '\n rise: ' + rise + '\n set: ' + set);
 
