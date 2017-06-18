@@ -86,8 +86,3 @@ function Y(theta, height) {
     var y = sin(theta);
     return height - (y * (height / 2));
 }
-
-// console.log($('#defaultCanvas0')[0]);
-// var src = ($('#defaultCanvas0')[0]).toDataURL("image/png");
-
-// document.body.style.background = "url(" + src + ")";
