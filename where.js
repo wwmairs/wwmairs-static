@@ -1,7 +1,3 @@
-new p5();
-var riseTime = 0;
-var setTime = 0;
-
 $.get('weather.json', {pass: "sweetboy" }, function(data) {
     forecast = JSON.parse(data);
     temp = forecast.currently.apparentTemperature;
@@ -10,8 +6,8 @@ $.get('weather.json', {pass: "sweetboy" }, function(data) {
     background_color = 'rgba(51, 153, 255, ' + (1 - clouds) + ')';
     riseDate = new Date(forecast.daily.data[0].sunriseTime * 1000);
     setDate  = new Date(forecast.daily.data[0].sunsetTime * 1000);
-    riseTime = riseDate.getHours();
-    setTime = setDate.getHours();
+    sessionStorage.setItem('riseTime', riseDate.getHours());
+    sesstionStorage.setItem('setTime', setDate.getHours());
 
     $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
 
@@ -44,19 +40,23 @@ $.get('sun.json', function(data) {
 
 // p5.js ish
 
+new p5(); 
+
 function setup() {
     const HEIGHT = windowHeight;
     const WIDTH = windowWidth;
     var time = hour();
     createCanvas(WIDTH, HEIGHT);
-    var params = getURLParams();
+
+    var riseTime = sessionStorage.getItem('riseTime');
+    var setTime = sessionStorage.getItem('setTime');
 
     var theta = Theta(time, riseTime, setTime);
 
     console.log('time: ' + time + '\n rise: ' + riseTime + '\n set: ' + setTime);
 
-    if ((time - rise) > 0 &&
-        (set - time) > 0) {
+    if ((time - riseTime) > 0 &&
+        (setTime - time) > 0) {
         background(51, 153, 255);
         fill(255, 204, 0);
         noStroke();
