@@ -9,6 +9,8 @@ $.get('weather.json', {pass: "sweetboy" }, function(data) {
     background_color = 'rgba(51, 153, 255, ' + (1 - clouds) + ')';
     riseDate = new Date(forecast.daily.data[0].sunriseTime * 1000);
     setDate  = new Date(forecast.daily.data[0].sunsetTime * 1000);
+    console.log(riseDate);
+    console.log(setDate);
     rise = riseDate.getHours();
     set = setDate.getHours();
 
