@@ -58,10 +58,6 @@ function setup() {
     } else {
         background('#262673');
     }
-    var canvas = document.getElementById('#defaultCanvas0');
-    var dataUrl = canvas.toDataURL();
-
-    document.body.style.background = "url(" + dataUrl + ")";
 }
 
 function draw() {
@@ -84,3 +80,9 @@ function Y(theta, height) {
     var y = sin(theta);
     return height - (y * (height / 2));
 }
+
+var canvas = document.getElementById('#defaultCanvas0');
+console.log("just found this canvas: " + canvas);
+var dataUrl = canvas.toDataURL();
+
+document.body.style.background = "url(" + dataUrl + ")";
