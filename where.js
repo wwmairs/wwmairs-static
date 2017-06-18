@@ -81,8 +81,7 @@ function Y(theta, height) {
     return height - (y * (height / 2));
 }
 
-var canvas = document.getElementById('#defaultCanvas0');
-console.log("just found this canvas: " + canvas);
-var dataUrl = canvas.toDataURL();
 
-document.body.style.background = "url(" + dataUrl + ")";
+var src = ($('#defaultCanvas0')[0]).toDataURL("image/png");
+
+document.body.style.background = "url(" + src + ")";
