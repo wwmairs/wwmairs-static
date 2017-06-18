@@ -1,3 +1,4 @@
+new p5();
 var riseTime = 0;
 var setTime = 0;
 
@@ -42,7 +43,6 @@ $.get('sun.json', function(data) {
 });
 
 // p5.js ish
-new p5;
 
 function setup() {
     const HEIGHT = windowHeight;
