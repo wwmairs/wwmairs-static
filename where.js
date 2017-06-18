@@ -52,6 +52,8 @@ function setup() {
 
     var theta = Theta(time, rise, set);
 
+    console.log('time: ' + time + '\n rise: ' + rise + '\n set: ' + set);
+
     if ((time - rise) > 0 &&
         (set - time) > 0) {
         background(51, 153, 255);
@@ -84,7 +86,7 @@ function Y(theta, height) {
     return height - (y * (height / 2));
 }
 
-console.dir($('#defaultCanvas0'));
+console.log($('#defaultCanvas0')[0]);
 var src = ($('#defaultCanvas0')[0]).toDataURL("image/png");
 
 document.body.style.background = "url(" + src + ")";
