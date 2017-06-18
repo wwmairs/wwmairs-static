@@ -12,7 +12,7 @@ function preload(){
         setDate  = new Date(forecast.daily.data[0].sunsetTime * 1000);
         sessionStorage.setItem('riseTime', riseDate.getHours());
         sessionStorage.setItem('setTime', setDate.getHours());
-        console.log(sessionStorage.getItem('setTime'));
+        // console.log(sessionStorage.getItem('setTime'));
 
         $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
 
