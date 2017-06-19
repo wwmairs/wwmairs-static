@@ -54,13 +54,13 @@ function preload(){
 function setup() {
     time = hour();
     createCanvas(WIDTH, HEIGHT);
-}
-
-function draw() {
     riseTime = sessionStorage.getItem('riseTime');
     setTime = sessionStorage.getItem('setTime');
 
     theta = Theta(time, riseTime, setTime);
+}
+
+function draw() {
 
     if (theta > PI) {
         background('#262673');
