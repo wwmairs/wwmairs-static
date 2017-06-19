@@ -1,5 +1,12 @@
 new p5(); 
 
+const HEIGHT = windowHeight;
+const WIDTH = windowWidth;
+var riseTime;
+var setTime;
+var theta;
+var time;
+
 function preload(){
 
     $.get('weather.json', {pass: "sweetboy" }, function(data) {
@@ -10,8 +17,8 @@ function preload(){
         background_color = 'rgba(51, 153, 255, ' + (1 - clouds) + ')';
         riseDate = new Date(forecast.daily.data[0].sunriseTime * 1000);
         setDate  = new Date(forecast.daily.data[0].sunsetTime * 1000);
-        sessionStorage.setItem('riseTime', riseDate.getHours());
-        sessionStorage.setItem('setTime', setDate.getHours());
+        riseTime = sessionStorage.setItem('riseTime', riseDate.getHours());
+        setTime = sessionStorage.setItem('setTime', setDate.getHours());
         // console.log(sessionStorage.getItem('setTime'));
 
         $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
@@ -45,28 +52,24 @@ function preload(){
 }
 
 function setup() {
-    const HEIGHT = windowHeight;
-    const WIDTH = windowWidth;
-    var time = hour();
+    time = hour();
     createCanvas(WIDTH, HEIGHT);
-
-    var riseTime = sessionStorage.getItem('riseTime');
-    var setTime = sessionStorage.getItem('setTime');
-
-    var theta = Theta(time, riseTime, setTime);
-
-    if ((time - riseTime) > 0 &&
-        (setTime - time) > 0) {
-        background(51, 153, 255);
-        fill(255, 204, 0);
-        noStroke();
-        ellipse(X(theta, WIDTH), Y(theta, HEIGHT), 100, 100); 
-    } else {
-        background('#262673');
-    }
 }
 
 function draw() {
+    riseTime = sessionStorage.getItem('riseTime');
+    setTime = sessionStorage.getItem('setTime');
+
+    theta = Theta(time, riseTime, setTime);
+
+    if (theta > PI) {
+        background('#262673');
+    } else {
+        background(0, 153, 255);
+        fill(255, 204, 0);
+        noStroke();
+        ellipse(X(theta), Y(theta), 100, 100); 
+    }
 }
 
 function Theta(t, r, s) {
@@ -85,4 +88,18 @@ function X(theta, width) {
 function Y(theta, height) {
     var y = sin(theta);
     return height - (y * (height / 2));
+}
+
+function mouseWheel(event) {
+    updateTheta(event.delta / 100);
+    //uncomment to block page scrolling
+    //return false;
+}
+
+function updateTheta(num) {
+    theta += num;
+    while (theta < 0) {
+        theta += TWO_PI;
+    }
+    theta = theta % TWO_PI;
 }
