@@ -61,14 +61,13 @@ function setup() {
 }
 
 function draw() {
-
     if (theta > PI) {
         background('#262673');
     } else {
         background(0, 153, 255);
         fill(255, 204, 0);
         noStroke();
-        ellipse(X(theta), Y(theta), 100, 100); 
+        ellipse(X(theta, WIDTH), Y(theta, HEIGHT), 100, 100); 
     }
 }
 
