@@ -20,6 +20,8 @@ function preload(){
         background_color = 'rgba(51, 153, 255, ' + (1 - clouds) + ')';
         riseDate = new Date(forecast.daily.data[0].sunriseTime * 1000);
         setDate  = new Date(forecast.daily.data[0].sunsetTime * 1000);
+        riseTime = riseDate.getHours();
+        setTime = riseDate.getHours();
         // riseTime = sessionStorage.setItem('riseTime', riseDate.getHours());
         // setTime = sessionStorage.setItem('setTime', setDate.getHours());
         // console.log(sessionStorage.getItem('setTime'));
