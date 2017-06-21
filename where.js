@@ -22,15 +22,14 @@ function preload(){
         setDate  = new Date(forecast.daily.data[0].sunsetTime * 1000);
         riseTime = riseDate.getHours();
         setTime = riseDate.getHours();
-        // riseTime = sessionStorage.setItem('riseTime', riseDate.getHours());
-        // setTime = sessionStorage.setItem('setTime', setDate.getHours());
+        riseTime = sessionStorage.setItem('riseTime', riseDate.getHours());
+        setTime = sessionStorage.setItem('setTime', setDate.getHours());
         // console.log(sessionStorage.getItem('setTime'));
 
         $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
 
         // $('body').css('background', background_color);
     });
-    console.log(HEIGHT);
     console.log(riseTime);
 
     $.get('sun.json', function(data) {
@@ -61,8 +60,8 @@ function preload(){
 function setup() {
     time = hour();
     createCanvas(WIDTH, HEIGHT);
-    // riseTime = sessionStorage.getItem('riseTime');
-    // setTime = sessionStorage.getItem('setTime');
+    riseTime = sessionStorage.getItem('riseTime');
+    setTime = sessionStorage.getItem('setTime');
 
     theta = Theta(time, riseTime, setTime);
 }
@@ -76,6 +75,12 @@ function draw() {
         noStroke();
         ellipse(X(theta, WIDTH), Y(theta, HEIGHT), 100, 100); 
     }
+}
+
+function windowResized() {
+    WIDTH = windowWidth;
+    HEIGHT = windowHeight;
+    resizeCanvas(WIDTH, HEIGHT);
 }
 
 function Theta(t, r, s) {
