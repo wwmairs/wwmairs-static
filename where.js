@@ -1,14 +1,14 @@
 // new p5(); 
 
-const HEIGHT; 
-const WIDTH; 
+var HEIGHT; 
+var WIDTH; 
 var riseTime;
 var setTime;
 var theta;
 var time;
 
 function preload(){
-    
+
     HEIGHT = windowHeight;
     WIDTH = windowWidth;
 
