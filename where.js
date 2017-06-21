@@ -1,4 +1,4 @@
-new p5(); 
+// new p5(); 
 
 const HEIGHT = windowHeight;
 const WIDTH = windowWidth;
