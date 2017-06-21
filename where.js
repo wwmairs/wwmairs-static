@@ -28,7 +28,7 @@ function preload(){
 
         // $('body').css('background', background_color);
     });
-
+    console.log(HEIGHT);
     console.log(riseTime);
 
     $.get('sun.json', function(data) {
