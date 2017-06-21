@@ -20,8 +20,8 @@ function preload(){
         background_color = 'rgba(51, 153, 255, ' + (1 - clouds) + ')';
         riseDate = new Date(forecast.daily.data[0].sunriseTime * 1000);
         setDate  = new Date(forecast.daily.data[0].sunsetTime * 1000);
-        riseTime = sessionStorage.setItem('riseTime', riseDate.getHours());
-        setTime = sessionStorage.setItem('setTime', setDate.getHours());
+        // riseTime = sessionStorage.setItem('riseTime', riseDate.getHours());
+        // setTime = sessionStorage.setItem('setTime', setDate.getHours());
         // console.log(sessionStorage.getItem('setTime'));
 
         $('#weather').append(temp + ' degrees, and the barometric pressure is ' + pressure + ' milibars.');
@@ -59,8 +59,8 @@ function preload(){
 function setup() {
     time = hour();
     createCanvas(WIDTH, HEIGHT);
-    riseTime = sessionStorage.getItem('riseTime');
-    setTime = sessionStorage.getItem('setTime');
+    // riseTime = sessionStorage.getItem('riseTime');
+    // setTime = sessionStorage.getItem('setTime');
 
     theta = Theta(time, riseTime, setTime);
 }
