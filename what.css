@@ -17,6 +17,7 @@ body {
 	margin: 0;
 	background: rgba(0, 128, 0, 0.7);
 	color: black;
+	overflow: hidden;
 }
 
 div{
