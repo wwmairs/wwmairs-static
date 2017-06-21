@@ -1,13 +1,16 @@
 // new p5(); 
 
-const HEIGHT = windowHeight;
-const WIDTH = windowWidth;
+const HEIGHT; 
+const WIDTH; 
 var riseTime;
 var setTime;
 var theta;
 var time;
 
 function preload(){
+    
+    HEIGHT = windowHeight;
+    WIDTH = windowWidth;
 
     $.get('weather.json', {pass: "sweetboy" }, function(data) {
         forecast = JSON.parse(data);
