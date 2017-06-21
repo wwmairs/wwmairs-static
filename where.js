@@ -26,6 +26,8 @@ function preload(){
         // $('body').css('background', background_color);
     });
 
+    console.log(riseTime);
+
     $.get('sun.json', function(data) {
         sunrise = data.sunrise;
         sunset = data.sunset;
