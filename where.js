@@ -1,4 +1,4 @@
-// new p5(); 
+new p5(); 
 
 var HEIGHT; 
 var WIDTH; 
