@@ -31,12 +31,12 @@ body{
 	margin:0;
 	font-size: 12px;
 	letter-spacing: 2px;
-	background: rgba(128, 0, 128, 0.7);
 }
 
 .container-fluid{
 	padding:0;
 	padding-left:100px;
+	background: rgba(128, 0, 128, 0.7);
 }
 
 .content{
@@ -81,7 +81,8 @@ a:hover {
 
 /* sidebar */
 #sidebar-wrapper{
-	position: fixed;
+	position: absolute;
+	/*position: fixed;*/
 	width: 100px;
 	/*height: 100%;*/
 }
@@ -100,13 +101,16 @@ a:hover {
 .internal-nav {
 	list-style-type: none;
 	margin: 0;
-	padding-left: 10px;
+	padding-left: 0px;
 	padding-top: 20px;
 }
+
 
 .internal-nav li {
 	padding-top: 5px;
 	padding-bottom: 5px;
+	padding-left: 10px;
+	border-left: 1px solid white;
 }
 
 .internal-nav a {
@@ -123,4 +127,30 @@ a:hover {
 
 #home-button a{
 	font-size: 14px;
+}
+
+
+#footer {
+	/*margin-top: 47px;*/
+	padding-left: 0px;
+	color: white;
+	height: 150px;
+	background: rgb(0, 51, 52);
+}
+
+#logo {
+	font-size: 32px;
+}
+
+#footer .row {
+	padding-top: 60px;
+}
+
+#footer ul{
+	list-style: none;
+}
+
+#footer li{
+	float: right;
+	padding: 10px;
 }
