@@ -12,7 +12,8 @@ function preload(){
     HEIGHT = windowHeight;
     WIDTH = windowWidth;
 
-    $.get('weather.json', {pass: "sweetboy" }, function(data) {
+// TODO: change this back to just weather.json !!!
+    $.get('10.0.0.248/butt.json', {pass: "sweetboy" }, function(data) {
         forecast = JSON.parse(data);
         temp = forecast.currently.apparentTemperature;
         pressure = forecast.currently.pressure;
@@ -32,7 +33,8 @@ function preload(){
     });
     console.log(riseTime);
 
-    $.get('sun.json', function(data) {
+// TODO: change this back to just sun.json !!!
+    $.get('10.0.0.248/sun.json', function(data) {
         sunrise = data.sunrise;
         sunset = data.sunset;
         rise_quality = sunrise.features[0].properties.quality;
@@ -67,8 +69,11 @@ function setup() {
 }
 
 function draw() {
+    console.log('in draw');
     if (theta > PI) {
+        console.log('default');
         background('#262673');
+        $('body').color('white');
     } else {
         background(0, 153, 255);
         fill(255, 204, 0);

@@ -2,6 +2,7 @@
  * stylesheet for resume.html
  */
 
+/* background : rgba(128, 0, 128, 0.7); */
 
 h1{
 	font-family: 'Vulf Mono Light Italic';
@@ -36,7 +37,7 @@ body{
 .container-fluid{
 	padding:0;
 	padding-left:100px;
-	background: rgba(128, 0, 128, 0.7);
+	background: white;
 }
 
 .content{
