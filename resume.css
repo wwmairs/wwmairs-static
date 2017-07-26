@@ -36,13 +36,16 @@ body{
 
 .container-fluid{
 	padding:0;
-	padding-left:100px;
+	padding-left:175px;
 	background: white;
 }
 
 .content{
-	padding: 20px;
-	color: white;
+	padding: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	color: black;
+	border-left: 1px solid rgba(128, 0, 128, 0.7);
 }
 .row{
 	text-align: center;
@@ -70,7 +73,7 @@ body{
 
 a{
 	text-decoration: none;
-	color: white;
+	color: black;
 }
 
 a:hover {
@@ -80,18 +83,27 @@ a:hover {
 	border-bottom: 2px dashed white;
 }
 
+#name {
+	transform
+}
+
 /* sidebar */
 #sidebar-wrapper{
 	position: absolute;
 	/*position: fixed;*/
-	width: 100px;
+	width: 175px;
 	/*height: 100%;*/
 }
 
 .sidebar-nav {
 	list-style-type: none;
 	margin: 0;
+	margin-left: 20px;
+	margin-right: 20px;
 	padding: 20px;
+	padding-left: 0;
+	padding-right: 0;
+	border-top: 1px solid rgba(128, 0, 128, 0.7);
 }
 
 .sidebar-nav li {
