@@ -16,7 +16,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="contact.css" rel="stylesheet"/>
+    <style>
+    :root{--page-color: rgba(0, 0, 255, 0.7)}
+    </style>
+    <link href="style.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -37,24 +40,31 @@
     <li>
         <a href='resume.html'>RESUME</a>
     </li>
-    <li>
-        <a href='contact.html'>CONTACT</a>
-    </li>
 </div>
     <!-- sigebar-wrapper -->
 <div class="container-fluid">
 <div class="content">
     <div class='row'>
-    <div class='col-md-4 col-sm-4 col-xs-12'>
+    <div class='col-md-6 col-sm-6 col-xs-12'>
         <h2>GET IN TOUCH</h2>
         <p class='contact-info'><span class='label'>EMAIL &rarr;</span> <a href="mailto:contact@wwmairs.com?Subject=Reaching%20out" target="_top">contact@wwmairs.com</a></p>
         <p class='contact-info'><span class='label'>PHONE &rarr;</span> 347.756.0934</p>
     </div>
-    <div class='col-md-4 col-sm-4 col-xs-12'>
+    <div class='col-md-6 col-sm-6 col-xs-12'>
+
+        <h2>WANNA VISIT?</h2>
+        <iframe width="100%" height="200px"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyABe3KDLu4G_cJ3QiFrzGSoN3hWnQs_F1o&q=28+Whitman,Somerville+MA&zoom=13" allowfullscreen>
+</iframe>
+    </div>
+    </div>
+    <div class='row'>
+    <div class='col-md-12 col-sm-12 col-xs-12'>
         <h2>SEND A MESSAGE</h2>
         <form action="/send">
         <div class="form-group">
-            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="text" id="replyname" name="name" placeholder="Name">
         </div>
         <div class="form-group">
             <input type="text" id="email" name="email" placeholder="Email">
@@ -67,14 +77,6 @@
             <input type="submit" id="submit" value="Send!">
         </div>
         </form>
-    </div>
-    <div class='col-md-4 col-sm-4 col-xs-12'>
-
-        <h2>WANNA VISIT?</h2>
-        <iframe width="100%" height="365px"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyABe3KDLu4G_cJ3QiFrzGSoN3hWnQs_F1o&q=28+Whitman,Somerville+MA&zoom=13" allowfullscreen>
-</iframe>
     </div>
     </div>
 
