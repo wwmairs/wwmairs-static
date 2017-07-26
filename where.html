@@ -23,6 +23,9 @@
     :root {--page-color: rgba(255, 204, 0, 1)}
     </style>
     <link href="style.css" rel="stylesheet"/>
+    <style>
+    .container-fluid {background: none;}
+    </style>
 </head>
 
 <body>
@@ -46,14 +49,16 @@
 </div>
     <!-- sigebar-wrapper -->
 <div class="container-fluid">
-    <div class='content'>
+    <div class='content' style="height:500px">
 
         <h2>WHERE I AM</h2>
+        <div class='row'>
         <p id='weather'>Right now I live in Somerville Mass. where currently it's
         </p>
         <p id='sunset'></p>
         <a class='poweredby' href="https://darksky.net/poweredby/">Powered By Dark Sky</a>
         <a class='poweredby' href="https://sunburst.sunsetwx.com/v1/docs/">and Sunburst</a>
+        </div>
     </div>
 
 

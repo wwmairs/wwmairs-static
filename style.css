@@ -2,8 +2,6 @@
  * an attempted master stylesheet
  */
 
-/* background : var(--page-color); */
-
 h1{
     font-family: 'Vulf Mono Light Italic';
     text-align: center;
@@ -164,10 +162,12 @@ a:hover {
 
 #footer .row {
     padding-top: 60px;
+    width: 100%;
 }
 #footer div{
     color: white;
     background: rgb(0, 51, 52);
+    padding:0;
 }
 
 #footer a{
@@ -185,6 +185,7 @@ a:hover {
 #footer li{
     float: right;
     padding: 10px;
+    padding-right: 0;
 }
 
  /*special bits for contact */
@@ -269,4 +270,10 @@ textarea{
     left:0;
     top:0;
     z-index:-1;
+}
+.poweredby {
+    font-size: 12px;
+    text-decoration: none;
+    font-style:italic;
+    color:black;
 }
