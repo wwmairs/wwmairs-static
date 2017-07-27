@@ -47,7 +47,7 @@ body{
     border-left: 1px solid var(--page-color);
 }
 .row{
-    text-align: center;
+    text-align: left;
 }
 
 .progress{
@@ -73,6 +73,10 @@ body{
 a{
     text-decoration: none;
     color: black;
+}
+
+.row a{
+    border-bottom: 1px solid var(--page-color);
 }
 
 a:hover {
@@ -146,9 +150,9 @@ a:hover {
 
 #footer {
     /*margin-top: 47px;*/
-    padding-left: 0px;
+    padding-left: 50px;
     color: white;
-    height: 150px;
+    height: 200px;
     background: rgb(0, 51, 52);
 }
 
