@@ -73,7 +73,7 @@ function draw() {
     if (theta > PI) {
         console.log('default');
         background('#262673');
-        $('body').color('white');
+        $('body').css('color', 'white');
     } else {
         background(0, 153, 255);
         fill(255, 204, 0);
