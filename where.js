@@ -13,7 +13,7 @@ function preload(){
     WIDTH = windowWidth;
 
 // TODO: change this back to just weather.json !!!
-    $.get('10.0.0.248/butt.json', {pass: "sweetboy" }, function(data) {
+    $.get('10.0.0.248/weather.json', {pass: "sweetboy" }, function(data) {
         forecast = JSON.parse(data);
         temp = forecast.currently.apparentTemperature;
         pressure = forecast.currently.pressure;
