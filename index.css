@@ -16,6 +16,10 @@ body{
 	position: relative;
 }
 
+.col-md-6 {
+	padding: 0;
+}
+
 h1{
 	color: white;
 	letter-spacing: 10px;
@@ -79,10 +83,9 @@ a.buttons:hover{
 	color: black;
 }
 
-
+/*
+leftover from old contact panel
 a.buttons-light {
-	/*margin: auto;*/
-	/*width: 10%;*/
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -103,14 +106,18 @@ a.buttons-light:hover{
 	border: 2px solid white;
 	background-color: white;
 	color: black;
+}*/
+
+#footer{
+	height: 0;
 }
 
-
 footer {
-	text-align: center;
+	/*text-align: center;*/
+	padding-left: 10px;
 	font-size: 10px;
-	color: black;
-	background: rgba(255, 255, 0, 0.7);
+	color: white;
+	transform: translate(0, -100%);
 }
 
 

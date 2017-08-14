@@ -28,7 +28,7 @@ h3{
 body{
     font-family: 'Vulf Mono Light Italic';
     margin:0;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 2px;
     background: var(--page-color);
 }
@@ -48,6 +48,10 @@ body{
 }
 .row{
     text-align: left;
+}
+
+.resume-fillings{
+    text-align: center;
 }
 
 .progress{
@@ -131,7 +135,7 @@ a:hover {
 }
 
 .internal-nav a {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 #home-button{
@@ -147,7 +151,6 @@ a:hover {
 }
 
 /* bits for footer */
-
 #footer {
     /*margin-top: 47px;*/
     padding-left: 50px;

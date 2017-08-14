@@ -25,34 +25,45 @@
 
 <body>
 <div class="container-fluid">
-	<div class="pane" id="hero-image">
+	<div id="hero-image">
 		<div class="hero-text">
 			<h1>William Mairs</h1>
 		</div>
 	</div>
-	<div class="pane" id="pane2">
-		<a class="buttons" href="who.html">Who</a>
+	<div class="row">
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="pane" id="pane2">
+				<a class="buttons" href="who.html">Who</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="pane" id="pane3">
+				<a class="buttons" href="what.html">What</a>
+			</div>
+		</div>
 	</div>
-	<div class="pane" id="pane3">
-		<a class="buttons" href="what.html">What</a>
-	</div>
-		<div class="pane" id="pane4">
-		<a class="buttons" href="where.html">Where</a>
-	</div>
-	<div class="pane" id="pane5">
-		<a class="buttons" href="resume.html">Resume</a>
-	</div>
-	<div class="pane" id="pane6">
+	<div class="row">
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="pane" id="pane4">
+				<a class="buttons" href="where.html">Where</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="pane" id="pane5">
+				<a class="buttons" href="resume.html">Resume</a>
+			</div>
+		</div>
+<!-- 	<div class="pane" id="pane6">
 		<a class="buttons-light" href="contact.html">Contact</a>
+	</div> -->
 	</div>
 
-
-	<footer>COPYRIGHT &copy; WWMairs Inc. 2017</footer>
-
+	<div id="footer">
+		<footer>COPYRIGHT &copy; WWMairs Inc. 2017</footer>
+	</div>
 	<script>
+	$("#hero-image").height($(window).height());
 	$(".pane").height($(window).height());
-	$("#pane1").width($(window).width());
-	$("#pane1").height($(window).width());
 	</script>
 </div>
 </body>
