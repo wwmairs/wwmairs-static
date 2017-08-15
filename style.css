@@ -32,6 +32,9 @@ body{
     letter-spacing: 2px;
     background: var(--page-color);
 }
+p{
+    margin-bottom: 20px;
+}
 
 .container-fluid{
     padding:0;
@@ -103,6 +106,7 @@ a:hover {
     /*height: 100%;*/
 }
 
+
 .sidebar-nav {
     list-style-type: none;
     margin: 0;
@@ -112,6 +116,7 @@ a:hover {
     padding-left: 0;
     padding-right: 0;
     border-top: 1px solid var(--page-color);
+    overflow: hidden;
 }
 
 .sidebar-nav li {
@@ -148,6 +153,42 @@ a:hover {
 
 #home-button a{
     font-size: 14px;
+}
+
+/* minimal sidebar on xs */
+@media (max-width: 768px){
+    #sidebar-wrapper{
+        /*display: none;*/
+        /*margin: 20px;*/
+        width: 100%;
+        /*border-bottom: 1px solid var(--page-color);*/
+    }
+    #home-button{
+        display: none;
+    }
+    .container-fluid{
+        padding-left: 0px;
+    }
+    .content{
+        border-left: none;
+    }
+    .sidebar-nav{
+        padding: 0;
+        /*margin: auto;*/
+        /*width: 70%;*/
+        border-top: none;
+        border-bottom: 1px solid var(--page-color);
+    }
+    .sidebar-nav li{
+        float: left;
+        padding: 10px;
+    }
+    .sidebar-nav li a{
+        
+    }
+    .internal-nav{
+        display: none;
+    }
 }
 
 /* bits for footer */

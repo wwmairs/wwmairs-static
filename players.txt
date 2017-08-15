@@ -1,0 +1,1 @@
+{"players": [{"points": 1600, "zeros": 29, "name": "Avery", "moons": 4}, {"points": 1646, "zeros": 41, "name": "Phil", "moons": 2}, {"points": 1719, "zeros": 56, "name": "Adam", "moons": 1}, {"points": 1835, "zeros": 54, "name": "Will", "moons": 7}]}

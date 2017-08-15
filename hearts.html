@@ -19,7 +19,7 @@
     <style>
     :root{--page-color: rgba(0, 128, 0, 0.7)}
     </style>
-    <link href="style.css" rel="stylesheet"/>
+    <link href="style.css?v=2.1.1" rel="stylesheet"/>
 </head>
 
 <body>
@@ -54,31 +54,66 @@
     <div class='content'>
         <h2>HEARTS</h2>
         <div class='row'>
+            <div class='col-md-4 col-sm-4 col-xs-12'>
+                <p>Ever played the card game Hearts?  It's sort of a big deal in my family, and this summer, it turned into a big deal with my friends too.  After a few rounds in May, we got hooked and launched a summer-long tournament.  We logged scores, and thanks to a little python and Highcharts, it was pretty quick to toss together something visual.  
+                </p>
+                <p>It's easy to see that Avery was the ultimate champion, and I the ultimate loser, but I think these lines are most interesting at their intersections.
+                </p>
+            </div>
+            <div class='col-md-8 col-sm-8 col-xs-12'>
+                <iframe width='100%' height='500px'
+                frameborder='0' style='border:0'
+                src='chart.html'></iframe>
+            </div>
+        </div>
+        <div class='row'>
             <div class='col-md-12 col-sm-12 col-xs-12'>
-                <p>We played 234 games of hearts.  This is how it all turned out.
+                <p>Adam was a real contender for first for a long time, and even held title for some, brief, time.  Game 174 to be specific.  It's sort of sad he didn't find out until the tournament was over, a glory never known.
+                </p>
+                <p>It all started to go downhill for me around game 87.  I  like to play dangerously and try to shoot the moon even when not especially prudent.  The technique didn't help me much in the long run, but it was fun.  I was briefly proud of myself between games 148 and 179, when I wasn't dead last.
                 </p>
             </div>
         </div>
         <div class='row'>
-            <iframe width='100%' height='500px'
-            frameborder='0' style='border:0'
-            src='chart.html'></iframe>
+            <div class='col-md-4 col-sm-4 col-xs-12'>
+                <iframe width='100%' height='500px'
+                frameborder='0' style='border:0'
+                src='bar.html'></iframe>
+            </div>
+            <div class='col-md-8 col-sm-8 col-xs-12'>
+                <p>Though it didn't help me win in overall score, playing bold did net me the most moons shot, and I certainly had fun on my long descent to securing last place.
+                </p>
+                <p>Avery struck the balance I couldn't, taking few cards while still sneaking moons past us.  It all paid well for her.
+                </p>
+                <p>Adam liked to play it safe and selfish, favoring vengeful and protectionist strategies.  It served him well, for a while, and he managed to get zero in the most rounds; he was deft at foisting bad cards onto others and took great joy in bleeding out the queen.  Around game 189 we all got fed up with this and agreed to attack him uniquely for a while (a vandetta, if you will).  The next ten games were especially hard for him, and he ultimately fell into third for it.  I regret nothing.
+                </p>
+                <p>Our first rounds of the summer were Phil's first rounds ever of Hearts, and the beginning was a toss-up for him.  He developed his own style quickly enough.  He has a special gift for slipping by with few hands taken for long streaks, before being discovered and pummeled with cards.  Phil's and my own strategies dueled for a while, as our lines danced across the scoreboard. 
+                </p>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-12 col-sm-12 col-xs-12'>
+                <p>The winning prize of this grand tournament was a Clapper, that doo-dad from the '70s that turns off the lights when you clap.  Runner-up prizes included spray-bottle tops that you shove into citrus fruits (they really work, it's amazing), a pineapple hat, and a Bop-It built for the future.  
+                </p>
+                <p>Come by to chat Hearts strategy or play a few rounds with us.  A tí te toca.
+                </p>
+            </div>
         </div>
     </div>
 
 </div>
 <div id='footer' class='container-fluid'>
     <div class='row'>
-        <div class='col-md-4 col-sm-4 col-xs-12'>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
             <p id='logo'>WWM
             </p>
             <p>WWMairs &copy; 2017
         </div>
-        <div class='col-md-8 col-sm-8 col-xs-12'>
+        <div class='col-md-8 col-sm-8 col-xs-8'>
             <p>
             </p>
             <ul id='contact-links'>
-                <li><a>maps</a></li>
+                <li><a href="https://www.google.com/maps/@42.4023285,-71.1233033,3a,75y,244.36h,98.87t/data=!3m6!1e1!3m4!1sTHjr4PigkIQWlbNtmPRtJQ!2e0!7i13312!8i6656">maps</a></li>
                 <li><a href="contact.html">contact</a></li>
                 <li><a href="https://github.com/wwmairs">github</a></li>
             </ul>
@@ -89,6 +124,6 @@
 </div>
 </body>
 <script>
-$('.content').css('min-height', $(document).height());
+// $('.content').css('min-height', $(document).height());
 </script>
 </html>
