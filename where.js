@@ -62,8 +62,15 @@ function preload(){
 function setup() {
     time = hour();
     createCanvas(WIDTH, HEIGHT);
+    noLoop();
+    // DISABLED FOR TESTING
     riseTime = sessionStorage.getItem('riseTime');
     setTime = sessionStorage.getItem('setTime');
+    console.log(riseTime);
+    if (riseTime == null) {
+        riseTime = 6;
+        setTime = 20;
+    }
 
     theta = Theta(time, riseTime, setTime);
 }
@@ -71,16 +78,35 @@ function setup() {
 function draw() {
     console.log('in draw');
     if (theta > PI) {
-        console.log('default');
+        // console.log('default');
         background('#262673');
-        $('body').css('color', 'white');
+        $(':root').css('--text-color', '#fff5cc');
+        // $('body').css('color', 'white');
     } else {
+        $(':root').css('--text-color', 'black');
+        x = X(theta, WIDTH);
+        y = Y(theta, HEIGHT)
         background(0, 153, 255);
+        // first layer
+        fill(26, 163, 255);
+        noStroke();
+        ellipse(x, y, 255, 255);
+        // second layer
+        fill(77, 184, 255);
+        noStroke();
+        ellipse(x, y, 220, 220);
+        // third layer
+        fill(102, 194, 255);
+        noStroke();
+        ellipse(x, y, 200, 200);
+        // sun
         fill(255, 204, 0);
         noStroke();
-        ellipse(X(theta, WIDTH), Y(theta, HEIGHT), 100, 100); 
+        ellipse(x, y, 150, 150); 
     }
+    console.log('color is: ' + $('body').css('color'));
 }
+
 
 function windowResized() {
     WIDTH = windowWidth;
@@ -107,6 +133,8 @@ function Y(theta, height) {
 }
 
 function mouseWheel(event) {
+    // console.log('scrolling');
+    redraw();
     updateTheta(event.delta / 100);
     //uncomment to block page scrolling
     //return false;

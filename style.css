@@ -1,11 +1,14 @@
 /* style.css
  * an attempted master stylesheet
  */
+:root{
+    --test-color: black;
+}
 
 h1{
     font-family: 'Vulf Mono Light Italic';
     text-align: center;
-    color: black;
+    color: var(--text-color);
     letter-spacing: 10px;
     font-size: 28px;
 }
@@ -46,7 +49,7 @@ p{
     padding: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
-    color: black;
+    color: var(--text-color);
     border-left: 1px solid var(--page-color);
 }
 .row{
@@ -79,7 +82,7 @@ p{
 
 a{
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
 }
 
 .row a{
@@ -88,9 +91,9 @@ a{
 
 a:hover {
     cursor: default;
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
-    border-bottom: 2px dashed black;
+    border-bottom: 2px dashed var(--text-color);
 }
 
 #name {
@@ -262,7 +265,7 @@ textarea{
 
 .label{
     font-size: 10px;
-    color: black;
+    color: var(--text-color);
     padding: 0px;
 }
 /* The Modal (background) */
@@ -306,7 +309,7 @@ textarea{
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
     cursor: pointer;
 }
@@ -323,5 +326,5 @@ textarea{
     font-size: 12px;
     text-decoration: none;
     font-style:italic;
-    color:black;
+    color: var(--text-color);
 }
