@@ -6,8 +6,15 @@ var riseTime;
 var setTime;
 var theta;
 var time;
+var dayColor = '#0099ff';
+var nightColor = '#262673';
+var sunsetColor = '#ffcccc';
 
 function preload(){
+
+    // dayColor = color('#0099ff');
+    // nightColor = color('#262673');
+    // sunsetColor = color('#ff9933');
 
     HEIGHT = windowHeight;
     WIDTH = windowWidth;
@@ -76,27 +83,29 @@ function setup() {
 }
 
 function draw() {
-    console.log('in draw');
     if (theta > PI) {
         // console.log('default');
-        background('#262673');
+        background(skyColor(theta));
         $(':root').css('--text-color', '#fff5cc');
         // $('body').css('color', 'white');
     } else {
         $(':root').css('--text-color', 'black');
         x = X(theta, WIDTH);
         y = Y(theta, HEIGHT)
-        background(0, 153, 255);
+        background(skyColor(theta));
         // first layer
-        fill(26, 163, 255);
+        fill(lerpColor(skyColor(theta), color('#ffffff'), .2));
+        // fill(26, 163, 255);
         noStroke();
         ellipse(x, y, 255, 255);
         // second layer
-        fill(77, 184, 255);
+        // fill(77, 184, 255);
+        fill(lerpColor(skyColor(theta), color('#ffffff'), .4));
         noStroke();
         ellipse(x, y, 220, 220);
         // third layer
-        fill(102, 194, 255);
+        // fill(102, 194, 255);
+        fill(lerpColor(skyColor(theta), color('#ffffff'), .5));
         noStroke();
         ellipse(x, y, 200, 200);
         // sun
@@ -104,7 +113,6 @@ function draw() {
         noStroke();
         ellipse(x, y, 150, 150); 
     }
-    console.log('color is: ' + $('body').css('color'));
 }
 
 
@@ -146,4 +154,17 @@ function updateTheta(num) {
         theta += TWO_PI;
     }
     theta = theta % TWO_PI;
+}
+
+function skyColor(theta) {
+    if (theta > PI)  {
+        return lerpColor(color(sunsetColor), color(nightColor), yDisp(theta))
+    }
+    else {
+        return lerpColor(color(sunsetColor), color(dayColor), yDisp(theta));
+    }
+}
+
+function yDisp(t) {
+    return abs((Y(t, HEIGHT) - HEIGHT) / 100);
 }
