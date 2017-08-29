@@ -5,5 +5,6 @@
     $message = $_GET['message'];
     $message = wordwrap($message, 70, "\r\n");
     echo "<h1>" . $message . "</h1>";
-    echo mail($dest, "from: " . $email, $message);
+    $success = mail($dest, "from: " . $email, $message);
+    echo "<h2" . $success . "</h2>";
 ?>
