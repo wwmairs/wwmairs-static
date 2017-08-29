@@ -1,5 +1,5 @@
 <?php
-    $dest = "contact@wwmairs.com"
+    $dest = "contact@wwmairs.com";
     $name = $_GET['name'];
     $email = $_GET['email'];
     $message = $_GET['message'];
