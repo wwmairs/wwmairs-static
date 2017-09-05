@@ -19,6 +19,7 @@ h2{
     text-align: center;
     letter-spacing: 4px;
     font-size: 18px;
+    line-height: 150%;
 }
 h3{
     font-family: 'Vulf Mono Light';
@@ -102,6 +103,12 @@ a:hover {
 }
 
 /* bits for sidebar */
+#desktop {
+
+}
+#mobile {
+    display: none;
+}
 #sidebar-wrapper{
     position: absolute;
     /*position: fixed;*/
@@ -160,11 +167,16 @@ a:hover {
 
 /* minimal sidebar on xs */
 @media (max-width: 768px){
+    #desktop {
+        display: none;
+    }
+    #mobile {
+        display: block;
+    }
     #sidebar-wrapper{
         /*display: none;*/
         /*margin: 20px;*/
         width: 100%;
-        /*border-bottom: 1px solid var(--page-color);*/
     }
     #home-button{
         display: none;
@@ -180,7 +192,7 @@ a:hover {
         /*margin: auto;*/
         /*width: 70%;*/
         border-top: none;
-        border-bottom: 1px solid var(--page-color);
+        border-bottom: 1px dashed var(--page-color);
     }
     .sidebar-nav li{
         float: left;
@@ -190,7 +202,23 @@ a:hover {
         
     }
     .internal-nav{
-        display: none;
+        overflow: hidden;
+        /*display: none;*/
+        /*position: absolute;*/
+        padding: 0;
+        margin-right: 20px;
+        margin-left: 20px;
+        border-bottom: 1px solid var(--page-color);
+        /*height: 100%;*/
+    }
+    .internal-nav li {
+        float: left;
+        /*padding: 10px;*/
+        border: none;
+    }
+    .internal-nav li a {
+        /*border-right: 1px solid var(--page-color);*/
+        
     }
 }
 
