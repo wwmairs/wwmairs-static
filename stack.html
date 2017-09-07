@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>What</title>
+    <title>My Stack</title>
     <link rel="icon" type="img/png" href="glasses.png">
     <!-- Roboto google font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
@@ -67,19 +67,18 @@
     <!-- sigebar-wrapper -->
 <div class="container-fluid">
     <div class='content'>
-        <h2>WHAT I'M UP TO</h2>
+        <h2>My STACK</h2>
+        <h3>or</h3>
+        <h2>Serving from the Sofa</h2>
         <div class='row'>
-            <div class='col-md-6 col-sm-6 col-xs-12'>
-                <p>When I'm not making coffee or studying visualizations and mobile developement, I'm working on my homegrown server, a rad pine64 in my living room, and experimenting in web design.  Read more about my stack <a href='stack.html'>here</a></p>
-                <p>This whole site serves as an entry in my portfolio, showcasing trends in my current design work.  Lastest additions include some <a href='where.html'>interactive</a> features thanks to the amazing <a href="https://darksky.net/dev">Dark Sky</a> api.  With a lot of help from the super cool <a href="https://p5js.org/">p5.js</a> library, put together a rising and setting sun animation, using data from Dark Sky.  If you're interested, you can follow my progress on <a href="https://github.com/wwmairs/server">Github</a>.
+            <div class='col-md-12 col-sm-12 col-xs-12'>
+                <p>Late last May a friend and I bought a Pine64.  If you don't know about Pine, you should definitely <a href='https://www.pine64.org/?page_id=1194'>check them out</a>. tl;dr it's a slightly cheaper, 64-bit RaspberyPi.  Having just completed an intro course in Web Programming, I yearned to serve my own data, and the Pine was to become my first demo server.
                 </p>
-            </div>
-            <div class='col-md-6 col-sm-6 col-xs-12'>
-                <p>This summer some friends and I got very enamored with the card game Hearts.  We loved it so much that we played 233 games and logged our scores the whole summer.  Want to see the <a href="hearts.html">results</a>?
+                <p>The Pine community is decidedly smaller than the Pi's base and there are markedly fewer distributions and OS's for Pine.  I played around for a while with a Debian distro, then Arch Linux, but they were both a little clunky hooked up to a display, and they both gave up after about a week.  Neither of these distros had a BIOS, so recovery was pretty much impossible, and the Pine could only be brought back to life by wiping the SD card and buring a new image onto it.  I finally settled on Longsleep's Ubuntu Xenial image.  It's lightweight and boots fast, unburdened by a desktop environment.  If you want a home server like mine, check out this <a href='https://www.reddit.com/r/pine64/comments/4xhhfr/ssh_and_pine64_as_a_server_a_guide_part_1/'>excellent guide</a> on reddit.
                 </p>
-                <p>Last spring I tossed together a (bug-prone) lil game about Kanye West with my good friends <a href="http://averyspratt.com">Avery</a> and <a href="http://akerch.com">Adam</a>.  <a href="http://kanyesinparis.com/">Check it out</a> and let me know if you find some funny bugs or get a highscore.
+                <p>Praline, as the Pine has been named, sits on the floor of our living room, beside out flower-print couch, with an old LaCie 1TB hard drive mounted as part of the file system.  Apache's httpd is my main static-content software, with MySQL and PHP rounding out the traditional LAMP stack.  I use express powered nodejs apps to do the extra lifting for funky API calls, like my DarkSky and Sunburst powered <a href='/where.html'>content</a>.
                 </p>
-                <p>If you want to see the first site I ever smacked together, you can strut through this <a href="https://wwmairs.github.io">portfolio</a> that I made for a project in the web programming class that got this all started.
+                <p>Everything had been much simpler early on, when Comcast was our ISP.  I ended up liking comcast well enough because they seemed to be OK with inboud traffic on port 80.  Our current ISP, RCN, blocks inbound on 80, and won't offer me a good reason why.  Awfully rude, I think.  To get around this, I have apache listening on 82, and a reverse proxy listening on 80.  Now you can get to this site in two different ways: you can talk directly to Praline at <a href='http://wwmairs.com:82'>wwmairs.com:82</a> or you can talk to my proxy at <a href='w.wwmairs.com'>w.wwmairs.com</a>.  I have some degree of confidence that I'm not currently violating RCN's terms and conditions, but I'm no lawyer.  We'll find out when the cease and desist letter comes.
                 </p>
             </div>
         </div>

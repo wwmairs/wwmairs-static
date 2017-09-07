@@ -2,7 +2,7 @@
  * an attempted master stylesheet
  */
 :root{
-    --test-color: black;
+    --text-color: black;
 }
 
 h1{
@@ -218,7 +218,7 @@ a:hover {
     }
     .internal-nav li a {
         /*border-right: 1px solid var(--page-color);*/
-        
+
     }
 }
 
