@@ -1,0 +1,34 @@
+body {
+    font-family: 'Vulf Mono Light Italic';
+
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0;
+}
+
+#text {
+    position: absolute;
+    font-size: 32px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+
+canvas {
+    position: relative;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: white;
+}
