@@ -1,0 +1,158 @@
+/* style.css
+ * an attempted master stylesheet
+ */
+:root{
+    --text-color: black;
+}
+
+h1{
+    font-family: 'Vulf Mono Light Italic';
+    text-align: center;
+    color: var(--text-color);
+    letter-spacing: 10px;
+    font-size: 28px;
+}
+
+h2{
+    font-family: 'Vulf Mono Light Italic';
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 18px;
+    line-height: 150%;
+}
+h3{
+    font-family: 'Vulf Mono Light';
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+}
+
+
+body{
+    font-family: 'Vulf Mono Light Italic';
+    margin:0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: var(--page-color);
+}
+p{
+    margin-bottom: 20px;
+}
+
+.container-fluid{
+    padding:0;
+    background: white;
+}
+
+.content{
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+.row{
+    text-align: left;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.row a{
+    border-bottom: 1px solid var(--page-color);
+}
+
+a:hover {
+    cursor: default;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 2px dashed var(--text-color);
+}
+
+#name {
+    font-family: 'Vulf Mono Light';
+    transform: translate(0px, -30px);
+}
+
+/* bits for sidebar */
+#mobile {
+    display: none;
+}
+#sidebar-wrapper{
+    position: fixed;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 1px;
+    border: 1px solid var(--page-color);
+    overflow: hidden;
+    font-size: 14px;
+}
+#sidebar-wrapper a:hover {
+    border-bottom: none;
+}
+
+#home {
+    padding-right: 20px;
+    float: left;
+
+}
+#back {
+    padding-left: 20px;
+    float: right;
+    border-left: 1px solid var(--page-color);
+
+}
+
+/* minimal sidebar on xs */
+@media (max-width: 768px){
+    #sidebar-wrapper{
+        position: absolute;
+    }
+}
+
+/* bits for footer */
+#footer {
+    /*margin-top: 47px;*/
+    padding-left: 50px;
+    color: white;
+    height: 200px;
+    background: rgb(0, 51, 52);
+}
+
+#logo {
+    font-size: 32px;
+}
+#contact-links{
+    color: white;
+    background: rgb(0, 51, 52);
+}
+
+#footer .row {
+    padding-top: 60px;
+    width: 100%;
+}
+#footer div{
+    color: white;
+    background: rgb(0, 51, 52);
+    padding:0;
+}
+
+#footer a{
+    color: white;
+}
+
+#footer a:hover{
+    border-bottom: 2px dashed white;
+}
+
+#footer ul{
+    list-style: none;
+}
+
+#footer li{
+    float: right;
+    padding: 10px;
+    padding-right: 0;
+}

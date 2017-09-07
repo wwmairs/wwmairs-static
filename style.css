@@ -222,6 +222,20 @@ a:hover {
     }
 }
 
+/* portfolio */
+
+.portfolio{
+    padding-left: 0px;
+}
+
+.portfolio .content {
+    border-left: none;
+}
+
+.portfolio #sidebar-wrapper{
+    position: fixed;
+}
+
 /* bits for footer */
 #footer {
     /*margin-top: 47px;*/
