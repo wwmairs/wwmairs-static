@@ -20,7 +20,7 @@ function preload(){
     WIDTH = windowWidth;
 
 // TODO: change this back to just weather.json !!!
-    $.get('/weather.json', {pass: "sweetboy" }, function(data) {
+    $.get('wwmairs.com:82/weather.json', {pass: "sweetboy" }, function(data) {
         forecast = JSON.parse(data);
         temp = forecast.currently.apparentTemperature;
         pressure = forecast.currently.pressure;
@@ -41,7 +41,7 @@ function preload(){
     console.log(riseTime);
 
 // TODO: change this back to just sun.json !!!
-    $.get('/sun.json', function(data) {
+    $.get('wwmairs.com:82/sun.json', function(data) {
         sunrise = data.sunrise;
         sunset = data.sunset;
         rise_quality = sunrise.features[0].properties.quality;
