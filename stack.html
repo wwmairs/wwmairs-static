@@ -76,7 +76,7 @@
                 </p>
                 <p>The Pine community is decidedly smaller than the Pi's base and there are markedly fewer distributions and OS's for Pine.  I played around for a while with a Debian distro, then Arch Linux, but they were both a little clunky hooked up to a display, and they both gave up after about a week.  Neither of these distros had a BIOS, so recovery was pretty much impossible, and the Pine could only be brought back to life by wiping the SD card and buring a new image onto it.  I finally settled on Longsleep's Ubuntu Xenial image.  It's lightweight and boots fast, unburdened by a desktop environment.  If you want a home server like mine, check out this <a href='https://www.reddit.com/r/pine64/comments/4xhhfr/ssh_and_pine64_as_a_server_a_guide_part_1/'>excellent guide</a> on reddit.
                 </p>
-                <p>Praline, as the Pine has been named, sits on the floor of our living room, beside out flower-print couch, with an old LaCie 1TB hard drive mounted as part of the file system.  Apache's httpd is my main static-content software, with MySQL and PHP rounding out the traditional LAMP stack.  I use express powered nodejs apps to do the extra lifting for funky API calls, like my DarkSky and Sunburst powered <a href='/where.html'>content</a>.
+                <p>Praline, as the Pine has been named, sits on the floor of our living room, beside out flower-print couch, with an old LaCie 1TB hard drive mounted as part of the file system.  Apache's httpd is my main static-content software, with MySQL and PHP rounding out the traditional LAMP stack.  I use express powered nodejs apps to do the extra lifting for funky API calls, like my DarkSky and Sunburst powered <a href='/where.html'>content</a>.  the apache mod_proxy let's me bypass apache when I need to fall back on node.
                 </p>
                 <p>Everything had been much simpler early on, when Comcast was our ISP.  I ended up liking comcast well enough because they seemed to be OK with inboud traffic on port 80.  Our current ISP, RCN, blocks inbound on 80, and won't offer me a good reason why.  Awfully rude, I think.  To get around this, I have apache listening on 82, and a reverse proxy listening on 80.  Now you can get to this site in two different ways: you can talk directly to Praline at <a href='http://wwmairs.com:82'>wwmairs.com:82</a> or you can talk to my proxy at <a href='w.wwmairs.com'>w.wwmairs.com</a>.  I have some degree of confidence that I'm not currently violating RCN's terms and conditions, but I'm no lawyer.  We'll find out when the cease and desist letter comes.
                 </p>
@@ -107,6 +107,6 @@
 </div>
 </body>
 <script>
-$('.content').css('min-height', $(document).height());
+$('.content').css('min-height', $(window).height());
 </script>
 </html>
