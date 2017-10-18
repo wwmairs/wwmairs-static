@@ -29,7 +29,19 @@
         <a id="back" href="../what.html">BACK</a>
     </div>
     <div class='content'>
-        
+    <?php
+        // yikes, what a gaping vulnerability.. I should deal with this
+        $myUserName = "will";
+        $myPassword = 'ojema';
+        $myDatabase = "wwmairs";
+        $myHost = "localhost";
+        $db = mysql_connect($myHost, $myUserName, $myPassword) or die ('I cannot connect to the database because: ' . mysqli_error());    
+        $query = "SELECT * FROM portfolio";
+        $myResult = mysql_query($db, $query);
+        while ($row = mysql_fetch_array($myResult, MYSQL_ASSOC)) {
+            echo "<h2>" .$row["title"] . "</h2>\n";
+        }
+    ?>
 
     </div>
 
