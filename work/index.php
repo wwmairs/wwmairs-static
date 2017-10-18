@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html lang="en">
 
 <head>
@@ -29,14 +29,8 @@
         <a id="back" href="../what.html">BACK</a>
     </div>
     <div class='content'>
-        <div class='row'>
-            <h2>BOOKS</h2>
-        </div>
-        <div class='row'>
-            <h2>WEB DESIGN</h2>
-        </div>
-        <div class='row'>
-        </div>
+        
+
     </div>
 
 </div>
