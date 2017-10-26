@@ -23,6 +23,19 @@ var links = [{ name: "who",
              { name: "resume",
                url: "resumer.html"}];
 
+var colors = ['#3ECCA6', ]
+
+
+/*
+  * page colors
+  * who:    #3ECCA6
+  * what:   #FFB666
+  * where:  #A6FEFF
+  * work:   #CC5B51
+  * resume: #99917B
+  *
+  */
+
 var Circle = {
     selected: false,
     c  : 0,
