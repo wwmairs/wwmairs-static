@@ -67,6 +67,8 @@ function preload(){
 }
 
 function setup() {
+    smooth();
+    pickbuffer = createGraphics(WIDTH, HEIGHT);
     time = hour();
     createCanvas(WIDTH, HEIGHT);
     noLoop();

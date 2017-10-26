@@ -17,7 +17,7 @@
     <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-    :root{--page-color: rgba(255, 165, 0, 0.7)}
+    :root{--page-color: #CC5B51}
     </style>
     <link href="portfolio.css?v=2.1.2" rel="stylesheet"/>
 </head>
