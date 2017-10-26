@@ -6,7 +6,7 @@ var HOVER_CUTOFF = 50;
 var pickbuffer;
 var circles = new Array(NUM_CIRCLES);
 
-var vulfFont;
+var vFont;
 
 var links = [{ name: "who",
                url: "who.html"
@@ -21,9 +21,9 @@ var links = [{ name: "who",
                url: "work/"
              },
              { name: "resume",
-               url: "resumer.html"}];
+               url: "resume.html"}];
 
-var colors = ['#3ECCA6', ]
+var colors = ['#3ECCA6', '#FFB666', '#A6FEFF', '#CC5B51', '#99917B'];
 
 
 /*
@@ -60,8 +60,9 @@ var Circle = {
             ellipse(this.x, this.y, this.d + augment, this.d + augment);   
         }
         fill(0);
-        textAlign(CENTER, CENTER);
-        // textFont(vulfFont);
+        textAlign(CENTER);
+        textFont(vFont);
+        textSize(16);
         text(this.name, this.x, this.y);
     },
     renderSelected: function() {
@@ -79,6 +80,9 @@ var Circle = {
         return (red(mouseColor) == red(this.id) &&
                 blue(mouseColor) == blue(this.id) &&
                 green(mouseColor) == green(this.id));
+    },
+    gotoLink: function() {
+        window.location.href = this.href;
     }
 }
 
@@ -87,7 +91,7 @@ var Circle = {
 
 function preload(){
 
-    // vulfFont = loadFont('vulfface/Vulf_Mono-Light_Italic_web.ttf')
+    vFont = loadFont('vulfface/Vulf_Mono-Light_Italic_web.ttf')
 
     HEIGHT = windowHeight;
     WIDTH = windowWidth;
@@ -102,13 +106,21 @@ function setup () {
 
     for (i = 0; i < NUM_CIRCLES; i++) {
         circles[i] = Object.create(Circle);
-        circles[i].c = color(random(255), random(255), random(255));
+        circles[i].c = colors[i];
         circles[i].d = random(25) + 100;
-        circles[i].x = random(WIDTH);
-        circles[i].y = random(HEIGHT);
+        circles[i].x = random(WIDTH - 200) + 100;
+        circles[i].y = random(HEIGHT - 200) + 100;
         circles[i].id= color(random(255) | 0, random(255) | 0, random(255) | 0);
         circles[i].name = links[i].name;
         circles[i].href = links[i].url;
+        for (j = (i - 1); j >= 0; j--) {
+            if (abs(circles[i].x - circles[j].x) < 75) {
+                circles[i].x = random(WIDTH - 200) + 100;
+            }
+            if (abs(circles[i].y - circles[j].y) < 75) {
+                circles[i].y = random(HEIGHT - 200) + 100;
+            }
+        }
     }
     drawPickBuffer();
 
@@ -119,6 +131,15 @@ function draw() {
     noStroke();
     for (i = 0; i < NUM_CIRCLES; i++) {
         circles[i].render();
+    }
+
+}
+
+function mouseClicked() {
+    for (i = 0; i < NUM_CIRCLES; i++) {
+        if (circles[i].isect()) {
+            circles[i].gotoLink();
+        }
     }
 
 }
