@@ -1,6 +1,18 @@
 /* style.css
  * an attempted master stylesheet
  */
+
+
+
+ /*
+  * page colors
+  * who:    #3ECCA6
+  * what:   #FFB666
+  * where:  #A6FEFF
+  * work:   #CC5B51
+  * resume: #99917B
+  *
+  */
 :root{
     --text-color: black;
 }
