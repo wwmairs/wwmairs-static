@@ -76,6 +76,32 @@ a:hover {
     transform: translate(0px, -30px);
 }
 
+/* bits for content added from mysql, i.e. portfolio */
+#entries{
+    margin: auto;
+    width: 80%;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.entry {
+    border-right: 1px solid var(--page-color);
+    border-bottom: 1px solid var(--page-color);
+    margin-bottom: 200px;
+}
+
+.entry p {
+    padding: 10px;
+}
+
+.entry iframe{
+    width: 90%;
+    height: 600px;
+    margin: auto;
+    border: 0;
+    overflow: hidden;
+}
+
 /* bits for sidebar */
 #mobile {
     display: none;
@@ -156,3 +182,4 @@ a:hover {
     padding: 10px;
     padding-right: 0;
 }
+
