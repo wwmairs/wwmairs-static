@@ -2,6 +2,7 @@ new p5();
 
 var NUM_CIRCLES = 5;
 var HOVER_CUTOFF = 50;
+var BACKGROUND_INDEX = parseInt(random(100)%5);
 
 var pickbuffer;
 var circles = new Array(NUM_CIRCLES);
@@ -23,16 +24,15 @@ var links = [{ name: "who",
              { name: "resume",
                url: "resume.html"}];
 
-var colors = ['#3ECCA6', '#FFB666', '#A6FEFF', '#CC5B51', '#99917B'];
-
+var colors = ['#6B3037', '#B80D21', '#176185', '#E2DB28', '#7ED5FF'];
 
 /*
   * page colors
-  * who:    #3ECCA6
-  * what:   #FFB666
-  * where:  #A6FEFF
-  * work:   #CC5B51
-  * resume: #99917B
+  * who:    #6B3037
+  * what:   #B80D21
+  * where:  #176185
+  * work:   #E2DB28
+  * resume: #7ED5FF
   *
   */
 
@@ -59,7 +59,7 @@ var Circle = {
             }
             ellipse(this.x, this.y, this.d + augment, this.d + augment);   
         }
-        fill(0);
+        fill(255);
         textAlign(CENTER);
         textFont(vFont);
         textSize(16);
@@ -100,8 +100,9 @@ function preload(){
 }
 
 function setup () {
+    background(150);
     noLoop();
-    smooth();
+    // smooth();
     createCanvas(WIDTH, HEIGHT);
 
     for (i = 0; i < NUM_CIRCLES; i++) {
@@ -114,10 +115,10 @@ function setup () {
         circles[i].name = links[i].name;
         circles[i].href = links[i].url;
         for (j = (i - 1); j >= 0; j--) {
-            if (abs(circles[i].x - circles[j].x) < 75) {
+            while (abs(circles[i].x - circles[j].x) < 75) {
                 circles[i].x = random(WIDTH - 200) + 100;
             }
-            if (abs(circles[i].y - circles[j].y) < 75) {
+            while (abs(circles[i].y - circles[j].y) < 75) {
                 circles[i].y = random(HEIGHT - 200) + 100;
             }
         }

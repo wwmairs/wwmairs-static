@@ -1,70 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- my home page-->
-	<title>William Mairs</title>
-	<link rel="icon" type="img/png" href="glasses.png">
-
-	<!-- Roboto google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100|Roboto:100" rel="stylesheet">
-	<!-- vulf fonts -->
-	<link href="vulfface/font.css" rel="stylesheet">
-	<!-- Latest compiled and minified CSS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TITLE</title>
+    <link rel="icon" type="img/png" href="glasses.png">
+    <!-- Roboto google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <!-- vulf fonts -->
+    <link href="vulfface/font.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link href="index.css?v=2.0.1" rel="stylesheet"/>
+    <!-- p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="index.js?v=1.0"></script>
 
-
+    <style>
+    :root {--page-color: rgba(255, 204, 0, 1)}
+    </style>
+    <link href="style.css?v=2.1.1" rel="stylesheet"/>
+    <style>
+    .container-fluid {background: none;}
+    body{background:none;}
+    </style>
 </head>
 
 <body>
-<div class="container-fluid">
-	<div id="hero-image">
-		<div class="hero-text">
-			<h1>William Mairs</h1>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 col-sm-6 col-xs-12">
-			<div class="pane" id="pane2">
-				<a class="buttons" href="who.html">Who</a>
-			</div>
-		</div>
-		<div class="col-md-6 col-sm-6 col-xs-12">
-			<div class="pane" id="pane3">
-				<a class="buttons" href="what.html">What</a>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 col-sm-6 col-xs-12">
-			<div class="pane" id="pane4">
-				<a class="buttons" href="where.html">Where</a>
-			</div>
-		</div>
-		<div class="col-md-6 col-sm-6 col-xs-12">
-			<div class="pane" id="pane5">
-				<a class="buttons" href="resume.html">Resume</a>
-			</div>
-		</div>
-<!-- 	<div class="pane" id="pane6">
-		<a class="buttons-light" href="contact.html">Contact</a>
-	</div> -->
-	</div>
 
-	<div id="footer">
-		<footer>COPYRIGHT &copy; WWMairs Inc. 2017</footer>
-	</div>
-	<script>
-	$("#hero-image").height($(window).height());
-	$(".pane").height($(window).height());
-	</script>
-</div>
+    <div>
+        <div id="hero-image" class="hero-pane">
+            <img class="rellax" src="wwmairs.jpg" width="100%">
+        </div>
+        <div class="rellax" data-rellax-speed="7" data-rellax-zindex="5" data-rellax-percentage="-0.6">
+            <h1 id="hero-text">William Mairs</h1>
+        </div>
+        <div class="hero-pane">
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="resources/rellax.min.js"></script>
+    <script>
+        $(".hero-pane").height($(window).height());
+        var rellax = new Rellax('.rellax');
+    </script>
 </body>
+
 </html>
