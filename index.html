@@ -33,21 +33,19 @@
 <body>
 
     <div>
-        <div id="hero-image" class="hero-pane">
-            <img class="rellax" src="wwmairs.jpg" width="100%">
+        <div id="hero-image">
+            <!-- <img src="wwmairs.jpg" width="100%"> -->
         </div>
-        <div class="rellax" data-rellax-speed="7" data-rellax-zindex="5" data-rellax-percentage="-0.6">
-            <h1 id="hero-text">William Mairs</h1>
-        </div>
-        <div class="hero-pane">
+        <div>
+            <!-- <h1 id="hero-text">William Mairs</h1>    -->
         </div>
     </div>
 
 
     <script type="text/javascript" src="resources/rellax.min.js"></script>
     <script>
-        $(".hero-pane").height($(window).height());
-        var rellax = new Rellax('.rellax');
+        $("#hero-image").height($(window).height());
+        // var rellax = new Rellax('.rellax');
     </script>
 </body>
 

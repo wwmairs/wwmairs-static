@@ -133,6 +133,10 @@ function draw() {
     for (i = 0; i < NUM_CIRCLES; i++) {
         circles[i].render();
     }
+    textAlign(CENTER);
+    textFont(vFont);
+    textSize(48);
+    text("William Mairs", WIDTH / 2, HEIGHT / 2);
 
 }
 
@@ -145,13 +149,13 @@ function mouseClicked() {
 
 }
 
-// deprecated
-// function windowResized() {
-//     WIDTH = windowWidth;
-//     HEIGHT = windowHeight;
-//     resizeCanvas(WIDTH, HEIGHT);
-//     redraw();
-// }
+
+function windowResized() {
+    WIDTH = windowWidth;
+    HEIGHT = windowHeight;
+    resizeCanvas(WIDTH, HEIGHT);
+    redraw();
+}
 
 function mouseMoved() {
     // for (i = 0; i < NUM_CIRCLES; i++) { 
