@@ -196,6 +196,7 @@ a:hover {
         padding-left: 0px;
     }
     .content{
+        margin-top: 70px;
         border-left: none;
     }
     .sidebar-nav{
@@ -210,7 +211,7 @@ a:hover {
         padding: 10px;
     }
     .sidebar-nav li a{
-        
+        /*font-size: 10;*/
     }
     .internal-nav{
         overflow: hidden;

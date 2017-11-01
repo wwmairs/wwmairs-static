@@ -135,7 +135,7 @@ function draw() {
     }
     textAlign(CENTER);
     textFont(vFont);
-    textSize(48);
+    textSize(36);
     text("William Mairs", WIDTH / 2, HEIGHT / 2);
 
 }
