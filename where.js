@@ -160,10 +160,10 @@ function updateTheta(num) {
 
 function skyColor(theta) {
     if (theta > PI)  {
-        return lerpColor(color(sunsetColor), color(nightColor), yDisp(theta))
+        return lerpColor(color(sunsetColor), color(nightColor), yDisp(theta) * 2)
     }
     else {
-        return lerpColor(color(sunsetColor), color(dayColor), yDisp(theta));
+        return lerpColor(color(sunsetColor), color(dayColor), yDisp(theta) * 2);
     }
 }
 
