@@ -15,7 +15,7 @@ if (sent == 'true') {
     modalMessage.innerHTML = "Thanks! I'll get back to you soon on that one.";
     modal.style.display = "block";
 } else if (sent == 'false') {
-    modalMessage.innerHTML = "Whoops! Something went wrong with my javascript.";
+    modalMessage.innerHTML = "Whoops! Something went wrong with my scripts.";
     modal.style.display = "block";
 } else {
 
