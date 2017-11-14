@@ -73,20 +73,20 @@ a:hover {
 
 #name {
     font-family: 'Vulf Mono Light';
-    transform: translate(0px, -30px);
+    /*transform: translate(0px, -30px);*/
 }
 
 /* bits for content added from mysql, i.e. portfolio */
 #entries{
     margin: auto;
-    width: 80%;
+    width: 90%;
     margin-top: 100px;
     text-align: center;
 }
 
 .entry {
-    border-right: 1px solid var(--page-color);
-    border-bottom: 1px solid var(--page-color);
+    /*border-right: 1px solid var(--page-color);*/
+    border: 1px solid var(--page-color);
     margin-bottom: 200px;
 }
 

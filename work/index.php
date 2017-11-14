@@ -31,16 +31,17 @@
     <div class='content'>
     <div id='entries'>
     <?php
+    $cat = $_GET['category'];
 	$config = parse_ini_file('/home/wm/config.ini');
 	$mysqli = new mysqli($config['servername'], $config['username'],
 			     $config['password'], $config['dbname']);
-        $result = $mysqli->query("SELECT * FROM portfolio");
+    $result = $mysqli->query("SELECT * FROM portfolio");
 	#var_dump($result->fetch_all());
-	while($entry = mysqli_fetch_assoc($result)) {
+    while($entry = mysqli_fetch_assoc($result)) {
 		echo "<div class='entry'>";
 		echo "<h2>" . $entry["title"] . "</h2>";
 		if ($entry["category"] == "web") {
-			echo "<iframe src='" . $entry["url"] . "'></iframe>";
+			echo "<iframe src='" . $entry["url"] . "' height='100%'></iframe>";
 		} else if ($entry["category"] == "books") {
 			echo "<img src='" . $entry["url"] . "'>";
 		}
