@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "83b6abf6d841cdb5b1ce056b8fcfe973",
+    "content-hash": "c2c55600aa804b9ba263b3c614806496",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -176,7 +176,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "swiftmailer/swiftmailer": 0
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
