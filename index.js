@@ -1,6 +1,6 @@
 new p5();
 
-var NUM_CIRCLES = 5;
+var NUM_CIRCLES = 6;
 var HOVER_CUTOFF = 50;
 var BACKGROUND_INDEX = parseInt(random(100)%5);
 
@@ -22,17 +22,22 @@ var links = [{ name: "who",
                url: "work/"
              },
              { name: "resume",
-               url: "resume.html"}];
+               url: "resume.html"
+             },
+             { name: "contact",
+               url: "contact.html"}];
 
-var colors = ['#6B3037', '#B80D21', '#176185', '#E2DB28', '#7ED5FF'];
+var colors = ['#0F935A', '#16588A', '#6ABEFE', 
+              '#D78416', '#D74D16', '#FF8D60'];
 
 /*
   * page colors
-  * who:    #6B3037
-  * what:   #B80D21
-  * where:  #176185
-  * work:   #E2DB28
-  * resume: #7ED5FF
+  * who:    #0F935A
+  * what:   #16588A
+  * where:  #6ABEFE
+  * work:   #D78416
+  * resume: #D74D16
+  * contact:#FF8D60 
   *
   */
 
