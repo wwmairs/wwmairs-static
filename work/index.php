@@ -66,7 +66,7 @@
             </p>
             <ul id='contact-links'>
                 <li><a href="https://www.google.com/maps/@42.4023285,-71.1233033,3a,75y,244.36h,98.87t/data=!3m6!1e1!3m4!1sTHjr4PigkIQWlbNtmPRtJQ!2e0!7i13312!8i6656">maps</a></li>
-                <li><a href="contact.html">contact</a></li>
+                <li><a href="../contact.html">contact</a></li>
                 <li><a href="https://github.com/wwmairs">github</a></li>
             </ul>
             <p id='version'>
