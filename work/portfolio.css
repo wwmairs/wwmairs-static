@@ -87,7 +87,8 @@ a:hover {
 .entry {
     /*border-right: 1px solid var(--page-color);*/
     border: 1px solid var(--page-color);
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+    box-shadow: 0px 0px 10px #cccccc;
 }
 
 .entry p {
