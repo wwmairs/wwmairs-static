@@ -1,0 +1,62 @@
+/*
+  * page colors
+  * who:    #0F935A
+  * what:   #16588A
+  * where:  #6ABEFE
+  * work:   #D78416
+  * resume: #D74D16
+  * contact:#FF8D60 
+  *
+  */
+
+:root{
+    --text-color: black;
+}
+
+h1{
+    font-family: 'Vulf Mono Light Italic';
+    text-align: center;
+    color: var(--text-color);
+    letter-spacing: 10px;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Vulf Mono Light Italic';
+    margin:0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: var(--page-color);
+}
+
+
+
+.link{
+    margin: 0 auto;
+    width: 10%;
+    /*height: 100%;*/
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#who{
+    background-color: #0F935A;
+}
+#what {
+    background-color: #16588A;
+}
+#where {
+    background-color: #6ABEFE;
+}
+#work {
+    background-color: #D78416;
+}
+#resume {
+    background-color: #D74D16;
+}
+#contact {
+    background-color: #FF8D60;
+}
