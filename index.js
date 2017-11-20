@@ -1,3 +1,8 @@
+if (screen.width <= 756) {
+    document.location = "mindex.html";
+}
+
+
 new p5();
 
 var NUM_CIRCLES = 6;
