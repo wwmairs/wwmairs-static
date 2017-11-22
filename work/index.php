@@ -35,19 +35,29 @@
 	$config = parse_ini_file('/home/wm/config.ini');
 	$mysqli = new mysqli($config['servername'], $config['username'],
 			     $config['password'], $config['dbname']);
-    $result = $mysqli->query("SELECT * FROM portfolio");
-	#var_dump($result->fetch_all());
-    while($entry = mysqli_fetch_assoc($result)) {
-		echo "<div class='entry'>";
-		echo "<h2>" . $entry["title"] . "</h2>";
-		if ($entry["category"] == "web") {
-			echo "<iframe src='" . $entry["url"] . "' height='100%'></iframe>";
-		} else if ($entry["category"] == "books") {
-			echo "<img src='" . $entry["url"] . "'>";
-		}
-		echo "<p>" . $entry["body"] . "</p>";
-		echo "</div>";
-	}
+    #$result = $mysqli->query("SELECT * FROM portfolio");
+    if ($cat == null) {
+        if (!($stmt = $mysqli->prepare("SELECT * FROM portfolio")))
+            echo "prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
+        if (!$stmt->execute())
+            echo "execute failed: (" . $mysqli->errno . ")" . $mysqli->error;
+        $out_title    = NULL;
+        $out_body     = NULL;
+        $out_category = NULL;
+        $out_url      = NULL;
+        $stmt->bind_result($out_title, $out_body, $out_category, $out_url);
+        while ($stmt->fetch()) {
+            echo "<div class='entry'>";
+            echo "<h2>" . $out_title . "</h2>";
+            if ($out_entry == "web") 
+                echo "<iframe src='" . $out_url . "' height='100%'></iframe>";
+            else
+                echo "<img src='" . $out_url ."'>";
+            echo "<p>" . $out_body . "</p>";
+            echo "</div>";
+        }
+    } else 
+        echo "cat is something else: " . $cat
 	
     ?>
     </div>
