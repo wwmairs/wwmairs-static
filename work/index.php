@@ -35,21 +35,22 @@
 	$config = parse_ini_file('/home/wm/config.ini');
 	$mysqli = new mysqli($config['servername'], $config['username'],
 			     $config['password'], $config['dbname']);
-    #$result = $mysqli->query("SELECT * FROM portfolio");
     if ($cat == null) {
         if (!($stmt = $mysqli->prepare("SELECT * FROM portfolio")))
             echo "prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
         if (!$stmt->execute())
             echo "execute failed: (" . $mysqli->errno . ")" . $mysqli->error;
+        $out_id       = NULL;
         $out_title    = NULL;
         $out_body     = NULL;
         $out_category = NULL;
         $out_url      = NULL;
-        $stmt->bind_result($out_title, $out_body, $out_category, $out_url);
+        if (!$stmt->bind_result($out_id, $out_title, $out_body, $out_category, $out_url))
+            echo "binding output pars failed: (" . $stmt->errno . ") " . $stmt->error;
         while ($stmt->fetch()) {
             echo "<div class='entry'>";
             echo "<h2>" . $out_title . "</h2>";
-            if ($out_entry == "web") 
+            if ($out_category == "web") 
                 echo "<iframe src='" . $out_url . "' height='100%'></iframe>";
             else
                 echo "<img src='" . $out_url ."'>";
