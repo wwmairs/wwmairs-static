@@ -28,19 +28,28 @@
         <a id="home" href='../index.html'>WWM</a>
         <a id="back" href="../what.html">BACK</a>
     </div>
+    <div id="options">
+        <ul>
+            <li>
+                <a href="?category=machines">by machine</a>
+            </li>
+            <li>
+                <a href="?category=hands">by hand</a>
+            </li>
+            <li>
+                <a href="?">all</a>
+            </li>
+        </ul>
+    </div>
     <div class='content'>
     <div id='entries'>
     <?php
     $cat = $_GET['category'];
+    $search_id = $_GET['id'];
 	$config = parse_ini_file('/home/wm/config.ini');
 	$mysqli = new mysqli($config['servername'], $config['username'],
 			     $config['password'], $config['dbname']);
-    if ($cat == null) {
-        if (!($stmt = $mysqli->prepare("SELECT * FROM portfolio")))
-            echo "prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
-        if (!$stmt->execute())
-            echo "execute failed: (" . $mysqli->errno . ")" . $mysqli->error;
-    } else {
+    if ($cat != null) {
         if (!($stmt = $mysqli->prepare("SELECT * FROM portfolio WHERE category = ?")))
             echo "prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
         if (!$stmt->bind_param("s", $cat))
@@ -48,6 +57,18 @@
         if (!$stmt->execute())
             echo "execute failed: (" . $mysqli->errno . ")" . $mysqli->error;
         
+    } else if ($search_id != null) {
+        if (!($stmt = $mysqli->prepare("SELECT * FROM portfolio WHERE id = ?")))
+            echo "prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
+        if (!$stmt->bind_param("i", $search_id))
+            echo "binding pars failed: (" .$stmt->errno . ") " .$stmt->error;
+        if (!$stmt->execute())
+            echo "execute failed: (" . $mysqli->errno . ")" . $mysqli->error;
+    } else {
+        if (!($stmt = $mysqli->prepare("SELECT * FROM portfolio")))
+            echo "prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
+        if (!$stmt->execute())
+            echo "execute failed: (" . $mysqli->errno . ")" . $mysqli->error;
     }
     $out_id       = NULL;
     $out_title    = NULL;
@@ -57,14 +78,16 @@
     if (!$stmt->bind_result($out_id, $out_title, $out_body, $out_category, $out_url))
         echo "binding output pars failed: (" . $stmt->errno . ") " . $stmt->error;
     while ($stmt->fetch()) {
+        echo "<a href='?id=" . $out_id . "'>";
         echo "<div class='entry'>";
         echo "<h2>" . $out_title . "</h2>";
-        if ($out_category == "web") 
+        if ($out_category == "machines") 
             echo "<iframe src='" . $out_url . "' height='100%'></iframe>";
         else
             echo "<img src='" . $out_url ."'>";
         echo "<p>" . $out_body . "</p>";
         echo "</div>";
+        echo "</a>";
     }
 	
     ?>
@@ -94,6 +117,6 @@
 </div>
 </body>
 <script>
-$('.content').css('min-height', $(document).height());
+$('.entries').css('min-height', $(document).height());
 </script>
 </html>
