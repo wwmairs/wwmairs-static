@@ -44,7 +44,7 @@ h3{
 body{
     font-family: 'Vulf Mono Light Italic';
     margin:0;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 2px;
     background: var(--page-color);
 }
@@ -59,7 +59,8 @@ p{
 }
 
 .content{
-    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     margin-top: 30px;
     margin-bottom: 30px;
     color: var(--text-color);
@@ -126,6 +127,7 @@ a:hover {
     /*position: fixed;*/
     width: 175px;
     /*height: 100%;*/
+    font-size: 14px;
 }
 
 
@@ -252,6 +254,7 @@ a:hover {
 /* bits for footer */
 #footer {
     /*margin-top: 47px;*/
+    font-size: 14px;
     padding-left: 50px;
     color: white;
     height: 200px;
