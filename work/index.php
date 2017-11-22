@@ -57,8 +57,32 @@
             echo "<p>" . $out_body . "</p>";
             echo "</div>";
         }
-    } else 
-        echo "cat is something else: " . $cat
+    } else {
+        if (!($stmt = $mysqli->prepare("SELECT * FROM portfolio WHERE category = ?")))
+            echo "prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
+        if (!$stmt->bind_param("s", $cat))
+            echo "binding pars failed: (" .$stmt->errno . ") " .$stmt->error;
+        if (!$stmt->execute())
+            echo "execute failed: (" . $mysqli->errno . ")" . $mysqli->error;
+        $out_id       = NULL;
+        $out_title    = NULL;
+        $out_body     = NULL;
+        $out_category = NULL;
+        $out_url      = NULL;
+        if (!$stmt->bind_result($out_id, $out_title, $out_body, $out_category, $out_url))
+            echo "binding output pars failed: (" . $stmt->errno . ") " . $stmt->error;
+        while ($stmt->fetch()) {
+            echo "<div class='entry'>";
+            echo "<h2>" . $out_title . "</h2>";
+            if ($out_category == "web") 
+                echo "<iframe src='" . $out_url . "' height='100%'></iframe>";
+            else
+                echo "<img src='" . $out_url ."'>";
+            echo "<p>" . $out_body . "</p>";
+            echo "</div>";
+        }
+        
+    }
 	
     ?>
     </div>
