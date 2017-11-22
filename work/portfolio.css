@@ -87,8 +87,9 @@ a:hover {
 .entry {
     /*border-right: 1px solid var(--page-color);*/
     border: 1px solid var(--page-color);
+    border-radius: 2px;
     margin-bottom: 100px;
-    box-shadow: 0px 0px 10px #cccccc;
+    box-shadow: 0px 0px 3px #cccccc;
 }
 
 .entry p {
@@ -115,6 +116,7 @@ a:hover {
     border: 1px solid var(--page-color);
     overflow: hidden;
     font-size: 14px;
+    background: white;
 }
 #sidebar-wrapper a:hover {
     border-bottom: none;
@@ -131,11 +133,40 @@ a:hover {
     border-left: 1px solid var(--page-color);
 
 }
+#options{
+    position: fixed;
+    top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 20px;
+    border-radius: 1px;
+    border-left: 1px solid var(--page-color);
+    overflow: hidden;
+    font-size: 12px;
+    /*background: white;*/
+}
+#options ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+#options ul li{
+    /*background: white;*/
+}
 
 /* minimal sidebar on xs */
 @media (max-width: 768px){
     #sidebar-wrapper{
         position: absolute;
+    }
+    #options{
+        position: absolute;
+        padding-bottom: 10px;
+    }
+    #entries{
+        margin-top: 120px;
     }
 }
 
