@@ -202,12 +202,21 @@ a:hover {
         display: none;
     }
 
+    #button-wrapper {
+        width: 100%;
+    }
     #button {
+        text-align: center;
         display: block;
+        width: 15%;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 6px;
         border-radius: 1px;
         background: white;
         color: black;
-        border: none;
+        border: 1px solid var(--page-color);
     }
     .container-fluid{
         padding-left: 0px;
