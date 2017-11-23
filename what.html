@@ -23,6 +23,7 @@
 </head>
 
 <body>
+<div id="desktop">
 <div id="sidebar-wrapper">
     <h2 id="home-button">
         <a href='index.html'>WWM</a>
@@ -33,7 +34,7 @@
     </li>
     <li>
         <a href='what.html'>WHAT</a>
-        <ul id='desktop' class='internal-nav'>
+        <ul class='internal-nav'>
         <li>
             <a href='stack.html'>server</a>
         </li>
@@ -52,20 +53,49 @@
         <a href='resume.html'>RESUME</a>
     </li>
     </ul>
-    <ul id='mobile' class='internal-nav'>
-    <li>
-        <a href='work'>work</a>
-    </li>
-    <li>
-        <a href='stack.html'>server</a>
-    </li>
-    <li>
-        <a href='hearts.html'>hearts</a>
-    </li>
-    </ul>
+</div>
 </div>
     <!-- sigebar-wrapper -->
 <div class="container-fluid">
+<div id='mobile'>
+    <div id="button-wrapper">
+        <div class="row">
+            <div class="col-xs-6">
+                <a class="button" href="index.html">WWM</a>
+            </div>
+            <div class="col-xs-6">
+                <a class="button" class="btn btn-primary" 
+                data-toggle="collapse" href="#mobile-sidebar" 
+                aria-expanded="false" aria-controls="mobile-sidebar">
+                <span class="glyphicon glyphicon-menu-hamburger" 
+                aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-sidebar" class="collapse">
+        <h2 id="home-button">
+            <a href='index.html'>WWM</a>
+        </h2>
+        <ul class="sidebar-nav">
+        <li>
+            <a href='who.html'>WHO</a>
+        </li>
+        <li>
+            <a href='what.html'>WHAT</a>
+        </li>
+        <li>
+            <a href='where.html'>WHERE</a>
+        </li>
+            <li>
+            <a href='work/'>WORK</a>
+        </li>
+        <li>
+            <a href='resume.html'>RESUME</a>
+        </li>
+        </ul>
+    </div>
+</div>
     <div class='content'>
         <h2>WHAT I'M UP TO</h2>
         <div class='row'>

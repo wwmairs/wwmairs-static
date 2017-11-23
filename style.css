@@ -244,6 +244,7 @@ a:hover {
     }
     .internal-nav{
         overflow: hidden;
+        width: 100%;
         /*display: none;*/
         /*position: absolute;*/
         padding: 0;
