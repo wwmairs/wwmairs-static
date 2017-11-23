@@ -205,7 +205,11 @@ a:hover {
     #button-wrapper {
         width: 100%;
     }
-    #button {
+    #button-wrapper a{
+        width: 25%;
+        margin: auto;
+    }
+    .button {
         text-align: center;
         display: block;
         width: 15%;
@@ -216,7 +220,7 @@ a:hover {
         border-radius: 1px;
         background: white;
         color: black;
-        border: 1px solid var(--page-color);
+        border-bottom: none !important;
     }
     .container-fluid{
         padding-left: 0px;
