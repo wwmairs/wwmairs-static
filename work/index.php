@@ -75,7 +75,8 @@
     $out_body     = NULL;
     $out_category = NULL;
     $out_url      = NULL;
-    if (!$stmt->bind_result($out_id, $out_title, $out_body, $out_category, $out_url))
+    $out_blurb    = NULL;
+    if (!$stmt->bind_result($out_id, $out_title, $out_body, $out_category, $out_url, $out_blurb))
         echo "binding output pars failed: (" . $stmt->errno . ") " . $stmt->error;
     while ($stmt->fetch()) {
         echo "<a href='?id=" . $out_id . "'>";
