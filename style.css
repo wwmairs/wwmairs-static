@@ -179,13 +179,19 @@ a:hover {
     font-size: 14px;
 }
 
+
+
 /* minimal sidebar on xs */
 @media (max-width: 768px){
     #desktop {
         display: none;
     }
     #mobile {
+        width: 100%;
         display: block;
+        position: fixed;
+        background: white;
+        z-index: 2;
     }
     #sidebar-wrapper{
         /*display: none;*/
@@ -195,11 +201,19 @@ a:hover {
     #home-button{
         display: none;
     }
+
+    #button {
+        display: block;
+        border-radius: 1px;
+        background: white;
+        color: black;
+        border: none;
+    }
     .container-fluid{
         padding-left: 0px;
     }
     .content{
-        margin-top: 0px;
+        margin-top: 50px;
         border-left: none;
     }
     .sidebar-nav{

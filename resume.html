@@ -25,9 +25,6 @@
     :root{--page-color: #D74D16}
     </style>
 	<link href="style.css?v=2.1.3" rel="stylesheet"/>
-	<style>
-	    @media (max-width: 768px){ .content {margin-top: 170px;}}
-	</style>
 
 </head>
 
@@ -73,9 +70,10 @@
 	<!-- sigebar-wrapper -->
 <div class='container-fluid'>
 	<div id='mobile'>
-	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mobile-sidebar" aria-expanded="false" aria-controls="mobile-sidebar">
-	    Button with data-target
-	  </button>
+	<a id="button" class="btn btn-primary" data-toggle="collapse" href="#mobile-sidebar" aria-expanded="false" aria-controls="mobile-sidebar" 
+	style="width: 100%;">
+    WWM
+  	</a>
 	<div id="mobile-sidebar" class="collapse">
 		<h2 id="home-button">
 			<a href='index.html'>WWM</a>
