@@ -28,16 +28,34 @@
 	$config = parse_ini_file('/home/wm/config.ini');
 	$mysqli = new mysqli($config['servername'], $config['username'],
         $config['password'], $config['dbname']);
+
+    if (!($stmt = $mysqli->prepare("SELECT pswd FROM logins WHERE page = 'entry.html' AND name = 'will'")))
+            echo "prepare failed: (" . $mysqli->errno . ")" . $mysqli->error;
+    if (!$stmt->execute())
+        echo "execute failed: (" . $mysqli->errno . ")" . $mysqli->error;
+
     if (!empty($_POST)) {
-        if (!($stmt = $mysqli->prepare("INSERT INTO portfolio (title, body, category, url, blurb) VALUES (?, ?, ?, ?, ?)")))
-            echo "prepare failed: (" . $mysqli->errno .") ". $mysqli->error;
-        if (!$stmt->bind_param("sssss", $_POST["title"], $_POST["body"], $_POST["category"], $_POST["url"], $_POST["blurb"]))
-            echo "binding pars failed: (" . $stmt->errno . ") " . $stmt->error;
-        if (!$stmt->execute())
-            echo "execute failed: (" .$stmt->errno .")" . $stmt->error;
-            header("Location: http://wwmairs.com:82/work");
-    } else {
-        echo "this can't be right";
+        $out_pswd = NULL;
+        if (!$stmt->bind_result($out_pswd))
+            echo "binding output pars failed: (" . $stmt->errno . ") " . $stmt->error;
+        $stmt->execute();
+        $pswd = NULL;
+        while ($stmt->fetch()) {
+        }
+        $stmt->close();
+        if ($out_pswd == $_POST["psw"]) {
+            if (!($stmt2 = $mysqli->prepare("INSERT INTO portfolio (title, body, category, url, blurb) VALUES (?, ?, ?, ?, ?)")))
+                echo "prepare failed: (" . $mysqli->errno .") ". $mysqli->error;
+            if (!$stmt2->bind_param("sssss", $_POST["title"], $_POST["body"], $_POST["category"], $_POST["url"], $_POST["blurb"]))
+                echo "binding pars failed: (" . $stmt2->errno . ") " . $stmt2->error;
+            if (!$stmt2->execute()) {
+                echo "execute failed: (" . $stmt2->errno .")" . $stmt2->error;
+            } else { 
+                header("Location: http://wwmairs.com:82/work");
+            }
+        } else { 
+            echo "bad password";
+        }
     }
     ?>
 </div>
