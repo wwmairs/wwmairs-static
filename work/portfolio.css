@@ -104,6 +104,16 @@ a:hover {
     overflow: hidden;
 }
 
+.entry img{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.body {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
 /* bits for sidebar */
 #mobile {
     display: none;

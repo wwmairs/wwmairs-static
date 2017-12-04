@@ -45,6 +45,7 @@
     <div id='entries'>
     <?php
     $cat = $_GET['category'];
+    $image_path = 'images/';
     $search_id = $_GET['id'];
 	$config = parse_ini_file('/home/wm/config.ini');
 	$mysqli = new mysqli($config['servername'], $config['username'],
@@ -82,11 +83,16 @@
         echo "<a href='?id=" . $out_id . "'>";
         echo "<div class='entry'>";
         echo "<h2>" . $out_title . "</h2>";
-        if ($out_category == "machines") 
+        if ($out_category == "machines") {
             echo "<iframe src='" . $out_url . "' height='100%'></iframe>";
-        else
-            echo "<img src='" . $out_url ."'>";
-        echo "<p>" . $out_body . "</p>";
+        } else {
+            echo "<img src='" . $image_path . $out_url ."' width=100%>";
+        }
+        if ($search_id != null) {
+            echo "<div class='body'>" . $out_body . "</div>";
+        } else {
+            echo "<p>" . $out_blurb . "</p>";
+        }
         echo "</div>";
         echo "</a>";
     }
