@@ -435,6 +435,11 @@ textarea:hover{
     z-index:-1;
 }
 
+#svg-container{
+    position: absolute;
+    z-index: 2;
+}
+
 #hero-text{
     /*color: white;*/
     position: absolute;
@@ -447,4 +452,14 @@ textarea:hover{
     text-decoration: none;
     font-style:italic;
     color: var(--text-color);
+}
+
+/* for index circle buttons */
+.circle:hover{
+    transform: scale(1.5);
+}
+
+.circle{
+    transition: all .5s;
+    transform-origin: 50% 50%;
 }

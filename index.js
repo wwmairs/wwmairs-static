@@ -3,16 +3,14 @@ if (screen.width <= 756) {
 }
 
 
-new p5();
+var WIDTH = window.innerWidth;
+var HEIGHT = window.innerHeight;
 
 var NUM_CIRCLES = 6;
-var HOVER_CUTOFF = 50;
-var BACKGROUND_INDEX = parseInt(random(100)%5);
 
-var pickbuffer;
-var circles = new Array(NUM_CIRCLES);
+var circles = [];
 
-var vFont;
+const svgns = "http://www.w3.org/2000/svg";
 
 var links = [{ name: "who",
                url: "who.html"
@@ -46,145 +44,66 @@ var colors = ['#0F935A', '#16588A', '#6ABEFE',
   *
   */
 
-var Circle = {
-    selected: false,
-    c  : 0,
-    d  : 0,
-    x  : 0,
-    y  : 0,
-    id : 255,
-    render: function() {
-        
-        fill(this.c);
-        if (this.isect()) {
-            ellipse(this.x, this.y, 
-                    this.d + HOVER_CUTOFF / 2, 
-                    this.d + HOVER_CUTOFF / 2);
-        } else {
-            augment = 0
-            distance = dist(this.x, this.y, mouseX, mouseY) - this.d/2;
-            if (distance < HOVER_CUTOFF) {
-                augment = (HOVER_CUTOFF - distance) / 2;
-                
+var container = document.getElementById("svg-container");
+console.log(container);
+var svg = document.createElementNS(svgns, "svg");
+svg.setAttribute("width", WIDTH);
+svg.setAttribute("height", HEIGHT);
+container.appendChild(svg);
+
+
+
+class Circle {
+    constructor(i){
+        this.c  = colors[i];
+        this.r  = Math.random() * 25 + 50;
+        this.x  = Math.random() * (WIDTH - 200) + 100;
+        this.y  = Math.random() * (HEIGHT - 200) + 100;
+        for (var j = (i - 1); j >= 0; j--) {
+            if (Math.abs(this.x - circles[j].x) < 100) {
+                this.x = Math.random() * (WIDTH - 200) + 100;
+                console.log("finding new x");
             }
-            ellipse(this.x, this.y, this.d + augment, this.d + augment);   
-        }
-        fill(255);
-        textAlign(CENTER);
-        textFont(vFont);
-        textSize(16);
-        text(this.name, this.x, this.y);
-    },
-    renderSelected: function() {
-        fill(0);
-        ellipse(this.x, this.y, this.d, this.d);
-    },
-    renderIsect: function() {
-        pickbuffer.fill(this.id.levels);
-        pickbuffer.stroke(this.id);
-        pickbuffer.strokeWeight(5);
-        pickbuffer.ellipse(this.x, this.y, this.d, this.d);  
-    },
-    isect () {
-        mouseColor = color(pickbuffer.get(mouseX, mouseY));
-        return (red(mouseColor) == red(this.id) &&
-                blue(mouseColor) == blue(this.id) &&
-                green(mouseColor) == green(this.id));
-    },
-    gotoLink: function() {
-        window.location.href = this.href;
-    }
-}
-
-
-
-
-function preload(){
-
-    vFont = loadFont('vulfface/Vulf_Mono-Light_Italic_web.ttf')
-
-    HEIGHT = windowHeight;
-    WIDTH = windowWidth;
-    pickbuffer = createGraphics(WIDTH, HEIGHT);
-
-}
-
-function setup () {
-    background(150);
-    noLoop();
-    // smooth();
-    createCanvas(WIDTH, HEIGHT);
-
-    for (i = 0; i < NUM_CIRCLES; i++) {
-        circles[i] = Object.create(Circle);
-        circles[i].c = colors[i];
-        circles[i].d = random(25) + 100;
-        circles[i].x = random(WIDTH - 200) + 100;
-        circles[i].y = random(HEIGHT - 200) + 100;
-        circles[i].id= color(random(255) | 0, random(255) | 0, random(255) | 0);
-        circles[i].name = links[i].name;
-        circles[i].href = links[i].url;
-        for (j = (i - 1); j >= 0; j--) {
-            while (abs(circles[i].x - circles[j].x) < 75) {
-                circles[i].x = random(WIDTH - 200) + 100;
-            }
-            while (abs(circles[i].y - circles[j].y) < 75) {
-                circles[i].y = random(HEIGHT - 200) + 100;
+            if (Math.abs(this.y - circles[j].y) < 100) {
+                this.y = Math.random() * (HEIGHT - 200) + 100;
+                console.log("finding new y");
             }
         }
+        let name = links[i].name;
+        let href = links[i].url;
+
+        this.circle = document.createElementNS(svgns, "circle");
+        this.circle.setAttribute("class", "circle");
+        this.circle.setAttribute("cx", this.x);
+        this.circle.setAttribute("cy", this.y);
+        this.circle.setAttribute("r", this.r);
+        this.circle.setAttribute("fill", this.c);
+        this.circle.addEventListener("click", function (event) {
+          window.location.href = href;
+        });
+        this.circle.addEventListener("mouseover", function(event) {
+          console.log("mouseover");
+        });
+        svg.appendChild(this.circle);
+
+        var text = document.createElementNS(svgns, "text");
+        text.innerHTML = name;
+        text.setAttribute("x", this.x)
+        text.setAttribute("y", this.y)
+        text.setAttribute("fill", "white");
+        text.setAttribute("text-anchor", "middle");
+        svg.appendChild(text);
     }
-    drawPickBuffer();
-
-}
-
-function draw() {
-    clear();
-    noStroke();
-    for (i = 0; i < NUM_CIRCLES; i++) {
-        circles[i].render();
-    }
-    textAlign(CENTER);
-    textFont(vFont);
-    textSize(36);
-    text("William Mairs", WIDTH / 2, HEIGHT / 2);
-
-}
-
-function mouseClicked() {
-    for (i = 0; i < NUM_CIRCLES; i++) {
-        if (circles[i].isect()) {
-            circles[i].gotoLink();
-        }
-    }
-
-}
-
-
-function windowResized() {
-    WIDTH = windowWidth;
-    HEIGHT = windowHeight;
-    resizeCanvas(WIDTH, HEIGHT);
-    redraw();
-}
-
-function mouseMoved() {
-    // for (i = 0; i < NUM_CIRCLES; i++) { 
-    //     if (circles[i].isect() == true) {
-    //         circles[i].selected = true;
-    //     } else {
-    //         circles[i].selected = false;
-    //     }
-    // }
-    redraw();
-
-}
-
-function drawPickBuffer() {
-    for (i = 0; i < NUM_CIRCLES; i++) { 
-        if (circles[i].selected == true) {
-            circles[i].renderSelected();
-        } else {
-            circles[i].renderIsect();
-        }
+    updatePosition() {
+      this.circle.setAttribute("cx", this.x);
+      this.circle.setAttribute("cy", this.y);
     }
 }
+
+
+for (var i = 0; i < NUM_CIRCLES; i++) {
+  circles[i] = new Circle(i);
+}
+
+
+
