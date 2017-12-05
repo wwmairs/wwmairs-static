@@ -48,7 +48,7 @@ var container = document.getElementById("svg-container");
 console.log(container);
 var svg = document.createElementNS(svgns, "svg");
 svg.setAttribute("width", WIDTH);
-svg.setAttribute("height", HEIGHT);
+svg.setAttribute("height", HEIGHT - 5);
 container.appendChild(svg);
 
 
