@@ -1,7 +1,8 @@
 const statistics = {"header": ["Name" , "Games"],
                     "values": [{"name": "Avery", "games": 1},
                                {"name": "Phil", "games": 2},
-                               {"name": "Adam", "games": 1}]};
+                               {"name": "Adam", "games": 1},
+                               {"name": "Will", "games": 1}]};
 
 
 //ToDo (2): Learn how you access each value.
@@ -33,7 +34,7 @@ let pathDescriptions = ["M250,250 L250,50 A200,200 0 0,1 450,250 z",
                         "M250,250 L450,250 A200,200 0 0,1 250,450 z",
                         "M250,250 L250,450 A200,200 0 0,1 50,250 z",
                         "M250,250 L50,250 A200,200 0 0,1 250,50 z"];
-var colors = ["#f44165", "#6a41f4", "#f4be41"]
+var colors = ["#f44165", "#6a41f4", "#f4be41", "#42f47d"];
 var sum = 0;
 for (const value of statistics.values) {
   sum += value.games;
