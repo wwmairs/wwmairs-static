@@ -57,6 +57,9 @@ text.setAttribute("fill", "black");
 text.setAttribute("font-size", 22);
 text.innerHTML = defaultMessage;
 chart.appendChild(text);
+
+
+
 for (var i = 0; i < statistics.values.length; i++) {
 
   let value = statistics.values[i];
