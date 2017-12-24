@@ -26,8 +26,11 @@ h1{
 }
 
 h2{
+    margin: auto;
+    width: 350px;
+    border-bottom: 1px solid var(--page-color);
     font-family: 'Vulf Mono Light Italic';
-    margin-top: 0;
+    margin-top: 10px;
     text-align: center;
     letter-spacing: 4px;
     font-size: 16px;
@@ -35,7 +38,7 @@ h2{
 }
 h3{
     margin: 0;
-    margin-top: 10px;
+    margin-top: 15px;
     font-family: 'Vulf Mono Light';
     text-align: center;
     font-style: italic;
@@ -55,8 +58,13 @@ body{
     letter-spacing: 2px;
     background: var(--page-color);
 }
+
 p{
     margin-bottom: 20px;
+}
+
+.section{
+    padding-bottom: 10px;
 }
 
 .container-fluid{
@@ -68,7 +76,7 @@ p{
 .content{
     padding-left: 50px;
     padding-right: 50px;
-    /*margin-top: 30px;*/
+    margin-top: 30px;
     margin-bottom: 30px;
     color: var(--text-color);
     /*border-left: 1px solid var(--page-color);*/
@@ -81,39 +89,19 @@ p{
 
 .resume-fillings{
     text-align: center;
+    /*margin-left: 100px;*/
+    margin: auto;
+    width: 300px;
     font-size: 12px;
+    margin-bottom: 25px;
 }
 
-.progress{
-    background: rgba(255, 255, 128, 0.0);
-    border: none;
-    box-shadow: 0 0 0 0;
-    border-radius: 40px;
-    height: 20px;
-}
-
-.progress-bar-custom{
-    font-family: 'Vulf Mono Regular';
-    font-size: 12px;
-    /*background: rgba(0, 0, 255, 0.7);*/
-    border-radius: 40px;
-    box-shadow: 0 0 0 0;
-    /*color: var(--page-color);*/
-    color: white;
-    text-align: right;
-    padding-left: 15px;
-    padding-right: 10px;
-    /*padding-top: 13px;*/
-}
 
 a{
     text-decoration: none;
     color: var(--text-color);
 }
 
-.row a{
-    border-bottom: 1px solid var(--page-color);
-}
 
 a:hover {
     cursor: default;
@@ -126,7 +114,7 @@ a:hover {
     text-align: center;
     font-family: 'Vulf Mono Light';
     /*transform: translate(0px, -30px);*/
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     margin: 0;
     /*border-bottom: 1px solid var(--page-color); */
 }
@@ -134,7 +122,9 @@ a:hover {
 
 /* bits for footer */
 #footer {
-    margin-top: 40px;
+    border-top: 1px solid var(--page-color);
+    padding-top: 20px;
+    margin-top: 80px;
 }
 #footer p {
     text-align: center;
