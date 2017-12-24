@@ -28,16 +28,17 @@ h1{
 h2{
     font-family: 'Vulf Mono Light Italic';
     padding: 10px;
+    margin-top: 0;
     text-align: center;
     letter-spacing: 4px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 150%;
 }
 h3{
     font-family: 'Vulf Mono Light';
     text-align: center;
     font-style: italic;
-    font-size: 16px;
+    font-size: 15px;
 }
 h4{
     font-family: 'Vulf Mono Light';
@@ -85,7 +86,7 @@ p{
     border: none;
     box-shadow: 0 0 0 0;
     border-radius: 40px;
-    height: 45px;
+    height: 20px;
 }
 
 .progress-bar-custom{
@@ -99,7 +100,7 @@ p{
     text-align: right;
     padding-left: 15px;
     padding-right: 10px;
-    padding-top: 13px;
+    /*padding-top: 13px;*/
 }
 
 a{
@@ -123,10 +124,7 @@ a:hover {
     font-family: 'Vulf Mono Light';
     transform: translate(0px, -30px);
     padding-bottom: 15px;
-    margin: auto;
-    width: 75%;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin: 0;
     border-bottom: 1px solid var(--page-color); 
 }
 
