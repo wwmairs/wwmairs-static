@@ -119,10 +119,14 @@ a:hover {
 }
 
 #name {
-    text-align: left;
+    text-align: center;
     font-family: 'Vulf Mono Light';
     transform: translate(0px, -30px);
     padding-bottom: 15px;
+    margin: auto;
+    width: 75%;
+    margin-top: 20px;
+    margin-bottom: 10px;
     border-bottom: 1px solid var(--page-color); 
 }
 
