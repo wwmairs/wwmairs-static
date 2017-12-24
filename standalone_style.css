@@ -27,7 +27,6 @@ h1{
 
 h2{
     font-family: 'Vulf Mono Light Italic';
-    padding: 10px;
     margin-top: 0;
     text-align: center;
     letter-spacing: 4px;
@@ -35,6 +34,8 @@ h2{
     line-height: 150%;
 }
 h3{
+    margin: 0;
+    margin-top: 10px;
     font-family: 'Vulf Mono Light';
     text-align: center;
     font-style: italic;
@@ -67,18 +68,20 @@ p{
 .content{
     padding-left: 50px;
     padding-right: 50px;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
     margin-bottom: 30px;
     color: var(--text-color);
     /*border-left: 1px solid var(--page-color);*/
 }
 .row{
     text-align: left;
+    margin: none;
+    padding: none;
 }
 
 .resume-fillings{
     text-align: center;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .progress{
@@ -122,10 +125,10 @@ a:hover {
 #name {
     text-align: center;
     font-family: 'Vulf Mono Light';
-    transform: translate(0px, -30px);
+    /*transform: translate(0px, -30px);*/
     padding-bottom: 15px;
     margin: 0;
-    border-bottom: 1px solid var(--page-color); 
+    /*border-bottom: 1px solid var(--page-color); */
 }
 
 
