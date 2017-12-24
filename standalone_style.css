@@ -1,0 +1,138 @@
+/* style.css
+ * an attempted master stylesheet
+ */
+ 
+/*
+  * page colors
+  * who:    #0F935A
+  * what:   #16588A
+  * where:  #6ABEFE
+  * work:   #D78416
+  * resume: #D74D16
+  * contact:#FF8D60 
+  *
+  */
+
+:root{
+    --text-color: black;
+}
+
+h1{
+    font-family: 'Vulf Mono Light Italic';
+    text-align: center;
+    color: var(--text-color);
+    letter-spacing: 10px;
+    font-size: 28px;
+}
+
+h2{
+    font-family: 'Vulf Mono Light Italic';
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 18px;
+    line-height: 150%;
+}
+h3{
+    font-family: 'Vulf Mono Light';
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+}
+h4{
+    font-family: 'Vulf Mono Light';
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+}
+
+body{
+    font-family: 'Vulf Mono Light Italic';
+    margin:0;
+    font-size: 16px;
+    letter-spacing: 2px;
+    background: var(--page-color);
+}
+p{
+    margin-bottom: 20px;
+}
+
+.container-fluid{
+    padding:0;
+    /*padding-left:175px;*/
+    background: white;
+}
+
+.content{
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    /*border-left: 1px solid var(--page-color);*/
+}
+.row{
+    text-align: left;
+}
+
+.resume-fillings{
+    text-align: center;
+    font-size: 13px;
+}
+
+.progress{
+    background: rgba(255, 255, 128, 0.0);
+    border: none;
+    box-shadow: 0 0 0 0;
+    border-radius: 40px;
+    height: 45px;
+}
+
+.progress-bar-custom{
+    font-family: 'Vulf Mono Regular';
+    font-size: 12px;
+    /*background: rgba(0, 0, 255, 0.7);*/
+    border-radius: 40px;
+    box-shadow: 0 0 0 0;
+    /*color: var(--page-color);*/
+    color: white;
+    text-align: right;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 13px;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.row a{
+    border-bottom: 1px solid var(--page-color);
+}
+
+a:hover {
+    cursor: default;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 2px dashed var(--text-color);
+}
+
+#name {
+    text-align: left;
+    font-family: 'Vulf Mono Light';
+    transform: translate(0px, -30px);
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--page-color); 
+}
+
+
+/* bits for footer */
+#footer {
+    margin-top: 40px;
+}
+#footer p {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 0;
+}

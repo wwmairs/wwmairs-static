@@ -37,9 +37,14 @@ h3{
     font-family: 'Vulf Mono Light';
     text-align: center;
     font-style: italic;
+    font-size: 16px;
+}
+h4{
+    font-family: 'Vulf Mono Light';
+    text-align: center;
+    font-style: italic;
     font-size: 14px;
 }
-
 
 body{
     font-family: 'Vulf Mono Light Italic';
@@ -72,6 +77,7 @@ p{
 
 .resume-fillings{
     text-align: center;
+    font-size: 13px;
 }
 
 .progress{
@@ -84,12 +90,14 @@ p{
 
 .progress-bar-custom{
     font-family: 'Vulf Mono Regular';
+    font-size: 12px;
     /*background: rgba(0, 0, 255, 0.7);*/
     border-radius: 40px;
     box-shadow: 0 0 0 0;
     /*color: var(--page-color);*/
     color: white;
     text-align: right;
+    padding-left: 15px;
     padding-right: 10px;
     padding-top: 13px;
 }
