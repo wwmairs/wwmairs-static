@@ -1,0 +1,20 @@
+#header{
+    font-size: 60px;
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+}
+
+.horizontal-rule {
+    margin: 0px;
+    border-style: solid;
+    border-top: 15px solid #ffe680;
+}
+
+svg{
+/*border: 1px solid black;*/
+}
+
+body {
+font-family: 'Cousine', monospace;
+}
