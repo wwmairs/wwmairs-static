@@ -1,3 +1,0 @@
-#!/bin/bash
-# test script
-python2 -m SimpleHTTPServer 3000
