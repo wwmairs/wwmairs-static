@@ -23,9 +23,48 @@
           <h1 id="header">we play games</h1>
         </div>
       </div>
-      <hr class="horizontal-rule">
+      <hr class="horizontal-rule" data-target="header">
+      <div id="games-container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="game" id="hearts2">
+              <h3>hearts2</h3>
+              <iframe src="hearts.html" width="100%"></iframe>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+          </div>
+        </div>
+        <hr class="horizontal-rule" data-target="hearts2">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="game" id="hearts1">
+              <h3>hearts1</h3>
+              <iframe src="../hearts.html" width="100%"></iframe>
+            </div>
+          </div>
+        </div>
+        <hr class="horizontal-rule" data-target="hearts1">
+      </div>
     </div>
   </body>
+  <script>
+
+    // sets horizontal rule to line up with right side of target
+    rules = document.getElementsByClassName("horizontal-rule");
+    for (var i = 0; i < rules.length; i++) {
+      let r = rules[i];
+      console.log(r.dataset.target);
+      // let target = document.getElementById(r.dataset.target);
+      // console.log(window.getComputedStyle(target).marginLeft);
+      // let w = target.offsetWidth + parseInt(window.getComputedStyle(target).marginLeft);
+      let $t = $("#" + r.dataset.target)
+      w = ($t.offset().left + $t.outerWidth());
+      r.style.width = w + "px";
+    }
+  </script>
 </html>
 
 
