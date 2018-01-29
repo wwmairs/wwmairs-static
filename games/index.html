@@ -17,7 +17,7 @@
     
   </head>
   <body>
-    <div id="container-fluid">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <h1 id="header">we play games</h1>
@@ -25,23 +25,27 @@
       </div>
       <hr class="horizontal-rule" data-target="header">
       <div id="games-container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6 col-sm-6 col-xs-6">
-            <div class="game" id="hearts2">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="game" id="hearts2" 
+                 onClick="window.location.href = 'hearts2.html';">
               <h3>hearts2</h3>
               <iframe src="hearts2.html" width="400%" height="650px"></iframe>
             </div>
           </div>
-          <div class="col-md-6 col-sm-6 col-xs-6">
-            <div class="game">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="game"
+                 onClick="window.location.href = 'uno.html'">
               <h3>uno</h3>
               <iframe src="uno.html" width="400%" height="650px"></iframe>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 col-sm-6 col-xs-6">
-            <div class="game" id="hearts1">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="game" id="hearts1"
+                 onClick="window.location.href = '../hearts.html'">
               <h3>hearts1</h3>
               <iframe src="../hearts.html" width="400%" height="650px"></iframe>
             </div>
@@ -50,9 +54,14 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
   </body>
   <script>
+    $(".game").hover(
+      function() { $(this).addClass("game-hover")},
+      function() { $(this).removeClass("game-hover")}
+    )
 
     // sets horizontal rule to line up with right side of target
     rules = document.getElementsByClassName("horizontal-rule");

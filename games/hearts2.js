@@ -20,7 +20,7 @@ var displayRound = 0;
 let chartPadding = 10;
 
 // get data for line chart
-$.get('sum.csv', data => {
+$.get('csv/hearts2_sum.csv', data => {
 	let lines = data.split('\n');
 	let headers = lines[0].split(',');
 	let numPlayers = headers.length
@@ -38,7 +38,7 @@ $.get('sum.csv', data => {
 	lineChart = new LineChart(chartPadding, chartPadding, window.innerWidth - chartPadding * 2, window.innerHeight - chartPadding * 2, playerSums);
 });
 
-$.get('scores.csv', data => {
+$.get('csv/hearts2_scores.csv', data => {
 	let lines = data.split('\n');
 	let headers = lines[0].split(',');
 	let numPlayers = headers.length
@@ -57,6 +57,21 @@ $.get('scores.csv', data => {
 });
 
 
+// handle keypresses
+$(window).on('keydown', (evt) => {
+	let currRound = pieChart.currentRound;
+	// right
+	if (evt.keyCode == 39) {
+		lineChart.highlightRound(currRound + 1);
+		pieChart.changeRound(currRound + 1);
+		pieChart.displayName(pieChart.currentName);
+		console.log(pieChart);
+	} else if (evt.keyCode == 37) {
+		lineChart.highlightRound(currRound - 1);
+		pieChart.changeRound(currRound - 1);
+		pieChart.displayName(pieChart.currentName);
+	}
+})
 
 
 class PieChart {
@@ -94,13 +109,19 @@ class PieChart {
 		this.changeRound(0);
 	}
 
-	highlightName(name) {
+	displayName(name) {
+		this.currentName = name;
 		let roundNumber = this.currentRound;
 		this.label.innerHTML = "round " + roundNumber;
 		let player = this.data.find( o => o.name === name);
 		this.desc.innerHTML = name + " took " + player.scores[roundNumber] + (player.scores[roundNumber] == 1 ? " point" : " points" )+ " this round.";
 		this.desc.setAttribute("fill", colors[name]);
-		
+	}
+
+	highlightName(name) {
+		this.currentName = name;
+		let roundNumber = this.currentRound;
+		this.displayName(name);
 // let line = this.ls.find( o => o.name === name);
 
 		let startA = 0;
@@ -461,6 +482,7 @@ class Line{
 	}
 
 	highlightRound(roundNumber) {
+		this.highlightNone();
 		this.points[roundNumber].setAttribute("r", 7);
 	}
 	highlightNone() {
