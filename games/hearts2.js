@@ -5,6 +5,16 @@ let svg = document.createElementNS(svgns, "svg");
 svg.setAttribute("width", window.innerWidth);
 svg.setAttribute("height", window.innerHeight);
 container.appendChild(svg);
+let startMessage = document.createElementNS(svgns, "text");
+startMessage.setAttribute("y", window.innerHeight - 20);
+startMessage.setAttribute("x", window.innerWidth - 20);
+startMessage.setAttribute("text-anchor", "end");
+startMessage.setAttribute("fill", "black");
+startMessage.setAttribute("font-size", 22);
+startMessage.innerHTML = "use arrows and mouse to explore data";
+svg.appendChild(startMessage);
+let initState = true;
+
 
 
 var colors = {"avery": "#f44165",
@@ -71,6 +81,10 @@ $(window).on('keydown', (evt) => {
 		pieChart.changeRound(currRound - 1);
 		pieChart.displayName(pieChart.currentName);
 	}
+	if (initState && (evt.keyCode == 37 || evt.keyCode == 39)) {
+		initState = false;
+		startMessage.setAttribute("fill", "none");
+	}
 })
 
 
@@ -99,6 +113,7 @@ class PieChart {
 		this.desc.setAttribute("fill", "black");
 		this.desc.setAttribute("font-size", 22);
 		this.lineChart.g.appendChild(this.desc);
+		this.currentName = "will";
 
 		for (var i = 0; i < data.length; i++) {
 			let newPath = document.createElementNS(svgns, "path")
@@ -110,6 +125,7 @@ class PieChart {
 	}
 
 	displayName(name) {
+		console.log(name);
 		this.currentName = name;
 		let roundNumber = this.currentRound;
 		this.label.innerHTML = "round " + roundNumber;

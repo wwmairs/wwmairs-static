@@ -360,6 +360,7 @@ textarea:hover{
     border: 1px solid var(--page-color);
 }
 
+
 #submit-button:hover {
     background: var(--page-color);
     color: white;
