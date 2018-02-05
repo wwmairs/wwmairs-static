@@ -19,11 +19,11 @@
 }
 
 h1{
-    font-family: 'Vulf Mono Light Italic';
-    text-align: center;
+    font-family: 'ibm_plex_monolight';
     color: var(--text-color);
     letter-spacing: 10px;
-    font-size: 28px;
+    font-size: 68px;
+    display: inline-block;
 }
 
 h2{
@@ -35,20 +35,20 @@ h2{
     line-height: 150%;
 }
 h3{
-    font-family: 'Vulf Mono Light';
+    font-family: 'ibm_plex_monolight';
     text-align: center;
     font-style: italic;
     font-size: 16px;
 }
 h4{
-    font-family: 'Vulf Mono Light';
+    font-family: 'ibm_plex_monolight';
     text-align: center;
     font-style: italic;
     font-size: 14px;
 }
 
 body{
-    font-family: 'Vulf Mono Light Italic';
+    font-family: 'Cousine', monospace;
     margin:0;
     font-size: 16px;
     letter-spacing: 2px;
@@ -79,4 +79,45 @@ p{
 #svg-container {
     position: fixed;
     z-index: -1;
+}
+
+#name1 {
+    position: fixed;
+    top: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+#name2 {
+    position: fixed;
+    top: 40vh;
+    left: 25vw;
+    margin-top: 10px;
+}
+
+#name3 {
+    position: fixed;
+    bottom: 0; 
+    margin-left: 10px; 
+}
+
+#buttons-container{
+    position: fixed;
+    top: 8vh;
+    right: 0;
+    width: 20px;
+}
+
+#buttons-container div {
+    text-align: right;
+    float: right;
+    height: 16vh;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#buttons-container a {
+    color: white;
+    text-decoration: none;
 }
