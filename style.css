@@ -50,33 +50,19 @@ body{
     letter-spacing: 2px;
     background-color: #f2f2f2;
 }
+
 p{
     font-size: 15px;
     /*text-align: justify;*/
 }
 
-.container-fluid{
-    padding:0;
-    padding-left:175px;
-    background: white;
-}
-
-.content{
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    color: var(--text-color);
-    border-left: 1px solid var(--page-color);
-}
-.row{
-    text-align: left;
-}
 
 #svg-container {
     position: fixed;
     z-index: -1;
 }
+
+/* three line name on landing */
 
 #name1 {
     position: fixed;
@@ -84,7 +70,6 @@ p{
     margin-top: 10px;
     margin-left: 10px;
 }
-
 
 #name2 {
     position: fixed;
@@ -98,6 +83,8 @@ p{
     bottom: 0; 
     margin-left: 10px; 
 }
+
+/* buttons on landing */
 
 #buttons-container{
     position: fixed;
@@ -119,6 +106,8 @@ p{
     text-decoration: none;
 }
 
+/* columns */
+
 #columns {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -136,6 +125,8 @@ p{
     margin-top: 0px;
     margin-bottom: 20px;
 }
+
+/* sidebar and links on text pages */
 
 #side {
     position: fixed;
@@ -168,6 +159,8 @@ p{
     border-bottom: 2px solid var(--page-color);
     font-style: italic;
 }
+
+/* little wwm box above links on text pages */
 
 #wwm-box {
     margin: 30px;
