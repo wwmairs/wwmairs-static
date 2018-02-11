@@ -34,9 +34,7 @@ h2{
 }
 h3{
     font-family: 'ibm_plex_monolight';
-    text-align: center;
-    font-style: italic;
-    font-size: 16px;
+    font-size: 32px;
 }
 h4{
     font-family: 'ibm_plex_monolight';
@@ -157,9 +155,44 @@ p{
     float: right;
     color: black;
     width: 150px;
+    margin-bottom: 10px;
 }
 
 #links a{
     color: black;
     border-bottom: 2px solid black;
+}
+
+#links a:hover{
+    text-decoration: none;
+    border-bottom: 2px solid var(--page-color);
+    font-style: italic;
+}
+
+#wwm-box {
+    margin: 30px;
+    border: 2px solid var(--page-color);
+}
+
+#wwm-box:hover {
+    background-color: var(--page-color);
+}
+
+#wwm-box:hover h3 {
+    color: #f2f2f2;
+}
+
+#wwm-box a{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+#wwm-box h3{
+    color: var(--page-color);
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
 }
