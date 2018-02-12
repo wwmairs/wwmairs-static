@@ -19,7 +19,8 @@ $(function () {
 function makeChart() {
     var myChart = Highcharts.chart('container', {
         chart: {
-            type: 'spline'
+            type: 'spline',
+            backgroundColor: '#f2f2f2'
         },
         title: {
             text: 'Hearts'
