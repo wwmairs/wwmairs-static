@@ -109,8 +109,8 @@ class PieChart {
 
 		this.desc = document.createElementNS(svgns, "text");
 
-		this.desc.setAttribute("y", this.y);
-		this.desc.setAttribute("x", this.x + this.r + 15 );
+		this.desc.setAttribute("y", this.y - 80);
+		this.desc.setAttribute("x", this.x + this.r + 15);
 		this.desc.setAttribute("text-anchor", "left");
 		this.desc.setAttribute("fill", "black");
 		this.desc.setAttribute("font-size", 22);
