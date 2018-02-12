@@ -11,7 +11,7 @@ startMessage.setAttribute("y", chartHeight - 20);
 startMessage.setAttribute("x", chartWidth - 20);
 startMessage.setAttribute("text-anchor", "end");
 startMessage.setAttribute("fill", "black");
-startMessage.setAttribute("font-size", 22);
+startMessage.setAttribute("font-size", 20);
 startMessage.innerHTML = "use arrows and mouse to explore data";
 svg.appendChild(startMessage);
 let initState = true;
@@ -100,7 +100,7 @@ class PieChart {
 		this.paths = [];
 		this.label = document.createElementNS(svgns, "text");
 
-		this.label.setAttribute("y", this.y - this.r - 15);
+		this.label.setAttribute("y", this.y - this.r - 25);
 		this.label.setAttribute("x", this.x);
 		this.label.setAttribute("text-anchor", "middle");
 		this.label.setAttribute("fill", "black");
