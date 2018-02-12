@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>more hearts</title>
+    <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      @import url("/plex/font.css");
+      #container{
+        /*border: 1px solid black;*/
+      }
+      h1 {
+        font-family: 'ibm_plex_monolight';
+        letter-spacing: 4px;
+        font-size: 36px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        text-align: right;
+      }
+      body {
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin: 0;
+        background-color: #f2f2f2;
+        font-family: 'Cousine', monospace;
+      }
+      a{
+          text-decoration: none;
+          color: black;
+          border-bottom: 2px solid black;
+      }
+
+      a:hover{
+          text-decoration: none;
+          border-bottom: 2px solid var(--page-color);
+          font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HEARTS2</h1>
+
+    <div id="container"></div>
+    <div id="blurb" style="margin: 10px;">
+      <p style="width: 50vw;">In late december 2017, we played some more hearts. This time we only made it to 24 games, but collected good data nonetheless.  After studying how to design and build visualizations, I knew I could build something using SVG that'd look better and do more (and be more semantically correct) than bar and line charts plucked from the Highcharts library.  I won this time, not to brag, which almost makes up for how badly I lost <a href="hearts1">last time</a>.
+      </p>
+    </div>
+
+    <script src="hearts2.js?v=1.0.2"></script>
+  </body>
+</html>

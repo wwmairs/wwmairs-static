@@ -35,7 +35,8 @@ $(function () {
 function makeChart() {
     var myChart = Highcharts.chart('container', {
         chart: {
-            type: 'bar'
+            type: 'bar',
+            backgroundColor: '#f2f2f2'
         },
         title: {
             text: 'Hearts'

@@ -7,7 +7,23 @@
 
 [ ] make sure titles are all there
 
-[ ] fix spacing of links, or at least give it more thought
+[x] fix spacing of links, or at least give it more thought
+	[ ] iterate?
 
 [ ] new favicon
 	- lines?
+
+[ ] fix pages
+	[x] hearts1
+	[x] hearts2
+		[x] some writing
+		[x] a title, duh
+		[x] some more formatting
+	[x] games/index
+	[ ] what
+		- writing, mostly
+	[ ] work
+
+[ ] make things mobile friendly
+	[ ] bootstrap probably is the way to go with the columns
+	[ ] unclear what should happen with the sidebar

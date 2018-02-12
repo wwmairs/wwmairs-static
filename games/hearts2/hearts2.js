@@ -1,13 +1,14 @@
-// set up svg
 const svgns = "http://www.w3.org/2000/svg";
+var chartWidth  = window.innerWidth * 6 / 6;
+var chartHeight = window.innerHeight * 5 / 6;
 let container = document.getElementById("container");
 let svg = document.createElementNS(svgns, "svg");
-svg.setAttribute("width", window.innerWidth);
-svg.setAttribute("height", window.innerHeight);
+svg.setAttribute("width", chartWidth);
+svg.setAttribute("height", chartHeight);
 container.appendChild(svg);
 let startMessage = document.createElementNS(svgns, "text");
-startMessage.setAttribute("y", window.innerHeight - 20);
-startMessage.setAttribute("x", window.innerWidth - 20);
+startMessage.setAttribute("y", chartHeight - 20);
+startMessage.setAttribute("x", chartWidth - 20);
 startMessage.setAttribute("text-anchor", "end");
 startMessage.setAttribute("fill", "black");
 startMessage.setAttribute("font-size", 22);
@@ -45,7 +46,7 @@ $.get('csv/hearts2_sum.csv', data => {
 		}
 	}
 	// make chart
-	lineChart = new LineChart(chartPadding, chartPadding, window.innerWidth - chartPadding * 2, window.innerHeight - chartPadding * 2, playerSums);
+	lineChart = new LineChart(chartPadding, chartPadding, chartWidth - chartPadding * 2, chartHeight - chartPadding * 2, playerSums);
 });
 
 $.get('csv/hearts2_scores.csv', data => {
@@ -128,9 +129,9 @@ class PieChart {
 		console.log(name);
 		this.currentName = name;
 		let roundNumber = this.currentRound;
-		this.label.innerHTML = "round " + roundNumber;
+		this.label.innerHTML = "game " + roundNumber;
 		let player = this.data.find( o => o.name === name);
-		this.desc.innerHTML = name + " took " + player.scores[roundNumber] + (player.scores[roundNumber] == 1 ? " point" : " points" )+ " this round.";
+		this.desc.innerHTML = name + " took " + player.scores[roundNumber] + (player.scores[roundNumber] == 1 ? " point" : " points" )+ " this game.";
 		this.desc.setAttribute("fill", colors[name]);
 	}
 
@@ -204,7 +205,7 @@ class PieChart {
 	}
 	dehighlightName() {
 		let roundNumber = this.currentRound;
-		this.label.innerHTML = "round " + roundNumber;
+		this.label.innerHTML = "game " + roundNumber;
 		let startA = 0;
 		let hr = this.r + 5;
 		let largestFlag = 0;
@@ -266,7 +267,7 @@ class PieChart {
 
 	changeRound(roundNumber) {
 		this.currentRound = roundNumber;
-		this.label.innerHTML = "round " + roundNumber;
+		this.label.innerHTML = "game " + roundNumber;
 		let startA = 0;
 		let hr = this.r + 5;
 		let largestFlag = 0;
