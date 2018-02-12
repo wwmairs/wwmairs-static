@@ -1,3 +1,6 @@
 [ ] where.html
-	[ ] fix colors of wwm
+	[x] fix colors of wwm
 	[ ] and powered by
+
+	[ ] add stars!
+	[ ] and clouds!
