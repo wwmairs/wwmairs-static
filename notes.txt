@@ -11,3 +11,14 @@
 
 [ ] new favicon
 	- lines?
+
+[ ] fix pages
+	[ ] hearts1
+	[ ] hearts2
+		[ ] some writing
+		[ ] a title, duh
+		[ ] some more formatting
+	[ ] games/index
+	[ ] what
+		- writing, mostly
+	[ ] work

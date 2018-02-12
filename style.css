@@ -148,15 +148,14 @@ p{
 
 #links {
     position: relative;
-    top: 100px;
+    margin: 30px;
 }
 
 #links div {
     display: inline-block;
     text-align: right;
-    float: right;
     color: black;
-    width: 150px;
+    width: 100%;
     margin-bottom: 10px;
 }
 
