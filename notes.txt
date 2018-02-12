@@ -4,3 +4,10 @@
 
 	[ ] add stars!
 	[ ] and clouds!
+
+[ ] make sure titles are all there
+
+[ ] fix spacing of links, or at least give it more thought
+
+[ ] new favicon
+	- lines?

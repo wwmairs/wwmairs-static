@@ -51,6 +51,17 @@ body{
     background-color: #f2f2f2;
 }
 
+a{
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+a:hover{
+    text-decoration: none;
+    border-bottom: 2px solid var(--page-color);
+    font-style: italic;
+}
+
 p{
     font-size: 15px;
     /*text-align: justify;*/
@@ -149,17 +160,6 @@ p{
     margin-bottom: 10px;
 }
 
-#links a{
-    color: black;
-    border-bottom: 2px solid black;
-}
-
-#links a:hover{
-    text-decoration: none;
-    border-bottom: 2px solid var(--page-color);
-    font-style: italic;
-}
-
 /* little wwm box above links on text pages */
 
 #wwm-box {
@@ -175,10 +175,15 @@ p{
     color: #f2f2f2;
 }
 
+#wwm-box:hover a{
+    font-style: normal;
+}
+
 #wwm-box a{
     display: inline-block;
     height: 100%;
     width: 100%;
+    border: none;
 }
 
 #wwm-box h3{
@@ -188,4 +193,14 @@ p{
     margin-top: 5px;
     margin-bottom: 5px;
     display: inline-block;
+}
+
+/* contact.html specific */
+.contact-info {
+    font-size: 13px;
+}
+
+.label {
+    color: black;
+    padding: 0;
 }
