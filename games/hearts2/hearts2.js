@@ -15,6 +15,7 @@ startMessage.setAttribute("font-size", 22);
 startMessage.innerHTML = "use arrows and mouse to explore data";
 svg.appendChild(startMessage);
 let initState = true;
+let numScoreLabels = 0;
 
 
 
@@ -108,8 +109,8 @@ class PieChart {
 
 		this.desc = document.createElementNS(svgns, "text");
 
-		this.desc.setAttribute("y", this.y);
-		this.desc.setAttribute("x", this.x + this.r + 15 );
+		this.desc.setAttribute("y", this.y - 80);
+		this.desc.setAttribute("x", this.x + this.r + 15);
 		this.desc.setAttribute("text-anchor", "left");
 		this.desc.setAttribute("fill", "black");
 		this.desc.setAttribute("font-size", 22);
@@ -433,12 +434,29 @@ class Line{
 		this.w = _w;
 		this.h = _h;
 		this.c = colors[data.name];
-		this.step  = xStep;
-		this.ratio = yRatio;
-		this.poly  = document.createElementNS(svgns, "polyline");
+		this.data   = data;
+		this.step   = xStep;
+		this.ratio  = yRatio;
+		this.poly   = document.createElementNS(svgns, "polyline");
 		this.points = [];
-		this.chart = chart;
-		this.name = data.name;
+		this.chart  = chart;
+		this.name   = data.name;
+		this.score  = document.createElementNS(svgns, "text");
+		this.scoreLabel = document.createElementNS(svgns, "text");
+
+
+		this.score.setAttribute("fill", "#f2f2f2");
+		this.score.setAttribute("x", chartWidth - 20);
+		this.score.setAttribute("y", chartHeight - 40 - (20 * numScoreLabels));
+		this.score.setAttribute("text-anchor", "end");
+		this.chart.g.appendChild(this.score);
+		this.scoreLabel.setAttribute("fill", "#f2f2f2");
+		this.scoreLabel.setAttribute("x", chartWidth - 275);
+		this.scoreLabel.setAttribute("y", chartHeight - 40 - (20 * numScoreLabels));
+		this.chart.g.appendChild(this.scoreLabel);
+		// god, this code is horrible
+		numScoreLabels++;
+
 		// create path for polyline like this "0,40 40,40 40,80, 80,80"
 		let path = "";
 		for (let i = 0; i < data.sums.length; i++) {
@@ -477,7 +495,6 @@ class Line{
 		this.poly.addEventListener("mouseover", event => {
 			p.setAttribute("stroke-width", "8");
 			pieChart.highlightName(parent.name);
-			 // set some kinda text
 		});
 		this.poly.addEventListener("mouseleave", event => { 
 			p.setAttribute("stroke-width", "6");
@@ -501,6 +518,12 @@ class Line{
 	highlightRound(roundNumber) {
 		this.highlightNone();
 		this.points[roundNumber].setAttribute("r", 7);
+		// display total score up to here
+		console.log(this.data);
+		this.score.setAttribute("fill", this.c);
+		this.score.innerHTML = this.data.sums[roundNumber];
+		this.scoreLabel.setAttribute("fill", this.c);
+		this.scoreLabel.innerHTML = this.data.name + "'s total score: ";
 	}
 	highlightNone() {
 		for (var i = 0; i < this.points.length; i++) {
@@ -508,5 +531,3 @@ class Line{
 		}
 	}
 }
-
-// need PieChart class, and coordination

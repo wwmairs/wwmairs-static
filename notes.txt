@@ -19,6 +19,8 @@
 		[x] some writing
 		[x] a title, duh
 		[x] some more formatting
+		[x] score labels
+		[ ] favicon
 	[x] games/index
 	[ ] what
 		- writing, mostly
