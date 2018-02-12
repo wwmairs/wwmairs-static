@@ -14,12 +14,16 @@
 	- lines?
 
 [ ] fix pages
-	[ ] hearts1
-	[ ] hearts2
-		[ ] some writing
-		[ ] a title, duh
-		[ ] some more formatting
-	[ ] games/index
+	[x] hearts1
+	[x] hearts2
+		[x] some writing
+		[x] a title, duh
+		[x] some more formatting
+	[x] games/index
 	[ ] what
 		- writing, mostly
 	[ ] work
+
+[ ] make things mobile friendly
+	[ ] bootstrap probably is the way to go with the columns
+	[ ] unclear what should happen with the sidebar
