@@ -148,6 +148,7 @@ p{
     .column {
         margin-left: 30px;
         padding-left: 0px;
+        padding-right: 0px;
         border-bottom: 2px solid var(--page-color);
     }
 
