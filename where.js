@@ -9,6 +9,19 @@ var time;
 var dayColor = '#0099ff';
 var nightColor = '#262673';
 var sunsetColor = '#ffcccc';
+var starColor = '#FFE167';
+
+const NUM_STARS = 30;
+const STAR_SIDE = 3;
+const STAR_VARIANCE = 4;
+var stars = [];
+// stars are objects like this:
+// star = { "x" : xPos,
+//          "y" : yPos,
+//          "t" : rotationTheta,
+//          "v" : sideVariance }
+//
+// x, y, t generated randomly in setup 
 
 function preload(){
 
@@ -82,6 +95,15 @@ function setup() {
     }
 
     theta = Theta(time, riseTime, setTime);
+
+    // generate stars
+    for (var i = 0; i < NUM_STARS; i++) {
+        let x = random(WIDTH);
+        let y = random(HEIGHT);
+        let t = random(45);
+        let v = random(STAR_VARIANCE);
+        stars[i] = { "x" : x, "y" : y, "t" : t , "v" : v };
+    }
 }
 
 function draw() {
@@ -90,6 +112,20 @@ function draw() {
         background(skyColor(theta));
         $(':root').css('--text-color', '#fff5cc');
         // $('body').css('color', 'white');
+
+
+        // draw stars
+        for (var i = 0; i < stars.length; i++) {
+            let s = stars[i];
+
+            push();
+            translate(s.x, s.y);
+            rotate(s.t);
+            fill(starColor);
+            rect(0, 0, STAR_SIDE + s.v, STAR_SIDE + s.v);
+            pop();
+        }
+
     } else {
         $(':root').css('--text-color', 'black');
         x = X(theta, WIDTH);
@@ -156,6 +192,11 @@ function updateTheta(num) {
         theta += TWO_PI;
     }
     theta = theta % TWO_PI;
+    for (var i = 0; i < stars.length; i++) {
+        let s = stars[i];
+        s.x += num * s.v;
+        s.y += num * s.v;
+    }
 }
 
 function skyColor(theta) {

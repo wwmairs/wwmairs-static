@@ -1,13 +1,13 @@
 [ ] where.html
 	[x] fix colors of wwm
-	[ ] and powered by
+	[x] and powered by
 
-	[ ] add stars!
+	[x] add stars!
 	[ ] and clouds!
 
 	[ ] make it actually work... or make it go away
 
-[ ] make sure titles are all there
+[x] make sure titles are all there
 
 [x] fix spacing of links, or at least give it more thought
 	[ ] iterate?
@@ -26,8 +26,10 @@
 	[x] games/index
 	[ ] what
 		- writing, mostly
-	[ ] work
 
 [ ] make things mobile friendly
-	[ ] bootstrap probably is the way to go with the columns
+	[x] bootstrap probably is the way to go with the columns
 	[ ] unclear what should happen with the sidebar
+		- just give it a lil more space, I think
+		  decrease margin of left side, but keep
+		  the 30px padding on right
