@@ -12,7 +12,7 @@
 [x] fix spacing of links, or at least give it more thought
 	[ ] iterate?
 
-[ ] new favicon
+[x] new favicon
 	- lines?
 
 [ ] fix pages
