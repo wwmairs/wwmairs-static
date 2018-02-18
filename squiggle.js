@@ -1,9 +1,9 @@
 // set up svg
 const svgns = "http://www.w3.org/2000/svg";
-let container = document.getElementById("svg-container");
+let container = document.getElementById("squiggle-container");
 let svg = document.createElementNS(svgns, "svg");
-svg.setAttribute("width", window.innerWidth);
-svg.setAttribute("height", window.innerHeight);
+svg.setAttribute("width", 1000);
+svg.setAttribute("height", 490);
 container.appendChild(svg);
 
 

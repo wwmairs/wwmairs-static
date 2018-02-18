@@ -68,31 +68,14 @@ p{
 }
 
 
-#svg-container {
-    position: fixed;
-    z-index: -1;
-}
 
 /* three line name on landing */
 
-#name1 {
+#name {
     position: fixed;
     bottom: 0;
     margin: 0px;
-    margin-left: 15px;
-}
-
-#name2 {
-    position: fixed;
-    top: 40vh;
-    left: 25vw;
-    margin-top: 10px;
-}
-
-#name3 {
-    position: fixed;
-    bottom: 0; 
-    margin-left: 10px; 
+    margin-left: 5px;
 }
 
 /* buttons on landing */
@@ -115,6 +98,15 @@ p{
 #buttons-container a {
     color: black;
     text-decoration: none;
+}
+
+/* svg on desktop landing */
+#squiggle-container {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* columns */
