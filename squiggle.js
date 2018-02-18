@@ -143,6 +143,6 @@ class Connecter {
 }
 // params x, y, width, thickness, spacing, numTurns, right, color, parent
 let s1 = new Squiggle(0, 0, 1000, 40, 5, 2, true, "#35C58E", svg);
-let s2 = new Squiggle(100, 235, 300, 40, 5, 7, true, "#f4b042", svg);
-let s3 = new Squiggle(405, 250, 695, 70, 8, 2, false, "#f45742", svg);
-let s4 = new Squiggle(405, 450, 695, 9, 2, 10, false, "#4286f4", svg);
+let s2 = new Squiggle(0, 135, 300, 40, 5, 7, true, "#f4b042", svg);
+let s3 = new Squiggle(305, 135, 695, 70, 8, 2, false, "#f45742", svg);
+let s4 = new Squiggle(305, 365, 695, 10, 2.5, 9, false, "#4286f4", svg);
