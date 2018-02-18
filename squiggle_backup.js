@@ -54,14 +54,14 @@ class Squiggle {
 			if (direction) {
 				// right side
 				newC = new Connecter(this.x + this.w - this.t, 
-								     this.y + (this.s + this.t) * (i) + (this.t / 2),
-									 this.y + (this.s + this.t) * (i + 1) + (this.t / 2), 
+								     this.y + (this.s + this.t) * (i),
+									 this.y + (this.s + this.t) * (i + 1), 
 									 this.t, this.c, direction, this.p);
 			} else {
 				// left side
 				newC = new Connecter(this.x + this.t, 
-								     this.y + (this.s + this.t) * (i) + (this.t / 2),
-									 this.y + (this.s + this.t) * (i + 1) + (this.t / 2), 
+								     this.y + (this.s + this.t) * (i),
+									 this.y + (this.s + this.t) * (i + 1), 
 									 this.t, this.c, direction, this.p);
 			}
 			direction = !direction;
@@ -70,7 +70,15 @@ class Squiggle {
 		}
 
 
-
+// let l1 = new Line(70, 400, 100, 60, "#4286f4", svg);
+// let l2 = new Line(100, 400, 180, 60, "#4286f4", svg);
+// let l3 = new Line(100, 400, 260, 60, "#4286f4", svg);
+// let l4 = new Line(100, 400, 340, 60, "#4286f4", svg);
+// let l5 = new Line(100, 430, 420, 60, "#4286f4", svg);
+// let c1 = new Connecter(400, 100, 180, 60, "#4286f4", true, svg);
+// let c2 = new Connecter(100, 180, 260, 60, "#4286f4", false, svg);
+// let c3 = new Connecter(400, 260, 340, 60, "#4286f4", true, svg);
+// let c4 = new Connecter(100, 340, 420, 60, "#4286f4", false, svg);
 	}
 }
 
@@ -83,9 +91,22 @@ class Line {
 		this.w  = w;
 		this.c  = c;
 		this.p  = parent;
+		this.circle1 = document.createElementNS(svgns, "circle");
+		// cx, cy, r, fill
+		this.circle1.setAttribute("cx", this.x1);
+		this.circle1.setAttribute("cy", this.y);
+		this.circle1.setAttribute("r", this.w / 2);
+		this.circle1.setAttribute("fill", this.c);
+		// this.p.appendChild(this.circle1);
+		this.circle2 = document.createElementNS(svgns, "circle");
+		this.circle2.setAttribute("cx", this.x2);
+		this.circle2.setAttribute("cy", this.y);
+		this.circle2.setAttribute("r", this.w / 2);
+		this.circle2.setAttribute("fill", this.c);
+		// this.p.appendChild(this.circle2);
 		this.rect    = document.createElementNS(svgns, "rect");
 		this.rect.setAttribute("x", this.x1);
-		this.rect.setAttribute("y", this.y);
+		this.rect.setAttribute("y", this.y - this.w / 2);
 		this.rect.setAttribute("width", this.x2 - this.x1);
 		this.rect.setAttribute("height", this.w);
 		this.rect.setAttribute("fill", this.c);
@@ -141,8 +162,8 @@ class Connecter {
 
 	}
 }
-// params x, y, width, thickness, spacing, numTurns, right, color, parent
-let s1 = new Squiggle(0, 0, 1000, 40, 5, 2, true, "#35C58E", svg);
+
+let s1 = new Squiggle(100, 100, 1000, 40, 5, 2, true, "#35C58E", svg);
 let s2 = new Squiggle(100, 235, 300, 40, 5, 7, true, "#f4b042", svg);
 let s3 = new Squiggle(405, 250, 695, 70, 8, 2, false, "#f45742", svg);
 let s4 = new Squiggle(405, 450, 695, 9, 2, 10, false, "#4286f4", svg);
