@@ -1,67 +1,30 @@
-if (screen.width <= 756) {
-    document.location = "mindex.html";
-}
-
-
-var WIDTH = window.innerWidth;
-var HEIGHT = window.innerHeight;
-
-var NUM_CIRCLES = 6;
-
-var circles = [];
-
+// set up svg
 const svgns = "http://www.w3.org/2000/svg";
-
-
-/*
-  * page colors
-  * who:    #0F935A
-  * what:   #16588A
-  * where:  #6ABEFE
-  * work:   #D78416
-  * resume: #D74D16
-  * contact:#FF8D60 
-  *
-  */
-
-var container = document.getElementById("svg-container");
-console.log(container);
-var svg = document.createElementNS(svgns, "svg");
-svg.setAttribute("width", WIDTH);
-svg.setAttribute("height", HEIGHT);
+let container = document.getElementById("squiggle-container");
+let svg = document.createElementNS(svgns, "svg");
 container.appendChild(svg);
 
-var p1 = {"x" : WIDTH / 3,     "y" : HEIGHT};
-var p2 = {"x" : 2 * WIDTH / 3, "y" : 0};
-var p3 = {"x" : WIDTH,         "y" : 0};
-var p4 = {"x" : WIDTH,         "y" : HEIGHT};
-function pointString(p) {
-  return p.x + "," + p.y + " ";
-}
-var points = pointString(p1) + pointString(p2) + 
-             pointString(p3) + pointString(p4) + pointString(p1);
+cs = ["#35C58E", "#f4b042", "#f45742", "#4286f4"];
 
+if (screen.width <= 756) {
+  // mobile
+  let c = cs[randomInt(4)];
+  svg.setAttribute("width", "325px");
+  svg.setAttribute("height", "290px");
 
-var poly = document.createElementNS(svgns, "polygon");
-poly.setAttribute("points", points);
-poly.setAttribute("fill", "#0F935A");
-svg.appendChild(poly);
+  let s0 = new Squiggle(0, 0, 300, 50, 10, 4, true, c, svg);
 
-
-function resize() {
-  WIDTH = window.innerWidth;
-  HEIGHT = window.innerHeight;
-  svg.setAttribute("width", WIDTH);
-  svg.setAttribute("height", HEIGHT);
-
-  p1 = {"x" : WIDTH / 3,     "y" : HEIGHT};
-  p2 = {"x" : 2 * WIDTH / 3, "y" : 0};
-  p3 = {"x" : WIDTH,         "y" : 0};
-  p4 = {"x" : WIDTH,         "y" : HEIGHT};
-  points = pointString(p1) + pointString(p2) + 
-             pointString(p3) + pointString(p4) + pointString(p1);
-  poly.setAttribute("points", points);
-  poly.setAttribute("fill", "#0F935A");
+} else {
+  // desktop
+  svg.setAttribute("width", 1000);
+  svg.setAttribute("height", 490);
+  // params x, y, width, thickness, spacing, numTurns, right, color, parent
+  let s0 = new Squiggle(0, 0, 1000, 40, 5, 2, true, cs[0], svg);
+  let s1 = new Squiggle(0, 135, 300, 40, 5, 7, true, cs[1], svg);
+  let s2 = new Squiggle(305, 135, 695, 70, 8, 2, false, cs[2], svg);
+  let s3 = new Squiggle(305, 365, 695, 10, 2.5, 9, false, cs[3], svg);
 }
 
-window.onresize = resize;
+function randomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}

@@ -1,14 +1,4 @@
-// set up svg
-const svgns = "http://www.w3.org/2000/svg";
-let container = document.getElementById("squiggle-container");
-let svg = document.createElementNS(svgns, "svg");
-svg.setAttribute("width", 1000);
-svg.setAttribute("height", 490);
-container.appendChild(svg);
-
-
-
-
+// let's write some DOCUMENTATION, HUH???
 class Squiggle {
 	constructor(x, y, width, thickness, spacing, numTurns, right, color, parent) {
 		this.x  = x;
@@ -89,6 +79,7 @@ class Line {
 		this.rect.setAttribute("width", this.x2 - this.x1);
 		this.rect.setAttribute("height", this.w);
 		this.rect.setAttribute("fill", this.c);
+		this.rect.setAttribute("stroke", this.c);
 		this.p.appendChild(this.rect);
 		// x, y, width, height, (rx)
 		// make rect from x1 to x2 with y in middle
@@ -112,6 +103,7 @@ class Connecter {
 		this.l.setAttribute("width", this.w);
 		this.l.setAttribute("height", this.y2 - this.y1 - this.w);
 		this.l.setAttribute("fill", this.c);
+		this.l.setAttribute("stroke", this.c);
 		this.p.appendChild(this.l);
 		// need to make two paths
 		// let d = Mx,y LstartX,startY Ar,r 0 1,0 endX,endy z
@@ -141,8 +133,3 @@ class Connecter {
 
 	}
 }
-// params x, y, width, thickness, spacing, numTurns, right, color, parent
-let s1 = new Squiggle(0, 0, 1000, 40, 5, 2, true, "#35C58E", svg);
-let s2 = new Squiggle(0, 135, 300, 40, 5, 7, true, "#f4b042", svg);
-let s3 = new Squiggle(305, 135, 695, 70, 8, 2, false, "#f45742", svg);
-let s4 = new Squiggle(305, 365, 695, 10, 2.5, 9, false, "#4286f4", svg);
