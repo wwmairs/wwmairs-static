@@ -73,7 +73,7 @@ p{
 
 #name {
     position: fixed;
-    /*bottom: 0;*/
+    bottom: 0;
     margin: 0px;
     margin-left: 10px;
 }
