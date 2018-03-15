@@ -34,7 +34,7 @@ h2{
 }
 h3{
     font-family: 'ibm_plex_monolight';
-    font-size: 32px;
+    font-size: 24px;
 }
 h4{
     font-family: 'ibm_plex_monolight';
@@ -43,7 +43,7 @@ h4{
     font-size: 14px;
 }
 
-body{
+body {
     font-family: 'Cousine', monospace;
     margin:0;
     font-size: 16px;
@@ -51,18 +51,23 @@ body{
     background-color: #f2f2f2;
 }
 
-a{
+a {
+    text-decoration: none;
     color: black;
     border-bottom: 2px solid black;
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
     border-bottom: 2px solid var(--page-color);
     font-style: italic;
 }
 
-p{
+a:focus {
+    text-decoration: none;
+}
+
+p {
     font-size: 15px;
     /*text-align: justify;*/
 }
@@ -85,6 +90,12 @@ p{
     #buttons-container {
         left: 0;
         margin-left: 10px;
+    }
+    #side {
+        width: 120px;
+    }
+    .columns {
+        margin-right: 120px;
     }
 }
 
@@ -157,6 +168,7 @@ p{
     .column:last-child {
         border-bottom: none;
     }
+    /* make sidebar thing narrower */
 }
 
 /* sidebar and links on text pages */
@@ -214,6 +226,11 @@ p{
     margin-top: 5px;
     margin-bottom: 5px;
     display: inline-block;
+}
+
+/* portfolio entries */
+.portfolio_entry h3{
+    line-height: 1.3;
 }
 
 /* contact.html specific */
