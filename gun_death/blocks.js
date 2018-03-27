@@ -1,6 +1,5 @@
 const svgns = "http://www.w3.org/2000/svg";
 
-
 // block is B_SIZE pixels square, with B_PADDING between blocks
 const B_SIZE    = 4;
 const B_PADDING = 2;
@@ -678,8 +677,8 @@ function nextButton(currentButton) {
 
 // here's where it all begins
 var countries = []
-let container = document.getElementById("container");
-let svg = document.createElementNS(svgns, "svg");
+var container = document.getElementById("container");
+var svg = document.createElementNS(svgns, "svg");
 svg.id="svg1"
 svg.setAttribute("width", ((BS_WIDTH + BS_PADDING) * 3) + BS_PADDING);
 svg.setAttribute("height", ((BS_HEIGHT + BS_PADDING + BS_LABEL_PADDING) * 2) + BS_LABEL_PADDING);
@@ -722,7 +721,6 @@ $("#next").click(function () {
     $('input:radio[name=view]:nth(1)').attr('checked',true);
     //$('input:radio[name=sex]')[0].checked = true;
 });
-
 
 // fade out curtain on mouse move
 document.onmousemove = () => {
