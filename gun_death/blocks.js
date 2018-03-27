@@ -22,9 +22,9 @@ const GUN_DEATH_COLOR = "#990000";
 const GUN_SUICIDE_COLOR = "#cccccc";
 const SUICIDE_COLOR = "#004C99";
 
-const VIEW_DESCRIPTION = ["A closer look at gun violence",
+const VIEW_DESCRIPTION = ["Number of guns",
                           "Population",
-                          "Scaling down",
+                          "Five million people",
                           "Five million people",
                           "Gun deaths per five million",
                           "Suicide by gun",
@@ -36,9 +36,9 @@ const VIEW_COPY = ["In the United States there are 89 civilian guns for every hu
               "So, we'll look at multiple gun death statistics using a sample of five million people.",
               "With one square per person, you would need forty laptops to display all five million people.  This box only fits fifteen thousand",
               "With the exception of Germany, the rate of gun death is directly proportional to gun ownership.  But many causes make up these rates.",
-              "The majority of gun deaths <a href='https://fivethirtyeight.com/features/gun-deaths/'>are suicides</a>.  This raises the question of whether prevalence of guns lead to more suicides, or more people commit suicide using guns in countries where there are more guns.",
-              "The intersection of gun deaths and suicide is shown in grey.  The rate of suicide across these countries is not shown to be correlated with the rate of gun deaths.  In fact, the United States has the lowest proportion of gun deaths that are suicides, at 62%, in contrast with Australia, where 83% of gun deaths are suicides.",
-              "Adjusting for suicide reveals an even greater discrepacy of gun death rates between the United States and other countries of similar socio-economic status."
+              "The majority of gun deaths <a href='https://fivethirtyeight.com/features/gun-deaths/'>are suicides</a>.  This raises the question of whether the prevalence of guns leads to more suicides, or more people commit suicide using guns in countries where there are more guns.  Suicides with guns are shown in grey.",
+              "The intersection of gun deaths (red) and suicides (blue) per five million people is shown in grey.  The rate of suicide across these countries is not shown to be correlated with the rate of gun deaths.  In fact, the United States has the lowest proportion of gun deaths that are suicides, at 62%, in contrast with Australia, where 83% of gun deaths are suicides.",
+              "Examining the rates of non-suicide gun death reveals an even greater discrepacy between the United States and other countries of similar socio-economic status.  Not only are the rates of gun ownership and gun death disproportionately higher in the United States, but suicides account for a smaller percentage of gun deaths in the United States than in these other countries, showing a greater rate of gun violence towards others as well."
              ]
 
 const COUNTRY_DATA = {"countries": [["United States", 317900000, 33636, 21175, 41149, 285000000], ["Germany", 81690000, 926, 719, 14517, 25400000], ["France", 66600000, 1856, 1335, 9695, 12000000], ["Canada", 35850000, 698, 518, 3726, 8919328], ["Australia", 23790000, 211, 177, 2568, 3010000], ["United Kingdom", 65130000, 144, 106, 6045, 2403186]]}
@@ -723,3 +723,11 @@ $("#next").click(function () {
     //$('input:radio[name=sex]')[0].checked = true;
 });
 
+
+// fade out curtain on mouse move
+document.onmousemove = () => {
+    $("#curtain").css("opacity", 0);
+    setTimeout(() => {
+        $("#curtain").css("display", "none");
+    }, 1500);
+}
