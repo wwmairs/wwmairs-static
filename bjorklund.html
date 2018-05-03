@@ -70,8 +70,10 @@
     </script>
     <style>
       @import url("/plex/font.css");
-      #container{
-        /*border: 1px solid black;*/
+
+      .pane {
+        width: 100vw;
+        height: 100vh;
       }
       .content {
         position: absolute;
@@ -94,6 +96,14 @@
         background-color: #f2f2f2;
         font-family: 'Cousine', monospace;
       }
+
+      p {
+        margin: 20px;
+
+      }
+
+
+
       a{
           text-decoration: none;
           color: black;
@@ -110,46 +120,61 @@
         text-align: center;
         background-color: #f2f2f2;
         border: none;
-        font-size: 58px;
+        border-bottom: 1px solid black;
+        font-size: 72px;
         font-family: 'ibm_plex_monolight';
         
       }
 
       input:focus {
         outline: 0;
-        border: 1px solid black;
+      }
+
+      /* Remove controls from Safari and Chrome */
+      input[type=number]::-webkit-inner-spin-button, 
+      input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+        margin: 0; /* Removes leftover margin */
+      }
+      /* Remove controls from Firefox */
+      input[type=number] {
+        -moz-appearance: textfield;
       }
 
       #result {
         text-align: center;
+        margin-top: 50px;
       }
 
       #submit {
         font-family: 'Cousine', monospace;
         font-size: 28px;
-        border: 1px solid black;
+        /*border: 1px solid black;*/
       }
 
       #submit:active {
-        border: 1px solid #797979;
+        /*border: 1px solid #797979;*/
         background-color: #d9d9d9;
         font-style: italic;
       }
     </style>
   </head>
   <body onload="displayBjork()">
-    <h1>BJORKLUNDER</h1>
-    <div class="content">
-      <form action="javascript:;" onsubmit="displayBjork()">
-        <input id="steps" type="number" name="steps" min="1" max="64" value="8">
-        <input id="pulses" type="number" name="pulses" min="1" max="64" value="5">
-        <input id="submit" type="submit" value="bjork!">
-      </form>
+    <div class="pane">
+      <h1>BJORKLUNDER</h1>
+      <div class="content">
+        <form action="javascript:;" onsubmit="displayBjork()">
+          <input id="steps" type="number" name="steps" min="1" max="256" value="8">
+          <input id="pulses" type="number" name="pulses" min="1" max="256" value="5">
+          <input id="submit" type="submit" value="bjork!">
+        </form>
 
-      <h3 id="result"></h3>
-
+        <h3 id="result"></h3>
+      </div>
+    </div>
+    <div class="pane">
       <div id="blurb" style="margin: 10px;">
-        <p><a href="http://cgm.cs.mcgill.ca/~godfried/publications/banff.pdf">paper</a>.
+        <p>Like many other beautiful things, the structures of interesting rhythms have some interesting underlying mathematics that trace back to good ole Euclid.  A nuclear physicist by the name of Bjorklund used Euclid's method for finding greatest common divisors to design an algorithm that evenly places pulses in a string of a given length. Godfried Touissant, a computer scientist at McGill, <a href="http://cgm.cs.mcgill.ca/~godfried/publications/banff.pdf">explains</a> that when the pulses are beats in a sequence Bjorklund's algorithm can be used to generate rhythms found frequently in diverse genres of music.  He points out that these Euclidean rhythms are especially interesting when the number of steps and the number of pulses are relatively prime (I'm particularly fond of Euclid(5,8), which makes up the Cuban ciquillo).  This tool implements Bjorklund's algorithm to generate Euclidean rhthyms for the user.
         </p>
       </div>
     </div>
