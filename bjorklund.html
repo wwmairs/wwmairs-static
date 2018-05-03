@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BJORKLUNDER</title>
+    <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- withakay's js implementation of bjorklund's -->
+    <!-- found here: https://gist.github.com/withakay/1286731 -->
+    <script>
+
+
+      function bjorklund(steps, pulses) {
+        
+        steps = Math.round(steps);
+        pulses = Math.round(pulses);  
+
+        if(pulses > steps || pulses == 0 || steps == 0) {
+          return new Array();
+        }
+
+        pattern = [];
+           counts = [];
+           remainders = [];
+           divisor = steps - pulses;
+        remainders.push(pulses);
+        level = 0;
+
+        while(true) {
+          counts.push(Math.floor(divisor / remainders[level]));
+          remainders.push(divisor % remainders[level]);
+          divisor = remainders[level]; 
+               level += 1;
+          if (remainders[level] <= 1) {
+            break;
+          }
+        }
+        
+        counts.push(divisor);
+
+        var r = 0;
+        var build = function(level) {
+          r++;
+          if (level > -1) {
+            for (var i=0; i < counts[level]; i++) {
+              build(level-1); 
+            } 
+            if (remainders[level] != 0) {
+                  build(level-2);
+            }
+          } else if (level == -1) {
+                   pattern.push(0); 
+          } else if (level == -2) {
+                 pattern.push(1);        
+          } 
+        };
+
+        build(level);
+        return pattern;
+      }
+
+      function displayBjork() {
+        let steps  = document.getElementById("steps").value;
+        let pulses = document.getElementById("pulses").value;
+        let result = document.getElementById("result");
+        let beatArray = bjorklund(steps, pulses);
+        result.innerHTML = beatArray.map(n => n == 1 ? 'X' : '.').join(' ');
+      }
+
+    </script>
+    <style>
+      @import url("/plex/font.css");
+      #container{
+        /*border: 1px solid black;*/
+      }
+      .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      h1 {
+        font-family: 'ibm_plex_monolight';
+        letter-spacing: 4px;
+        font-size: 60px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+      }
+      body {
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin: 0;
+        background-color: #f2f2f2;
+        font-family: 'Cousine', monospace;
+      }
+      a{
+          text-decoration: none;
+          color: black;
+          border-bottom: 2px solid black;
+      }
+
+      a:hover{
+          text-decoration: none;
+          border-bottom: 2px solid var(--page-color);
+          font-style: italic;
+      }
+
+      input {
+        text-align: center;
+        background-color: #f2f2f2;
+        border: none;
+        font-size: 58px;
+        font-family: 'ibm_plex_monolight';
+        
+      }
+
+      input:focus {
+        outline: 0;
+        border: 1px solid black;
+      }
+
+      #result {
+        text-align: center;
+      }
+
+      #submit {
+        font-family: 'Cousine', monospace;
+        font-size: 28px;
+        border: 1px solid black;
+      }
+
+      #submit:active {
+        border: 1px solid #797979;
+        background-color: #d9d9d9;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body onload="displayBjork()">
+    <h1>BJORKLUNDER</h1>
+    <div class="content">
+      <form action="javascript:;" onsubmit="displayBjork()">
+        <input id="steps" type="number" name="steps" min="1" max="64" value="8">
+        <input id="pulses" type="number" name="pulses" min="1" max="64" value="5">
+        <input id="submit" type="submit" value="bjork!">
+      </form>
+
+      <h3 id="result"></h3>
+
+      <div id="blurb" style="margin: 10px;">
+        <p><a href="http://cgm.cs.mcgill.ca/~godfried/publications/banff.pdf">paper</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
