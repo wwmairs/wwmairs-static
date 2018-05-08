@@ -32,7 +32,7 @@ function preload(){
     HEIGHT = windowHeight;
     WIDTH = windowWidth;
 
-    $.get('http://praline.wwmairs.com:82/weather.json', {pass: "sweetboy" }, function(data) {
+    $.get('http://praline.wwmairs.com:3000/weather.json', {pass: "sweetboy" }, function(data) {
         forecast = JSON.parse(data);
         temp = forecast.currently.apparentTemperature;
         pressure = forecast.currently.pressure;
