@@ -52,7 +52,7 @@ function preload(){
     });
     console.log(riseTime);
 
-    $.get('http://praline.wwmairs.com:82/sun.json', function(data) {
+    $.get('http://praline.wwmairs.com:3000/sun.json', function(data) {
         sunrise = data.sunrise;
         sunset = data.sunset;
         rise_quality = sunrise.features[0].properties.quality;
