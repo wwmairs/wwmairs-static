@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+
+body {
+  user-select: none;
+  position: relative;
+  min-height: 100%;
+  margin-bottom: 60px;
+  background-color: #496C89;
+  color: lightgrey;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.5em;
+}
+
+img {
+  pointer-events: none;
+}
+
+svg {
+  position: fixed;
+  z-index: -1;
+}
+
+#header {
+  position: fixed;
+  left: 5px;
+}
+
+#canvas {
+  position: fixed;
+  width: 100%;
+  min-height: calc(100% - 60px);
+  z-index: 10;
+}
+
+.tonecircle {
+  position: fixed;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255,0);
+  background-color: #123552;
+  z-index: 10;
+}
+
+.tonecircle:hover {
+  cursor: pointer !important;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.osc-btn {
+  height: 60px;
+  border: 1px dashed;
+  border-left: 0px;
+  border-bottom: 0px;
+  z-index: 1;
+}
+
+#options-btn {
+  height: 60px;
+  border: 1px dashed;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  z-index: 1;
+  font-size: 14px;
+}
+
+#options-btn h3 {
+  text-align: right;
+  font-size: 16px;
+}
+
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* this is all from https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 10px; /* Specified height */
+    background: lightgray; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: #FAE773; 
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: #FAE773; 
+    cursor: pointer; /* Cursor on hover */
+}
