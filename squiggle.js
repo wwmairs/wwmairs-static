@@ -1,4 +1,19 @@
 // let's write some DOCUMENTATION, HUH???
+
+class multiSquiggle {
+	constructor(x, y, width, thickness, spacing, numTurns, right, colors, stackSpacing, parent) {
+		this.x  = x;
+		this.y  = y;
+		this.w  = width;
+		this.s  = spacing;
+		this.t  = thickness;
+		this.r  = right;
+		this.c  = color;
+		this.p  = parent;
+		this.ss = [];
+	}
+}
+
 class Squiggle {
 	constructor(x, y, width, thickness, spacing, numTurns, right, color, parent) {
 		this.x  = x;
