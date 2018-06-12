@@ -1,6 +1,6 @@
 // let's write some DOCUMENTATION, HUH???
 
-class multiSquiggle {
+class StackedSquiggle {
 	constructor(x, y, width, thickness, spacing, numTurns, right, colors, stackSpacing, parent) {
 		this.x  = x;
 		this.y  = y;
@@ -8,9 +8,18 @@ class multiSquiggle {
 		this.s  = spacing;
 		this.t  = thickness;
 		this.r  = right;
-		this.c  = color;
+		this.cs = colors;
 		this.p  = parent;
 		this.ss = [];
+
+		// number of stacks determined by length of colors list
+		for (var i = 0; i < 2; i++) {
+			let squig = new Squiggle(x, y + (stackSpacing * i), width - (stackSpacing * i), 
+															 thickness - ((stackSpacing * 2) * i),
+															 spacing + ((stackSpacing * 2) * i), numTurns, right,
+															 colors[i], parent);
+			this.ss.push(squig);
+		}
 	}
 }
 
@@ -79,7 +88,6 @@ class Squiggle {
 	}
 }
 
-// rectangles with circles on left, right sides
 class Line {
 	constructor(startX, endX, y, w, c, parent) {
 		this.x1 = startX;
