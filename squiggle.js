@@ -13,8 +13,8 @@ class StackedSquiggle {
 		this.ss = [];
 
 		// number of stacks determined by length of colors list
-		for (var i = 0; i < 1; i++) {
-			let squig = new Squiggle(x, y + (stackSpacing * i), width - (stackSpacing * i), 
+		for (var i = 0; i < 3; i++) {
+			let squig = new Squiggle(x + (stackSpacing) * i, y + (stackSpacing * i), width - (stackSpacing * 2 * i), 
 															 thickness - ((stackSpacing * 2) * i),
 															 spacing + ((stackSpacing * 2) * i), numTurns, right,
 															 colors[i], parent);
@@ -41,28 +41,29 @@ class Squiggle {
 		let direction = right;
 		let firstLine
 		if (direction) {
-			firstLine = new Line(this.x, this.x + this.w - this.t, 
+			firstLine = new Line(this.x, this.x + this.w - (this.t + this.s / 2), 
 							     this.y, this.t, this.c, this.p);
 		} else {
-			firstLine = new Line(this.x + this.t, this.x + this.w, 
+			firstLine = new Line(this.x + this.t + this.s / 2, this.x + this.w, 
 							     this.y, this.t, this.c, this.p);
 		}
 		this.ls.push(firstLine);
 		for (var i = 0; i < numTurns; i++) {
 			if (i == numTurns - 1) {
 				if (direction) {
-					let newLine = new Line(this.x, this.x + this.w - this.t, 
+					let newLine = new Line(this.x, this.x + this.w - (this.t + this.s / 2),
 								   	   this.y + (this.t + this.s) * (i + 1),
 								       this.t, this.c, this.p);
 				} else {
-					let newLine = new Line(this.x + this.t, this.x + this.w, 
+					let newLine = new Line(this.x + this.t + this.s / 2, this.x + this.w, 
 								   	   this.y + (this.t + this.s) * (i + 1),
 								       this.t, this.c, this.p);
 				}
 			}
-			let newLine = new Line(this.x + this.t, this.x + this.w - this.t, 
-								   this.y + (this.t + this.s) * (i + 1),
-								   this.t, this.c, this.p)
+			let newLine = new Line(this.x + this.t + this.s / 2, 
+														 this.x + this.w - (this.t + this.s / 2), 
+								   					 this.y + (this.t + this.s) * (i + 1),
+								   					 this.t, this.c, this.p)
 			this.ls.push(newLine);
 			let newC;
 			if (direction) {
@@ -126,13 +127,13 @@ class Connecter {
 		this.c1.setAttribute("stroke", "white");
 		this.c1.setAttribute("cy", y);
 		this.c1.setAttribute("cx", x);
-		// padding radius of white to make corners as smooth as possible
-		this.c1.setAttribute("r", r + 2);
+		this.c1.setAttribute("r", r);
 		this.m.appendChild(this.c1);
 
 		// the inner, black circle
 		this.c2 = document.createElementNS(svgns, "circle");
 		this.c2.setAttribute("fill", "black");
+		this.c2.setAttribute("stroke", "white");
 		this.c2.setAttribute("cy", y);
 		this.c2.setAttribute("cx", x);
 		this.c2.setAttribute("r", s / 2);
