@@ -13,7 +13,7 @@ class StackedSquiggle {
 		this.ss = [];
 
 		// number of stacks determined by length of colors list
-		for (var i = 0; i < 2; i++) {
+		for (var i = 0; i < 1; i++) {
 			let squig = new Squiggle(x, y + (stackSpacing * i), width - (stackSpacing * i), 
 															 thickness - ((stackSpacing * 2) * i),
 															 spacing + ((stackSpacing * 2) * i), numTurns, right,
@@ -67,16 +67,14 @@ class Squiggle {
 			let newC;
 			if (direction) {
 				// right side
-				newC = new Connecter(this.x + this.w - this.t, 
-								     this.y + (this.s + this.t) * (i) + (this.t / 2),
-									 this.y + (this.s + this.t) * (i + 1) + (this.t / 2), 
-									 this.t, this.c, direction, this.p);
+				newC = new Connecter(this.x + this.w - (this.t + this.s/2), 
+														 this.y + this.t + (this.s / 2) + (this.t + this.s) * i,
+									 this.t + this.s / 2, this.c, this.s, direction, this.p);
 			} else {
 				// left side
-				newC = new Connecter(this.x + this.t, 
-								     this.y + (this.s + this.t) * (i) + (this.t / 2),
-									 this.y + (this.s + this.t) * (i + 1) + (this.t / 2), 
-									 this.t, this.c, direction, this.p);
+				newC = new Connecter(this.x + this.t + this.s/2,
+														 this.y + this.t + (this.s / 2) + (this.t + this.s) * i,
+									 this.t + this.s / 2, this.c, this.s, direction, this.p);
 			}
 			direction = !direction;
 			this.cs.push(newC);
@@ -111,47 +109,49 @@ class Line {
 }
 
 class Connecter {
-	constructor(x, startY, endY, w, c, right, parent) {
+	constructor(x, y, r, c, s, right, parent) {
 		this.x  = x;
-		this.y1 = startY;
-		this.y2 = endY;
-		this.w  = w;
+		this.y  = y
+		this.r  = r;
 		this.c  = c;
-		this.s  = right;
+		this.s  = s;
+		this.d  = right;
 		this.p  = parent;
-		this.path1 = document.createElementNS(svgns, "path");
-		this.path2 = document.createElementNS(svgns, "path");
-		this.l = document.createElementNS(svgns, "rect");
-		this.l.setAttribute("y", this.y1 + this.w / 2);
-		this.l.setAttribute("width", this.w);
-		this.l.setAttribute("height", this.y2 - this.y1 - this.w);
-		this.l.setAttribute("fill", this.c);
-		this.l.setAttribute("stroke", this.c);
-		this.p.appendChild(this.l);
-		// need to make two paths
-		// let d = Mx,y LstartX,startY Ar,r 0 1,0 endX,endy z
-		if (this.s) {
-			this.l.setAttribute("x", this.x);
-			// make top and bottom right quadrants
-			let d1 = "M" + this.x + "," + (this.y1 + this.w / 2) + " L" + this.x + "," + (this.y1 - this.w / 2) + " A" + this.w + "," + this.w + " 0 0,1 " + (this.x + this.w) + "," + (this.y1 + this.w/2) + " z";
-			this.path1.setAttribute("d", d1);
-			this.path1.setAttribute("fill", this.c);
-			this.p.appendChild(this.path1);
-			let d2 = "M" + this.x + "," + (this.y2 - this.w / 2) + " L" + (this.x + this.w) + "," + (this.y2 - this.w / 2) + " A" + this.w + "," + this.w + " 0 0,1 " + this.x + "," + (this.y2 + this.w/2) + " z";
-			this.path2.setAttribute("d", d2);
-			this.path2.setAttribute("fill", this.c);
-			this.p.appendChild(this.path2);
+		this.m  = document.createElementNS(svgns, "mask");
+		this.maskID = "mask" + x + "-" + y + "-" + r;
+		this.m.setAttribute("id", this.maskID);
+		// the outer, white circle
+		this.c1 = document.createElementNS(svgns, "circle");
+		this.c1.setAttribute("fill", "white");
+		this.c1.setAttribute("stroke", "white");
+		this.c1.setAttribute("cy", y);
+		this.c1.setAttribute("cx", x);
+		// padding radius of white to make corners as smooth as possible
+		this.c1.setAttribute("r", r + 2);
+		this.m.appendChild(this.c1);
+
+		// the inner, black circle
+		this.c2 = document.createElementNS(svgns, "circle");
+		this.c2.setAttribute("fill", "black");
+		this.c2.setAttribute("cy", y);
+		this.c2.setAttribute("cx", x);
+		this.c2.setAttribute("r", s / 2);
+		this.m.appendChild(this.c2);
+		this.c3 = document.createElementNS(svgns, "path");
+
+		this.p.appendChild(this.m);
+		this.c3.setAttribute("fill", this.c);
+		this.c3.setAttribute("stroke", this.c);
+		this.c3.setAttribute("mask", "url(#" + this.maskID + ")");
+		if (this.d) {
+			let d = "M " + x + "," + (y - r) + " A " + r + "," + r + " 0 0,1 " + x + "," + (y + r);
+			this.c3.setAttribute("d", d);
+			// apply mask!
+			this.p.appendChild(this.c3);
 		} else {
-			this.l.setAttribute("x", this.x - this.w);
-			// make top and bottom left quadrants
-			let d1 = "M" + this.x + "," + (this.y1 + this.w / 2) + " L" + this.x + "," + (this.y1 - this.w / 2) + " A" + this.w + "," + this.w + " 0 0,0 " + (this.x - this.w) + "," + (this.y1 + this.w/2) + " z";
-			this.path1.setAttribute("d", d1);
-			this.path1.setAttribute("fill", this.c);
-			this.p.appendChild(this.path1);
-			let d2 = "M" + this.x + "," + (this.y2 - this.w / 2) + " L" + (this.x - this.w) + "," + (this.y2 - this.w / 2) + " A" + this.w + "," + this.w + " 0 0,0 " + this.x + "," + (this.y2 + this.w/2) + " z";
-			this.path2.setAttribute("d", d2);
-			this.path2.setAttribute("fill", this.c);
-			this.p.appendChild(this.path2);
+			let d = "M " + x + "," + (y + r) + " A " + r + "," + r + " 0 0,1 " + x + "," + (y - r);
+			this.c3.setAttribute("d", d);
+			this.p.appendChild(this.c3);
 		}
 
 	}
