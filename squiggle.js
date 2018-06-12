@@ -13,7 +13,7 @@ class StackedSquiggle {
 		this.ss = [];
 
 		// number of stacks determined by length of colors list
-		for (var i = 0; i < 3; i++) {
+		for (var i = 0; i < this.cs.length; i++) {
 			let squig = new Squiggle(x + (stackSpacing) * i, y + (stackSpacing * i), width - (stackSpacing * 2 * i), 
 															 thickness - ((stackSpacing * 2) * i),
 															 spacing + ((stackSpacing * 2) * i), numTurns, right,
