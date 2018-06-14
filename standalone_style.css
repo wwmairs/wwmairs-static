@@ -18,18 +18,18 @@
 }
 
 h1{
-    font-family: 'Vulf Mono Light Italic';
+    font-family: 'ibm_plex_monolight_italic';
     text-align: center;
     color: var(--text-color);
-    letter-spacing: 10px;
-    font-size: 28px;
+    letter-spacing: 5px;
+    font-size: 48px;
 }
 
 h2{
     margin: auto;
     width: 350px;
     border-bottom: 1px solid var(--page-color);
-    font-family: 'Vulf Mono Light Italic';
+    font-family: 'ibm_plex_monolight_italic';
     margin-top: 10px;
     text-align: center;
     letter-spacing: 4px;
@@ -39,25 +39,28 @@ h2{
 h3{
     margin: 0;
     margin-top: 15px;
-    font-family: 'Vulf Mono Light';
+    font-family: 'ibm_plex_monolight';
     /*text-align: center;*/
-    padding-left: 10px;
     font-style: italic;
     font-size: 18px;
+		text-transform: lowercase;
 }
 h4{
-    font-family: 'Vulf Mono Light';
-    text-align: center;
+    font-family: 'ibm_plex_monolight';
+    text-align: left;
     font-style: italic;
-    font-size: 16px;
+    font-size: 14px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+    padding-left: 10px;
 }
 
 body{
-    font-family: 'Vulf Mono Light';
+    font-family: 'Cousine', monospace;
     margin:0;
     font-size: 16px;
     letter-spacing: 2px;
-    background: var(--page-color);
+    background: #f2f2f2;;
 }
 
 p{
@@ -94,7 +97,8 @@ p{
     margin: auto;
     width: 300px;
     font-size: 12px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+		margin-top: 10px;
 }
 
 
@@ -113,7 +117,7 @@ a:hover {
 
 #name {
     text-align: center;
-    font-family: 'Vulf Mono Light';
+    font-family: 'ibm_plex_monolight';
     /*transform: translate(0px, -30px);*/
     padding-bottom: 20px;
     margin: 0;
