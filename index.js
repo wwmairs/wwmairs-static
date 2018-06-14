@@ -12,7 +12,7 @@ if (screen.width <= 756) {
   svg.setAttribute("width", "325px");
   svg.setAttribute("height", "290px");
 
-  let s0 = new Squiggle(0, 0, 300, 50, 10, 4, true, c, svg);
+  let s0 = new StackedSquiggle(0, 0, 300, 50, 10, 4, true, cs, 7, svg);
 
 } else {
   // desktop
