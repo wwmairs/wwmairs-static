@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GAMES</title>
+    <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i"
+          rel="stylesheet">
+    <!-- vulf fonts -->
+    <link href="../vulfface/font.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="index.css" rel="stylesheet">
+    
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h1 id="header">we play games</h1>
+        </div>
+      </div>
+      <hr class="horizontal-rule" data-target="header">
+      <div id="games-container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="game" id="hearts2" 
+                 onClick="window.location.href = 'hearts2';">
+              <h3>hearts2</h3>
+              <iframe src="hearts2" width="400%" height="650px"></iframe>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="game"
+                 onClick="window.location.href = 'uno'">
+              <h3>uno</h3>
+              <iframe src="uno" width="400%" height="650px"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="game" id="hearts1"
+                 onClick="window.location.href = 'hearts1'">
+              <h3>hearts1</h3>
+              <iframe src="hearts1" width="400%" height="650px"></iframe>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(".game").hover(
+      function() { $(this).addClass("game-hover")},
+      function() { $(this).removeClass("game-hover")}
+    )
+
+    // sets horizontal rule to line up with right side of target
+    rules = document.getElementsByClassName("horizontal-rule");
+    for (var i = 0; i < rules.length; i++) {
+      let r = rules[i];
+      console.log(r.dataset.target);
+      // let target = document.getElementById(r.dataset.target);
+      // console.log(window.getComputedStyle(target).marginLeft);
+      // let w = target.offsetWidth + parseInt(window.getComputedStyle(target).marginLeft);
+      let $t = $("#" + r.dataset.target)
+      w = ($t.offset().left + $t.outerWidth());
+      r.style.width = w + "px";
+    }
+  </script>
+</html>
+
+
