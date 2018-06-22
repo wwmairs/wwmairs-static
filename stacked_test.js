@@ -4,13 +4,17 @@ let container = document.getElementById("squiggle-container");
 let svg = document.createElementNS(svgns, "svg");
 container.appendChild(svg);
 
-svg.setAttribute("width", "1000px");
-svg.setAttribute("height", "550px");
+let canvasWidth  = 1000;
+let canvasHeight = 625;
 
-cs = ["#35C58E", "#f4b042", "#f45742", "#4286f4"];
+svg.setAttribute("width", canvasWidth + "px");
+svg.setAttribute("height", canvasHeight + "px");
 
-let s = new StackedSquiggle(0, 0, 1000, 100, 10, 4, false, cs, 15, svg);
+let r = document.createElementNS(svgns, "rect");
+r.setAttribute("width", canvasWidth + "px");
+r.setAttribute("height", canvasHeight + "px");
+r.setAttribute("fill", "#098834");
+//svg.appendChild(r);
 
-function randomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
+cs = ["#0caa41", "#3cbb66", "#6dcc8d", "#9dddb3", "#ceeed9"];
+let s = new StackedSquiggle(0, 0, 1000, 300, 10, 1, true, cs, 33, svg);
