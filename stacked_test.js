@@ -7,14 +7,10 @@ container.appendChild(svg);
 let canvasWidth  = 1000;
 let canvasHeight = 625;
 
-svg.setAttribute("width", canvasWidth + "px");
-svg.setAttribute("height", canvasHeight + "px");
-
-let r = document.createElementNS(svgns, "rect");
-r.setAttribute("width", canvasWidth + "px");
-r.setAttribute("height", canvasHeight + "px");
-r.setAttribute("fill", "#098834");
-//svg.appendChild(r);
+svg.setAttribute("height", canvasWidth + "px");
+svg.setAttribute("width", canvasHeight + "px");
 
 cs = ["#0caa41", "#3cbb66", "#6dcc8d", "#9dddb3", "#ceeed9"];
-let s = new StackedSquiggle(0, 0, 1000, 300, 10, 1, true, cs, 33, svg);
+let s = new StackedSquiggle(0, 0, 625, 100, 10, 3, true, cs, 33, svg);
+
+svg.setAttribute("transform", "translate(0 " + canvasHeight + ") rotate(90)");

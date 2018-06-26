@@ -4,9 +4,9 @@
 
 @font-face {
     font-family: 'ibm_plex_monoextralight';
-    src: url('ibmplexmono-extralight-webfont.woff2') format('woff2'),
-         url('ibmplexmono-extralight-webfont.woff') format('woff'),
-         url('ibmplexmono-extralight-webfont.svg#ibm_plex_monoextralight') format('svg');
+    src: url('http://wwmairs.com/plex/ibmplexmono-extralight-webfont.woff2') format('woff2'),
+         url('http://wwmairs.com/plex/ibmplexmono-extralight-webfont.woff') format('woff'),
+         url('http://wwmairs.com/plex/ibmplexmono-extralight-webfont.svg#ibm_plex_monoextralight') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -17,9 +17,9 @@
 
 @font-face {
     font-family: 'ibm_plex_monoXLtIt';
-    src: url('ibmplexmono-extralightitalic-webfont.woff2') format('woff2'),
-         url('ibmplexmono-extralightitalic-webfont.woff') format('woff'),
-         url('ibmplexmono-extralightitalic-webfont.svg#ibm_plex_monoXLtIt') format('svg');
+    src: url('http://wwmairs.com/plex/ibmplexmono-extralightitalic-webfont.woff2') format('woff2'),
+         url('http://wwmairs.com/plex/ibmplexmono-extralightitalic-webfont.woff') format('woff'),
+         url('http://wwmairs.com/plex/ibmplexmono-extralightitalic-webfont.svg#ibm_plex_monoXLtIt') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -30,9 +30,9 @@
 
 @font-face {
     font-family: 'ibm_plex_monolight';
-    src: url('ibmplexmono-light-webfont.woff2') format('woff2'),
-         url('ibmplexmono-light-webfont.woff') format('woff'),
-         url('ibmplexmono-light-webfont.svg#ibm_plex_monolight') format('svg');
+    src: url('http://wwmairs.com/plex/ibmplexmono-light-webfont.woff2') format('woff2'),
+         url('http://wwmairs.com/plex/ibmplexmono-light-webfont.woff') format('woff'),
+         url('http://wwmairs.com/plex/ibmplexmono-light-webfont.svg#ibm_plex_monolight') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -43,9 +43,9 @@
 
 @font-face {
     font-family: 'ibm_plex_monolight_italic';
-    src: url('ibmplexmono-lightitalic-webfont.woff2') format('woff2'),
-         url('ibmplexmono-lightitalic-webfont.woff') format('woff'),
-         url('ibmplexmono-lightitalic-webfont.svg#ibm_plex_monolight_italic') format('svg');
+    src: url('http://wwmairs.com/plex/ibmplexmono-lightitalic-webfont.woff2') format('woff2'),
+         url('http://wwmairs.com/plex/ibmplexmono-lightitalic-webfont.woff') format('woff'),
+         url('http://wwmairs.com/plex/ibmplexmono-lightitalic-webfont.svg#ibm_plex_monolight_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -56,9 +56,9 @@
 
 @font-face {
     font-family: 'ibm_plex_monothin';
-    src: url('ibmplexmono-thin-webfont.woff2') format('woff2'),
-         url('ibmplexmono-thin-webfont.woff') format('woff'),
-         url('ibmplexmono-thin-webfont.svg#ibm_plex_monothin') format('svg');
+    src: url('http://wwmairs.com/plex/ibmplexmono-thin-webfont.woff2') format('woff2'),
+         url('http://wwmairs.com/plex/ibmplexmono-thin-webfont.woff') format('woff'),
+         url('http://wwmairs.com/plex/ibmplexmono-thin-webfont.svg#ibm_plex_monothin') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -69,9 +69,9 @@
 
 @font-face {
     font-family: 'ibm_plex_monothin_italic';
-    src: url('ibmplexmono-thinitalic-webfont.woff2') format('woff2'),
-         url('ibmplexmono-thinitalic-webfont.woff') format('woff'),
-         url('ibmplexmono-thinitalic-webfont.svg#ibm_plex_monothin_italic') format('svg');
+    src: url('http://wwmairs.com/plex/ibmplexmono-thinitalic-webfont.woff2') format('woff2'),
+         url('http://wwmairs.com/plex/ibmplexmono-thinitalic-webfont.woff') format('woff'),
+         url('http://wwmairs.com/plex/ibmplexmono-thinitalic-webfont.svg#ibm_plex_monothin_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 
