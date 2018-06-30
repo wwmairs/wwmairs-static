@@ -1,5 +1,72 @@
 // let's write some DOCUMENTATION, HUH???
 
+const NS = "http://www.w3.org/2000/svg";
+// creates an svg child with a squiggle in it
+// takes a list of colors, or if null, comes up with its own
+class SpaceFiller {
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+	getRandomInt(max) {
+	  return Math.floor(Math.random() * Math.floor(max));
+	}
+
+	getRandomBool() {
+		return Math.random() >= 0.5;
+	}
+
+	constructor(width, height, colors = null) {
+		this.w		 = width;
+		this.h 		 = height;
+		// height = thickness * (turns + 1) + spacing * turns
+		// 0 turns breaks it, unclear why exactly, for now, bump it
+		this.turns = this.getRandomInt(height / 32) + 1;
+		// spacing and turns will surely need tweaking
+		this.space = this.getRandomInt(height / this.turns) + 1;
+		this.thick = (height - (this.space * this.turns)) / (this.turns + 1);
+		this.right = this.getRandomBool(); 
+		this.stacked = this.getRandomBool();
+		if (colors != null) {
+			let len = colors.length;
+			if (this.stacked) {
+				// if stacked, use colors length to determine stackSpacing
+				// this is worth testing, maybe try assert within stackedSquiggle when drawing?
+				// who knows
+				// thickness = ((#layers * 2) - 1 ) * stackspacing
+				this.stackSpacing = this.thick / ((len * 2) - 1);
+				this.colors = colors;
+				// maybe it should be possible to get a gradient here?
+			} else {
+				// if not stacked, pick color from colors
+				this.color = colors[this.getRandomInt(len)]
+			}
+		} else {
+			// come up with a random color
+			// if stacked, turn into a gradient?
+		}
+		console.log("space:", this.space, "turns:", this.turns, "thick:", this.thick, "right:", this.right, "stacked:", this.stacked, "stackSpacing:", this.stackSpacing);
+	}
+
+	
+	// append as child to parent node, set as background
+	connect(parentNode) {
+		this.svg = document.createElementNS(NS, "svg");
+		this.svg.setAttribute("height", this.h + "px");
+		this.svg.setAttribute("width",  this.w + "px");
+		parentNode.appendChild(this.svg);
+		if (this.stacked) {
+			// make a stacked
+			this.squiggle = new StackedSquiggle(0, 0, this.w, this.thick, this.space, this.turns,
+																					this.right, this.colors, this.stackSpacing, this.svg);
+		} else {
+			// make a normal one
+			this.squiggle = new Squiggle(0, 0, this.w, this.thick, this.space, this.turns, this.right,
+																	 this.color, this.svg);
+		}
+
+		// might have to deal with making a background
+
+	}
+}
+
 class StackedSquiggle {
 	constructor(x, y, width, thickness, spacing, numTurns, right, colors, stackSpacing, parent) {
 		this.x  = x;
@@ -95,7 +162,7 @@ class Line {
 		this.w  = w;
 		this.c  = c;
 		this.p  = parent;
-		this.rect    = document.createElementNS(svgns, "rect");
+		this.rect    = document.createElementNS(NS, "rect");
 		this.rect.setAttribute("x", this.x1);
 		this.rect.setAttribute("y", this.y);
 		this.rect.setAttribute("width", this.x2 - this.x1);
@@ -118,11 +185,11 @@ class Connecter {
 		this.s  = s;
 		this.d  = right;
 		this.p  = parent;
-		this.m  = document.createElementNS(svgns, "mask");
+		this.m  = document.createElementNS(NS, "mask");
 		this.maskID = "mask" + x + "-" + y + "-" + r;
 		this.m.setAttribute("id", this.maskID);
 		// the outer, white circle
-		this.c1 = document.createElementNS(svgns, "circle");
+		this.c1 = document.createElementNS(NS, "circle");
 		this.c1.setAttribute("fill", "white");
 		this.c1.setAttribute("stroke", "white");
 		this.c1.setAttribute("cy", y);
@@ -131,14 +198,14 @@ class Connecter {
 		this.m.appendChild(this.c1);
 
 		// the inner, black circle
-		this.c2 = document.createElementNS(svgns, "circle");
+		this.c2 = document.createElementNS(NS, "circle");
 		this.c2.setAttribute("fill", "black");
 		this.c2.setAttribute("stroke", "white");
 		this.c2.setAttribute("cy", y);
 		this.c2.setAttribute("cx", x);
 		this.c2.setAttribute("r", s / 2);
 		this.m.appendChild(this.c2);
-		this.c3 = document.createElementNS(svgns, "path");
+		this.c3 = document.createElementNS(NS, "path");
 
 		this.p.appendChild(this.m);
 		this.c3.setAttribute("fill", this.c);
