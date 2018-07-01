@@ -3,6 +3,83 @@
 const NS = "http://www.w3.org/2000/svg";
 // creates an svg child with a squiggle in it
 // takes a list of colors, or if null, comes up with its own
+
+// it'd be great to be able to get
+// - the nth tint
+// - the nth shade
+// - hex value
+// - rgb value
+// - maybe some other spaces
+// - blends with other colors
+class Color {
+	// expects a string, either:
+	// '#xxxxxx'
+	// 'rgb(xxx,xxx,xxx)'
+	constructor(c) {
+  	if (c[0]) == '#') {
+			this.r = this.hexToDec(c.slice(1,3));
+			this.g = this.hexToDec(c.slice(3,5));
+			this.b = this.hexToDec(c.slice(5,7));
+			// assert well formed!
+		} else if (c.slice(0,3) == 'rgb') {
+			this.r = parseInt(c.slice(4,7));
+			this.g = parseInt(c.slice(8,11));
+			this.b = parseInt(c.slice(12,15));
+			// assert well formed!
+		} else {
+			throw "Unknown color type";
+		}
+
+		tintChannel(c, f) {
+			return c + (255 - c) * f;
+		}
+
+		shadeChannel(c, f) {
+			return c * (1 - f);
+		}
+
+		tintRGB(f) {
+			return 'rgb(' + this.tintChannel(this.r, f) + ',' 
+									  + this.tintChannel(this.g, f) + ',' 
+										+ this.tintChannel(this.g, f) + ')';
+		}
+
+		tintHex(f) {
+			return '#' + this.tintChannel(this.decToHex(this.r), f) 
+								 + this.tintChannel(this.decToHex(this.g), f) 
+								 + this.tintChannel(this.decToHex(this.b), f);
+		}
+
+		shadeRGB(f) {
+			return 'rgb(' + this.shadeChannel(this.r, f) + ',' 
+									  + this.shadeChannel(this.g, f) + ',' 
+										+ this.shadeChannel(this.g, f) + ')';
+		}
+
+		shadeHex(f) {
+			return '#' + this.shadeChannel(this.decToHex(this.r), f) 
+								 + this.shadeChannel(this.decToHex(this.g), f) 
+								 + this.shadeChannel(this.decToHex(this.b), f);
+		}
+
+		get hex() {
+			return '#' + this.decToHex(this.r) + this.decToHex(this.g) + this.decToHex(this.b);
+		}
+
+		get rgb() {
+			return 'rgb(' + this.r + ',' + this.g + ',' + this.g + ')';
+		}
+
+		decToHex(d) {
+			return d.toString(16);
+		}
+
+		hexToDec(h) {
+			return parseInt(h, 16);
+		}
+	}
+}
+
 class SpaceFiller {
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 	getRandomInt(max) {
