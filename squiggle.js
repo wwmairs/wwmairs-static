@@ -16,7 +16,7 @@ class Color {
 	// '#xxxxxx'
 	// 'rgb(xxx,xxx,xxx)'
 	constructor(c) {
-  	if (c[0]) == '#') {
+  	if (c[0] == '#') {
 			this.r = this.hexToDec(c.slice(1,3));
 			this.g = this.hexToDec(c.slice(3,5));
 			this.b = this.hexToDec(c.slice(5,7));
@@ -29,13 +29,14 @@ class Color {
 		} else {
 			throw "Unknown color type";
 		}
+	}
 
 		tintChannel(c, f) {
-			return c + (255 - c) * f;
+			return Math.round(c + (255 - c) * f);
 		}
 
 		shadeChannel(c, f) {
-			return c * (1 - f);
+			return Math.round(c * (1 - f));
 		}
 
 		tintRGB(f) {
@@ -45,9 +46,9 @@ class Color {
 		}
 
 		tintHex(f) {
-			return '#' + this.tintChannel(this.decToHex(this.r), f) 
-								 + this.tintChannel(this.decToHex(this.g), f) 
-								 + this.tintChannel(this.decToHex(this.b), f);
+			return '#' + this.decToHex(this.tintChannel(this.r, f))
+								 + this.decToHex(this.tintChannel(this.g, f)) 
+								 + this.decToHex(this.tintChannel(this.b, f));
 		}
 
 		shadeRGB(f) {
@@ -57,9 +58,9 @@ class Color {
 		}
 
 		shadeHex(f) {
-			return '#' + this.shadeChannel(this.decToHex(this.r), f) 
-								 + this.shadeChannel(this.decToHex(this.g), f) 
-								 + this.shadeChannel(this.decToHex(this.b), f);
+			return '#' + this.decToHex(this.shadeChannel(this.r, f)) 
+								 + this.decToHex(this.shadeChannel(this.g, f)) 
+								 + this.decToHex(this.shadeChannel(this.b, f));
 		}
 
 		get hex() {
@@ -67,7 +68,7 @@ class Color {
 		}
 
 		get rgb() {
-			return 'rgb(' + this.r + ',' + this.g + ',' + this.g + ')';
+			return 'rgb(' + this.r + ',' + this.g + ',' + this.b + ')';
 		}
 
 		decToHex(d) {
@@ -77,7 +78,6 @@ class Color {
 		hexToDec(h) {
 			return parseInt(h, 16);
 		}
-	}
 }
 
 class SpaceFiller {
