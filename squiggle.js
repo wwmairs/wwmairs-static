@@ -27,6 +27,7 @@ class Color {
 			this.b = parseInt(c.slice(12,15));
 			// assert well formed!
 		} else {
+			console.log(c);
 			throw "Unknown color type";
 		}
 	}
@@ -72,7 +73,8 @@ class Color {
 		}
 
 		decToHex(d) {
-			return d.toString(16);
+			let h = d.toString(16);
+			return h.length == 1 ? "0" + h : h;
 		}
 
 		hexToDec(h) {
@@ -90,7 +92,7 @@ class SpaceFiller {
 		return Math.random() >= 0.5;
 	}
 
-	constructor(width, height, colors = null) {
+	constructor(width, height, color = null) {
 		this.w		 = width;
 		this.h 		 = height;
 		// height = thickness * (turns + 1) + spacing * turns
@@ -101,23 +103,27 @@ class SpaceFiller {
 		this.thick = (height - (this.space * this.turns)) / (this.turns + 1);
 		this.right = this.getRandomBool(); 
 		this.stacked = this.getRandomBool();
-		if (colors != null) {
-			let len = colors.length;
+		this.numLayers = this.getRandomInt(5) + 1;
+		// maybe this should be generated?
+		this.tintAmount = .1;
+		this.color = new Color(color);
+		if (color != null) {
+			let layers = this.numLayers;
 			if (this.stacked) {
 				// if stacked, use colors length to determine stackSpacing
 				// this is worth testing, maybe try assert within stackedSquiggle when drawing?
 				// who knows
 				// thickness = ((#layers * 2) - 1 ) * stackspacing
-				this.stackSpacing = this.thick / ((len * 2) - 1);
+				this.stackSpacing = this.thick / ((layers * 2) - 1);
+				let colors = [];
+				for (var i = 0; i < layers; i++) {
+					colors[i] = this.color.tintHex(i * this.tintAmount);
+				}
 				this.colors = colors;
 				// maybe it should be possible to get a gradient here?
-			} else {
-				// if not stacked, pick color from colors
-				this.color = colors[this.getRandomInt(len)]
 			}
 		} else {
 			// come up with a random color
-			// if stacked, turn into a gradient?
 		}
 		console.log("space:", this.space, "turns:", this.turns, "thick:", this.thick, "right:", this.right, "stacked:", this.stacked, "stackSpacing:", this.stackSpacing);
 	}
@@ -135,8 +141,9 @@ class SpaceFiller {
 																					this.right, this.colors, this.stackSpacing, this.svg);
 		} else {
 			// make a normal one
+			console.log(this.color);
 			this.squiggle = new Squiggle(0, 0, this.w, this.thick, this.space, this.turns, this.right,
-																	 this.color, this.svg);
+																	 this.color.hex, this.svg);
 		}
 
 		// might have to deal with making a background
