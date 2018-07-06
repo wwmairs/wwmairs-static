@@ -99,13 +99,13 @@ class SpaceFiller {
 		// 0 turns breaks it, unclear why exactly, for now, bump it
 		this.turns = this.getRandomInt(height / 32) + 1;
 		// spacing and turns will surely need tweaking
-		this.space = this.getRandomInt(height / this.turns) + 1;
+		this.space = this.getRandomInt(height / (this.turns * 3)) + 1;
 		this.thick = (height - (this.space * this.turns)) / (this.turns + 1);
 		this.right = this.getRandomBool(); 
 		this.stacked = this.getRandomBool();
 		this.numLayers = this.getRandomInt(5) + 1;
 		// maybe this should be generated?
-		this.tintAmount = .1;
+		this.tintAmount = .2;
 		this.color = new Color(color);
 		if (color != null) {
 			let layers = this.numLayers;
