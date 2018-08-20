@@ -201,7 +201,7 @@ p {
 		font-size: 24px;
     font-family: 'ibm_plex_monolight';
 		text-transform: uppercase;
-    border: 2px solid var(--red);
+    border: none;
     color: var(--red);
 		background-color: var(--grey);
     width: 100%;
@@ -218,6 +218,7 @@ p {
 }
 .not_shown #wwm-box h3 {
 	background-color: var(--grey);
+	border: 2px solid var(--red)
 	color: var(--red);
 }
 

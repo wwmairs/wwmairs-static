@@ -25,25 +25,19 @@
 </head>
 
 <body>
-    <div class="container-fluid columns">
-        <div class="col-md-4 col-sm-4 col-xs-12 column">
-            <h2>WHERE<br>I AM</h2>
-            <p id='weather'>Right now I live in Fairplay, CO, where my server is still in a box somewhere waiting to be set back up.
-            </p>
+ <h2>WHERE<br>I AM</h2>
+ <p id='weather'>Right now I live in Fairplay, CO, where my server is still in a box somewhere waiting to be set back up.
+ </p>
 
-						<!--
-            <p id='sunset'></p>
-            <p>Powered by
-                <a class='poweredby' href="https://darksky.net/poweredby/">Dark Sky</a> and
-                <a class='poweredby' href="https://sunburst.sunsetwx.com/v1/docs/">Sunburst</a>
-            </p>
-						-->
-        </div>
-    </div>
-
-    <div id="side">
+ <!--
+ <p id='sunset'></p>
+ <p>Powered by
+     <a class='poweredby' href="https://darksky.net/poweredby/">Dark Sky</a> and
+     <a class='poweredby' href="https://sunburst.sunsetwx.com/v1/docs/">Sunburst</a>
+ </p>
+ -->
+    <div id="side" class="not_shown">
         <div id="wwm-box">
-            <a href="index.html">
             <h3 id="wwm">WWM</h3>
             </a>
         </div>
@@ -67,6 +61,13 @@
     </div>
 
 </body>
+
+<script>
+    $("#wwm-box").click(() => {
+        $("#side").toggleClass("not_shown");
+    });
+</script>
+
 <script src="where.js?v=1.0"></script>
 <style>
     #defaultCanvas0{
@@ -86,22 +87,16 @@
         border-bottom: 2px solid var(--text-color);
     }
 
-    #links a {
-        color: var(--text-color);
-        border-bottom: 2px solid var(--text-color);
-    }
-
-    #wwm-box{
+    .not_shown #wwm-box h3 {
         color: var(--text-color);
         border: 2px solid var(--text-color);
-    }
-    #wwm-box h3{
-        color: var(--text-color);
+        background: none;
     }
 
-    #wwm-box:hover h3{
-        color: var(--text-color);
+    .not_shown #wwm-box:hover h3 {
+        border: 2px solid var(--red);
     }
+
 </style>
 
 </html>
