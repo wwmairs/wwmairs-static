@@ -8,30 +8,21 @@
     <link rel="icon" type="img/png" href="favicons/line3.png">
     <!-- vulf fonts -->
     <link href="vulfface/font.css" rel="stylesheet">
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
     :root{--page-color: #0F935A}
     </style>
-    <link href="style.css?v=3.0.1" rel="stylesheet"/>
+    <link href="style.css?v=3.1.1" rel="stylesheet"/>
 </head>
 
 <body>
-    <div class="container-fluid columns">
-        <div class="col-md-4 col-sm-4 col-xs-12 column">
-            <h2>GET IN TOUCH</h2>
-            <p class='contact-info'><span class='label'>email //</span> <a href="mailto:contact@wwmairs.com?Subject=Reaching%20out" target="_top">contact@wwmairs.com</a></p>
-            <p class='contact-info'><span class='label'>phone //</span> 347.756.0934</p>
-        </div>
-    </div>
+  <h2>GET IN TOUCH</h2>
+  <p class='contact-info'><span class='label'>email //</span> <a href="mailto:contact@wwmairs.com?Subject=Reaching%20out" target="_top">contact@wwmairs.com</a></p>
+  <p class='contact-info'><span class='label'>phone //</span> 347.756.0934</p>
 
-    <div id="side">
+    <div id="side" class="not_shown">
         <div id="wwm-box">
-            <a href="index.html">
             <h3 id="wwm">WWM</h3>
             </a>
         </div>
@@ -55,5 +46,11 @@
     </div>
 
 </body>
+
+<script>
+    $("#wwm-box").click(() => {
+        $("#side").toggleClass("not_shown");
+    });
+</script>
 
 </html>

@@ -8,45 +8,38 @@
     <link rel="icon" type="img/png" href="favicons/line3.png">
 	<!-- vulf fonts -->
 	<link href="vulfface/font.css" rel="stylesheet">
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
     :root{--page-color: #0F935A}
     </style>
-	<link href="style.css?v=3.0.1" rel="stylesheet"/>
+	<link href="style.css?v=3.1.1" rel="stylesheet"/>
 </head>
 
 <body>
-    <div class="container-fluid columns">
-        <div class="col-md-4 col-sm-4 col-xs-12 column">
-            <h2>WHO<br>I AM</h2>
-            <p>
-            I'm a part-time student and barista, freelance web developer and bookbinder.  I grew up in Manhattan though I'm now ex-patriate.  'Home' is cedar shingles on the South Fork but I'm forever loyal to the Q train.
-            </p>
-            <p>Right now I live in Somerville Massachusetts, studying electronic instrument design and developing domain specific languages for testing student submissions.
-            </p>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12 column">
-            <p>
-            Coffee, cats, concise design, analog media, artificial languages, natural languages, wool coats, socks, minimalist funk, niche grammar, mindful typefaces, <a href="what/games">games</a>, sourdough bread, <a href="http://averyspratt.com">Dick Wolf</a> and cold soba.
-            </p>
-            <h2>THINGS<br>I LIKE</h2>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12 column">
-            <h2>WHERE<br>I'LL GO</h2>
-            <p>
-            I'm trying to spend my time engaged in the things I love and sharing them with other people. Web design, book-making, and making coffee, are what I plan on doing to make a some kinda mark here.  Want to help me make it?  <a href='contact.html'>Shoot me a message</a> if you want some freelance work done or just to share our latest projects over espresso or some bougie pour-over.
-            </p>
-        </div>
-    </div>
+  <div class="column">
+      <h2>WHO<br>I AM</h2>
+      <p>
+      I'm a part-time student and barista, freelance web developer and bookbinder.  I grew up in Manhattan though I'm now ex-patriate.  'Home' is cedar shingles on the South Fork but I'm forever loyal to the Q train.
+      </p>
+      <p>Right now I live in Somerville Massachusetts, studying electronic instrument design and developing domain specific languages for testing student submissions.
+      </p>
+  </div>
+  <div class="column">
+      <p>
+      Coffee, cats, concise design, analog media, artificial languages, natural languages, wool coats, socks, minimalist funk, niche grammar, mindful typefaces, <a href="what/games">games</a>, sourdough bread, <a href="http://averyspratt.com">Dick Wolf</a> and cold soba.
+      </p>
+      <h2>THINGS<br>I LIKE</h2>
+  </div>
+  <div class="column">
+      <h2>WHERE<br>I'LL GO</h2>
+      <p>
+      I'm trying to spend my time engaged in the things I love and sharing them with other people. Web design, book-making, and making coffee, are what I plan on doing to make a some kinda mark here.  Want to help me make it?  <a href='contact.html'>Shoot me a message</a> if you want some freelance work done or just to share our latest projects over espresso or some bougie pour-over.
+      </p>
+  </div>
 
-    <div id="side">
+    <div id="side" class="not_shown">
         <div id="wwm-box">
-            <a href="index.html">
             <h3 id="wwm">WWM</h3>
             </a>
         </div>
@@ -70,5 +63,11 @@
     </div>
 
 </body>
+
+<script>
+    $("#wwm-box").click(() => {
+        $("#side").toggleClass("not_shown");
+    });
+</script>
 
 </html>
