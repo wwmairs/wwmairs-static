@@ -69,17 +69,18 @@
     </div>
 
     <div id="side">
-        <div id="wwm-box">
-            <a href="../index.html">
+        <div id="wwm-box"
+						 onclick="toggleLinks()">
+            <!-- <a href="../index.html"> -->
             <h3 id="wwm">WWM</h3>
             </a>
         </div>
-        <div id="links">
+        <div id="links" style="display: none;">
             <div>
                 <a href="../who.html">who</a>
             </div>
             <div>
-                <a href="../what">what</a>
+                <a class="current" href="../what">what</a>
             </div>
             <div>
                 <a href="../where.html">where</a>
@@ -94,5 +95,14 @@
     </div>
 
 </body>
+
+<script>	
+	function toggleLinks() {
+		console.log('clicked');
+		let l = document.getElementById('links');
+		console.log(l);
+		l.style.display	== 'none' ? l.style.display = 'block' : l.style.display = 'none';
+	}
+</script>
 
 </html>
