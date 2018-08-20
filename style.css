@@ -147,21 +147,22 @@ p {
 		width: 150px;
 		z-index: -1;
 		padding: 10px;
-		padding-top: 100px;
-		transition: transform .5s;
-		-webkit-transition: transform .5s;
+		padding-top: 150px;
+		transition: transform .15s;
+		-webkit-transition: transform .15s;
 }
 
 #links div {
     display: inline-block;
-    text-align: left;
+    text-align: center;
     color: black;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #links a {
 	border: none;
+	color: var(--grey);
 }
 
 #links .current {
@@ -169,7 +170,7 @@ p {
 }
 
 #links a:hover {
-	color: var(--green);
+	color: var(--blue);
 }
 
 
@@ -192,9 +193,9 @@ p {
 }
 
 #wwm-box h3{
-    border: 2px solid var(--green);
-    color: var(--grey);
-		background-color: var(--green);
+    border: 2px solid var(--red);
+    color: var(--red);
+		background-color: var(--grey);
     width: 100%;
     text-align: center;
     padding-top: 5px;
@@ -204,12 +205,12 @@ p {
 }
 
 .not_shown #wwm-box:hover h3{
-    background-color: var(--green);
+    background-color: var(--red);
     color: var(--grey);
 }
 .not_shown #wwm-box h3 {
 	background-color: var(--grey);
-	color: var(--green);
+	color: var(--red);
 }
 
 /* portfolio entries */
@@ -277,4 +278,10 @@ p {
     .column:last-child {
         border-bottom: none;
     }
+
+		.col-xs-12 {
+			margin-left: 0px;
+			padding-left: 30px;
+			width: 100vw;
+		}
 }
