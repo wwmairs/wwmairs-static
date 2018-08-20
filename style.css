@@ -4,13 +4,14 @@
  
 @import url("plex/font.css");
 @import url('https://fonts.googleapis.com/css?family=Cousine:400,400i');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700i');
 :root{
     --text-color: black;
-		--green: #35c58e;
-		--red: #f45742;
-		--yellow: #f4b042;
-		--blue: #4286f4;
-		--grey: #f2f2f2;
+		--green: #3D9662;
+		--red: #DF6151;
+		--yellow: #F7C450;
+		--blue: #3680E8;
+		--grey: #FEFEFE;
 }
 
 h1{
@@ -23,19 +24,24 @@ h1{
 
 h2{
     font-family: 'ibm_plex_monolight';
-    letter-spacing: 4px;
-    font-size: 36px;
+    letter-spacing: 1px;
+    font-size: 40px;
     line-height: 150%;
 }
+
 h3{
-    font-family: 'ibm_plex_monolight';
-    font-size: 24px;
+    /*font-family: 'ibm_plex_monolight';*/
+		font-family: 'Playfair Display', serif;
+    font-size: 44px;
+		letter-spacing: 2.5px;
+		text-transform: lowercase;
 }
+
 h4{
     font-family: 'ibm_plex_monolight';
-    text-align: center;
+    text-align: left;
     font-style: italic;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 body {
@@ -54,8 +60,8 @@ a {
 
 a:hover {
     text-decoration: none;
-    border-bottom: 2px solid var(--green);
-    font-style: italic;
+		color: black;
+    border-bottom: 2px solid var(--blue);
 }
 
 a:focus {
@@ -146,8 +152,7 @@ p {
 		height: 100vh;
 		width: 150px;
 		z-index: -1;
-		padding: 10px;
-		padding-top: 150px;
+		padding-top: 125px;
 		transition: transform .15s;
 		-webkit-transition: transform .15s;
 }
@@ -193,6 +198,9 @@ p {
 }
 
 #wwm-box h3{
+		font-size: 24px;
+    font-family: 'ibm_plex_monolight';
+		text-transform: uppercase;
     border: 2px solid var(--red);
     color: var(--red);
 		background-color: var(--grey);
@@ -213,10 +221,27 @@ p {
 	color: var(--red);
 }
 
+
+
 /* portfolio entries */
-.portfolio_entry h3{
-    line-height: 1.3;
+.portfolio_entry {
+	width: 29vw;
+	display: inline-block;
 }
+
+.portfolio_entry h3 a {
+  line-height: 1.3;
+	border: 0px;
+	border-bottom: 3px solid var(--yellow);
+}
+
+.portfolio_entry h3 {
+  font-style: italic;
+}
+
+.portfolio_entry p {
+}
+
 
 /* contact.html specific */
 .contact-info {
@@ -239,6 +264,10 @@ p {
         margin: 0px;
         margin-left: 10px;
     }
+		.entries_container {
+			width: 90vw;
+			margin: auto;
+		}
 }
 
 /* mobile */
@@ -262,10 +291,10 @@ p {
     }
     #links {
         margin-left: 0px;
-
+				width: 120px;
     }
     #wwm-box {
-        margin-left: 0px;
+			margin: 10px;	
     }
     .column {
         margin-right: 120px;
@@ -278,10 +307,13 @@ p {
     .column:last-child {
         border-bottom: none;
     }
+		/* portfolio container */
+		.entries_container {
+			width: 95vw;
+			margin: auto;
+		}
 
-		.col-xs-12 {
-			margin-left: 0px;
-			padding-left: 30px;
-			width: 100vw;
+		.portfolio_entry {
+			width: 95vw;
 		}
 }
