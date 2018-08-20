@@ -68,14 +68,13 @@
         </div>
     </div>
 
-    <div id="side">
-        <div id="wwm-box"
-						 onclick="toggleLinks()">
+    <div id="side" class="not_shown">
+        <div id="wwm-box">
             <!-- <a href="../index.html"> -->
             <h3 id="wwm">WWM</h3>
             </a>
         </div>
-        <div id="links" style="display: none;">
+        <div id="links">
             <div>
                 <a href="../who.html">who</a>
             </div>
@@ -96,13 +95,10 @@
 
 </body>
 
-<script>	
-	function toggleLinks() {
-		console.log('clicked');
-		let l = document.getElementById('links');
-		console.log(l);
-		l.style.display	== 'none' ? l.style.display = 'block' : l.style.display = 'none';
-	}
+<script>
+	$("#wwm-box").click(() => {
+		$("#side").toggleClass("not_shown");
+	});
 </script>
 
 </html>
