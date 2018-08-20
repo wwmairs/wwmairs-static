@@ -4,7 +4,7 @@ let container = document.getElementById("squiggle-container");
 let svg = document.createElementNS(svgns, "svg");
 container.appendChild(svg);
 
-cs = ["#35C58E", "#f4b042", "#f45742", "#4286f4"];
+cs = ["#3d9662", "#F7C450", "#DF6151", "#3680E8"];
 
 if (screen.width <= 756) {
   // mobile
