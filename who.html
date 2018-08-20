@@ -75,11 +75,13 @@
 	.portfolio_entry h3 {
 		border-bottom: 3px solid var(--blue);
 	}
-	.entries_container {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	@media (min-width: 757px) {
+		.entries_container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 
 </style>
