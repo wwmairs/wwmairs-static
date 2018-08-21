@@ -246,6 +246,11 @@ p {
 			width: 90vw;
 			margin: auto;
 		}
+		.contact_container {
+			position: absolute;
+			top: 25%;
+			left: 25%;
+		}
 }
 
 /* mobile */
@@ -282,5 +287,11 @@ p {
 
 		.portfolio_entry {
 			width: 95vw;
+		}
+		.contact_container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 		}
 }
