@@ -14,6 +14,10 @@
 		--grey: #FEFEFE;
 }
 
+html {
+		cursor: url(res/cursors/carrot.png), auto;
+}
+
 h1{
     font-family: 'ibm_plex_monolight';
     color: var(--text-color);
@@ -62,6 +66,7 @@ a:hover {
     text-decoration: none;
 		color: black;
     border-bottom: 2px solid var(--blue);
+		cursor: url(res/cursors/beet.png) 7 25, pointer;
 }
 
 a:focus {
