@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<title>DUVET</title>
     <link rel="icon" type="img/png" href="../favicons/line3.png">
     <style>
@@ -20,9 +21,8 @@
 			<img src="../res/duvet/closer.jpg" width="100%">
 		</div>
 
-    <div id="side">
+    <div id="side" class="not_shown">
         <div id="wwm-box">
-            <a href="index.html">
             <h3 id="wwm">WWM</h3>
             </a>
         </div>
@@ -46,5 +46,11 @@
     </div>
 
 </body>
+
+<script>
+	$("#wwm-box").click(() => {
+		$("#side").toggleClass("not_shown");
+	});
+</script>
 
 </html>
