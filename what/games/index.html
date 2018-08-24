@@ -13,7 +13,85 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="index.css" rel="stylesheet">
+    <link href="../../style.css?v=3.0.1" rel="stylesheet"/>
+    <style>
+      h1 {
+        text-transform: uppercase;
+      }
+
+      h3 {
+        font-family: 'Cousine', monospace;
+        font-size: 24px;
+      }
+      #header{
+          font-size: 60px;
+          margin-top: 30px;
+          margin-left: 30px;
+          margin-bottom: 0px;
+          display: inline-block;
+      }
+      .container-fluid{
+          padding: 0px;
+      }
+
+      .horizontal-rule {
+          margin: 0px;
+          border-style: solid;
+          border-top: 25px solid var(--yellow);
+      }
+
+      #games-container {
+          margin: 20px;
+          margin-right: 70px;
+          margin-left: 70px;
+      }
+
+      .game{
+          margin-right: 30px;
+          margin-left: 30px;
+          height: 220px;
+          /*overflow: hidden;*/
+      }
+
+      .game h3{
+          display: inline-block;
+      }
+      .game-hover h3{
+          border-bottom: 3px solid black;
+          margin-bottom: 7px;
+      }
+
+      svg{
+      /*border: 1px solid black;*/
+      }
+
+      body {
+      font-family: 'Cousine', monospace;
+      }
+
+      iframe {
+          border: none;
+          pointer-events: none;
+          -moz-transform: scale(0.25, 0.25); 
+          -webkit-transform: scale(0.25, 0.25); 
+          -o-transform: scale(0.25, 0.25);
+          -ms-transform: scale(0.25, 0.25);
+          transform: scale(0.25, 0.25); 
+          -moz-transform-origin: top left;
+          -webkit-transform-origin: top left;
+          -o-transform-origin: top left;
+          -ms-transform-origin: top left;
+          transform-origin: top left;
+      }
+
+      #games-container .row {
+          margin-bottom: 50px;
+      }
+      .back_button {
+          position: relative;
+      }
+
+    </style>
     
   </head>
   <body>
@@ -51,6 +129,13 @@
             </div>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6">
+            <a href="../">
+            <div class="back_button">
+                <div class="back_arrow">
+                <span></span>
+                </div>
+            </div>
+      </a>
           </div>
         </div>
       </div>

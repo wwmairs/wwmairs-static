@@ -19,10 +19,10 @@ let numScoreLabels = 0;
 
 
 
-var colors = {"avery": "#f44165",
-			  "phil" : "#6a41f4",
-			  "adam" : "#f4be41",
-			  "will" : "#42f47d"}
+var colors = {"avery": "#3D9662",
+			  "phil" : "#DF6151",
+			  "adam" : "#F7C450",
+			  "will" : "#3680E8"}
 
 var lineChart;
 var pieChart;

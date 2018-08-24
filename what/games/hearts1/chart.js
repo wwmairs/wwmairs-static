@@ -20,7 +20,7 @@ function makeChart() {
     var myChart = Highcharts.chart('container', {
         chart: {
             type: 'spline',
-            backgroundColor: '#f2f2f2'
+            backgroundColor: '#fefefe'
         },
         title: {
             text: 'Hearts'
