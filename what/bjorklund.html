@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>BJORKLUNDER</title>
     <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i" rel="stylesheet">
+    <link href="../style.css?v=3.0.1" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- withakay's js implementation of bjorklund's -->
     <!-- found here: https://gist.github.com/withakay/1286731 -->
@@ -89,36 +90,13 @@
         margin-bottom: 5px;
         margin-left: 10px;
       }
-      body {
-        font-size: 15px;
-        letter-spacing: 2px;
-        margin: 0;
-        background-color: #f2f2f2;
+      h3 {
         font-family: 'Cousine', monospace;
+        font-size: 30px;
       }
-
-      p {
-        margin: 20px;
-
-      }
-
-
-
-      a{
-          text-decoration: none;
-          color: black;
-          border-bottom: 2px solid black;
-      }
-
-      a:hover{
-          text-decoration: none;
-          border-bottom: 2px solid var(--page-color);
-          font-style: italic;
-      }
-
       input {
         text-align: center;
-        background-color: #f2f2f2;
+        background-color: var(--grey);
         border: none;
         border-bottom: 1px solid black;
         font-size: 72px;
@@ -152,15 +130,31 @@
         /*border: 1px solid black;*/
       }
 
+      #submit:hover {
+        cursor: url(../res/cursors/beet.png) 7 25, pointer;
+      }
+
       #submit:active {
-        /*border: 1px solid #797979;*/
-        background-color: #d9d9d9;
+        /*border: 1px solid #797979;*/;
         font-style: italic;
+        color: var(--blue);
+      }
+
+      .back_button {
+        right: 0;
+        left: auto;
       }
     </style>
   </head>
   <body onload="displayBjork()">
     <div class="pane">
+      <a href=".">
+            <div class="back_button">
+                <div class="back_arrow">
+                <span></span>
+                </div>
+            </div>
+      </a>
       <h1>BJORKLUNDER</h1>
       <div class="content">
         <form action="javascript:;" onsubmit="displayBjork()">
@@ -178,5 +172,6 @@
         </p>
       </div>
     </div>
+    
   </body>
 </html>
