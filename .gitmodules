@@ -1,3 +1,6 @@
 [submodule "visual-synth"]
 	path = visual-synth
 	url = https://github.com/wwmairs/visual-synth.git
+[submodule "what/modules"]
+	path = what/modules
+	url = https://github.com/wwmairs/modules.git
