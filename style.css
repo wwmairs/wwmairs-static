@@ -225,6 +225,13 @@ p {
   line-height: 1.3;
 }
 
+.tags {
+	font-family: 'ibm_plex_monolight';
+	font-style: italic;
+	font-size: 11px;
+	display: block;
+}
+
 
 /* contact.html specific */
 .contact-info {
@@ -234,6 +241,10 @@ p {
 .label {
     color: black;
     padding: 0;
+}
+
+.label:after {
+	content: " // "
 }
 
 /* width dependant tweaks */
