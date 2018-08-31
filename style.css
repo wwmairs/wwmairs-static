@@ -166,6 +166,11 @@ p {
 		margin-bottom: 15px;
 }
 
+#wwm-box:hover {
+		cursor: url(res/cursors/beet.png) 7 25, pointer;
+}
+
+
 #wwm-box:hover a{
     font-style: normal;
 }
@@ -206,10 +211,33 @@ p {
 
 
 /* portfolio entries */
+.filter_container {
+	display: inline;
+}
+
+.filters {
+	font-family: 'Cousine', monospace;
+	font-style: italic;
+	display: inline-block;
+	margin: 0;
+	padding: 2px;
+	font-size: 11px;
+	letter-spacing: 1px;
+}
+
+.selected {
+	background-color: var(--green);
+	color: var(--grey);
+}
+
 .portfolio_entry {
 	width: 29vw;
 	display: inline-block;
 	margin-bottom: 15px;
+}
+
+.hidden {
+	display: none !important;
 }
 
 .portfolio_entry h3 a {
