@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>BA POST</title>
+    <link rel="icon" type="img/png" href="../favicons/line3.png">
+	<link href="../style.css?v=3.0.1" rel="stylesheet"/>
+</head>
+
+<body>
+		<div style="float: left; margin-auto;">
+			<h2>buenos aires postcards</h2>
+			<big-img src="../../res/ba_post/0.jpg">
+		</div>
+
+</body>
+
+<script>
+	class BigImg extends HTMLElement {
+		constructor() {
+			super();
+			this.shadow = this.attachShadow({mode: 'open'});
+			this.img = document.createElement('img');
+			this.img.style = "max-width: 700px; width: 80vw; margin: auto;";
+			this.img.src = this.getAttribute('src');
+			this.shadow.appendChild(this.img);
+			let bigSrc = this.img.src.split('/');
+			bigSrc[bigSrc.length - 1] = "big_" + bigSrc[bigSrc.length - 1];
+			bigSrc = bigSrc.join('/');
+
+			this.biggerImg = new Image();
+			var that = this;
+			this.biggerImg.onload = () => {
+				this.img.src = bigSrc;
+			};
+			this.biggerImg.src = bigSrc;
+		}
+	}
+
+	customElements.define('big-img', BigImg, {extends: 'img'});
+</script>
+
+</html>
