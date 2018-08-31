@@ -56,6 +56,23 @@ body {
     background-color: var(--grey);
 }
 
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--red);
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--grey);
+}
+
+::-webkit-scrollbar:hover {
+	cursor: url(../../res/cursors/hscroll.png) 16 16, ew-resize;
+}
+
 a {
     text-decoration: none;
     color: black;
