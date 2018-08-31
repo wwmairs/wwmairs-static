@@ -11,9 +11,40 @@
 </head>
 
 <body>
-		<div style="float: left; margin-auto;">
+		<div>
 			<h2>buenos aires postcards</h2>
-			<big-img src="../../res/ba_post/0.jpg">
+			<div style="white-space: nowrap;">
+				<big-img src="../../res/ba_post/0.jpg"></big-img>
+				<big-img src="../../res/ba_post/1.jpg"></big-img>
+				<big-img src="../../res/ba_post/2.jpg"></big-img>
+				<big-img src="../../res/ba_post/3.jpg"></big-img>
+				<big-img src="../../res/ba_post/4.jpg"></big-img>
+				<big-img src="../../res/ba_post/5.jpg"></big-img>
+				<big-img src="../../res/ba_post/6.jpg"></big-img>
+				<big-img src="../../res/ba_post/7.jpg"></big-img>
+				<big-img src="../../res/ba_post/8.jpg"></big-img>
+				<big-img src="../../res/ba_post/9.jpg"></big-img>
+				<big-img src="../../res/ba_post/10.jpg"></big-img>
+				<big-img src="../../res/ba_post/11.jpg"></big-img>
+				<big-img src="../../res/ba_post/12.jpg"></big-img>
+				<big-img src="../../res/ba_post/13.jpg"></big-img>
+				<big-img src="../../res/ba_post/14.jpg"></big-img>
+				<big-img src="../../res/ba_post/15.jpg"></big-img>
+				<big-img src="../../res/ba_post/16.jpg"></big-img>
+				<big-img src="../../res/ba_post/17.jpg"></big-img>
+				<big-img src="../../res/ba_post/18.jpg"></big-img>
+				<big-img src="../../res/ba_post/19.jpg"></big-img>
+				<big-img src="../../res/ba_post/20.jpg"></big-img>
+				<big-img src="../../res/ba_post/21.jpg"></big-img>
+				<big-img src="../../res/ba_post/22.jpg"></big-img>
+				<big-img src="../../res/ba_post/23.jpg"></big-img>
+				<big-img src="../../res/ba_post/24.jpg"></big-img>
+				<big-img src="../../res/ba_post/25.jpg"></big-img>
+				<big-img src="../../res/ba_post/26.jpg"></big-img>
+				<big-img src="../../res/ba_post/27.jpg"></big-img>
+				<big-img src="../../res/ba_post/28.jpg"></big-img>
+				<big-img src="../../res/ba_post/29.jpg"></big-img>
+			</div>
 		</div>
 
 </body>
@@ -22,9 +53,10 @@
 	class BigImg extends HTMLElement {
 		constructor() {
 			super();
+			this.style = "width: 100vw; display: inline-block; position: relative;"
 			this.shadow = this.attachShadow({mode: 'open'});
 			this.img = document.createElement('img');
-			this.img.style = "max-width: 700px; width: 80vw; margin: auto;";
+			this.img.style = "max-width: 700px; width: 80vw; position: absolute; left: 50%; transform: translateX(-50%);";
 			this.img.src = this.getAttribute('src');
 			this.shadow.appendChild(this.img);
 			let bigSrc = this.img.src.split('/');
