@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>WORDS</title>
+    <link rel="icon" type="img/png" href="../favicons/line3.png">
+    <style>
+    :root{--page-color: #0F935A}
+    </style>
+    <link href="../style.css?v=3.0.1" rel="stylesheet"/>
+</head>
+
+<body>
+    <div class="section-wrapper">
+        <div class="section">
+            <h4 class="section-heading">questions for which there may not be any answer though I continue to ask for whatever might be felt in their asking
+            </h4>
+            <div class="poem" style="width: 275px;">
+                <p>
+                    <span>these bananas<br>
+                    <span>are too green.
+                </p>
+                <p>
+                    I'm sure they've<br>
+                    seen a lot,<br>
+                    being so well-traveled<br>
+                    and all.<br>
+                    But they<br>
+                    are too green
+                </p>
+                <p>
+                    I knew this<br>
+                    seeing them<br>
+                    there on the shelf<br>
+                    looking birght,<br>
+                    undisqualified:<br>
+                    I wanted bananas.
+                </p>
+                <p>
+                    now unfairly<br>
+                    hoping sweet,<br>
+                    starchy firmness,<br>
+                    whose fault<br>
+                    is this?
+                </p>
+                <p>
+                    if I weren't<br>
+                    so hungry<br>
+                    would they<br>
+                    ripen?
+                </p>
+            </div>
+            <hr>
+            <div class="poem" style="width: 300px;">
+                <p>
+                    I read a letter<br>
+                    never sent<br>
+                    old<br>
+                    it'd be crumpled too<br>
+                    but it's all digital<br>
+                    black, white, and blue<br>
+                    and if I wanted<br>
+                    I could make it blink<br>
+                    like it were<br>
+                    all fresh again<br>
+                    and I'd say<br>
+                    that I'll just<br>
+                    check the spelling<br>
+                    and send it.
+                </p>
+                <p>
+                    it's not to say<br>
+                    I haven't thought<br>
+                    of you &mdash; only<br>
+                    that the train<br>
+                    was too damn crowded<br>
+                    and I wished<br>
+                    you'd wanted<br>
+                    to come downtown<br>
+                    for me.
+                </p>
+                <p>
+                    in short:<br>
+                    why's it I remember<br>
+                    first your teeth<br>
+                    and then<br>
+                    your eyes?
+                </p>
+            </div>
+            <hr>
+            <div class="poem" style="width: 150px;">
+                <p>
+                    who<br>
+                    am I<br>
+                    to hear<br>
+                    the morning<br>
+                    birds<br>
+                    and think<br>
+                    they might sing<br>
+                    for me?
+                </p>
+                <p>
+                    and who<br>
+                    are they<br>
+                    to sing<br>
+                    so sweetly?
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <h4 class="section-heading">looking out that window I wish I weren't behind
+            </h4>
+            <div class="poem" style="width: 300px;">
+                <p>
+                    the silk plants<br>
+                    by the window<br>
+                    don't need water.
+                </p>
+                <p>
+                    but to them<br>
+                    the sun means<br>
+                    nothing,
+                </p>
+                <p>
+                    less still<br>
+                    the breezes<br>
+                    and the bees.
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <h4 class="section-heading">other things bound loosely together
+            </h4>
+        </div>
+    </div>
+
+    <div id="side" class="not_shown">
+        <div id="wwm-box">
+            <h3 id="wwm">WWM</h3>
+            </a>
+        </div>
+        <div id="links">
+            <div>
+                <a href="../who.html">who</a>
+            </div>
+            <div>
+                <a href="../what/">what</a>
+            </div>
+            <div>
+                <a href="../where.html">where</a>
+            </div>
+            <div>
+                <a href="../RESUME.pdf">resume</a>
+            </div>
+            <div>
+                <a href="../contact.html">contact</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    $("#wwm-box").click(() => {
+        $("#side").toggleClass("not_shown");
+    });
+    var sectionsWidth = 40;
+    $(".section").each((i, el) => sectionsWidth += $(el).width());
+    $(".section-wrapper").width(sectionsWidth);
+</script>
+
+</html>
