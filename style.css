@@ -403,6 +403,9 @@ p {
     border-bottom: 3px solid #ffffff;
 }
 
+
+
+/* writing */
 .section-wrapper{
     float: left;
     overflow: scroll;
@@ -441,4 +444,9 @@ p {
 
 .poem:nth-child(1){
     margin-top: 100px;
+}
+
+/* photos */
+.img-container img:not(:nth-child(2)){
+    margin-bottom: 30px;
 }
