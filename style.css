@@ -427,6 +427,7 @@ p {
 
 .section hr{
     width: 350px;
+    max-width: 90vw;
     border: 1px solid var(--yellow);
 }
 
