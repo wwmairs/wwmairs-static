@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>BOOKS</title>
+    <link rel="icon" type="img/png" href="../favicons/line3.png">
+    <style>
+    :root{--page-color: #0F935A}
+    </style>
+	<link href="../style.css?v=3.0.1" rel="stylesheet"/>
+</head>
+
+<body>
+		<div class="img-container" style="margin: auto; width: 70vw;">
+			<h2>new york postcards</h2>
+			<img src="../res/ny_post/over.jpg" width="100%">
+			<h4 style="text-align: left;">a sturdy, neat box for my father's views of the city from sometime in the 80s. board, bookcloth, pva.</h4>
+			<img src="../res/ny_post/open.jpg" width="100%">
+			<img src="../res/ny_post/in.jpg" width="100%">
+			<img src="../res/ny_post/closed.jpg" width="100%">
+		</div>
+    <!--
+    <a href=".">
+            <div class="back_button">
+                <div class="back_arrow">
+                <span></span>
+                </div>
+            </div>
+        </a>
+    -->
+
+    <div id="side" class="not_shown">
+        <div id="wwm-box">
+            <h3 id="wwm">WWM</h3>
+            </a>
+        </div>
+        <div id="links">
+            <div>
+                <a href="../who.html">who</a>
+            </div>
+            <div>
+                <a href="../what/">what</a>
+            </div>
+            <div>
+                <a href="../where.html">where</a>
+            </div>
+            <div>
+                <a href="../RESUME.pdf">resume</a>
+            </div>
+            <div>
+                <a href="../contact.html">contact</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+	$("#wwm-box").click(() => {
+		$("#side").toggleClass("not_shown");
+	});
+</script>
+
+</html>
