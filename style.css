@@ -52,8 +52,12 @@ body {
     font-family: 'Cousine', monospace;
     margin:0;
     font-size: 16px;
-    letter-spacing: 2px;
     background-color: var(--grey);
+    letter-spacing: 2px;
+}
+
+p {
+    letter-spacing: initial;
 }
 
 ::-webkit-scrollbar {
@@ -406,45 +410,12 @@ p {
 
 
 /* writing */
-.section-wrapper{
-    float: left;
-    overflow: scroll;
-    margin: 20px;
-    margin-top: 40px;
-}
-
-.section-heading{
-    width: 75%;
-    margin: auto;
-    text-align: center;
-}
-
-.section{
-    width: 100vw;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.section hr{
-    width: 350px;
-    max-width: 90vw;
-    border: 1px solid var(--yellow);
+.poems-wrapper{
 }
 
 .poem{
-    text-align: left;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.poem p{
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.poem:nth-child(1){
-    margin-top: 100px;
+    display: inline-block;
+    padding: 20px;
 }
 
 /* photos */
