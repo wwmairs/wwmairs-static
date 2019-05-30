@@ -16,12 +16,40 @@ if (cmsData == null) {
     firebase.initializeApp(firebaseConfig);
     var db = firebase.database();
     var dbData = {};
-    db.ref("posts").once("value")
+    db.ref("data").once("value")
         .then((snapshot) => {
             snapshot.val().map((o) => {
                 dbData[o.key] = o;
                 window.sessionStorage.setItem("cmsData", JSON.stringify(dbData));
+                cmsData = dbData;
+                // do shit with the data
+                makeGalleries(cmsData);
             });
+        });
 } else {
-    // see if there's anything we need to make
+    // do shit
+    cmsData = JSON.parse(cmsData);
+    makeGalleries(cmsData);
+}
+
+function makeGalleries(cmsData) {
+    for (key in cmsData) {
+        // if it's a gallery
+        // if you can find a gallery el defined
+        if (! cmsData[key]["is_gallery"] || ! document.getElementById(key)) {
+            console.log("skipping", key);
+            continue;
+        }
+        let gallery = document.getElementById(key);
+        cmsData[key]["links"].map((src) => {
+            let div = document.createElement("div");
+            let img = document.createElement("img");
+            img.setAttribute("class", "gallery-img");
+            img.setAttribute("src", src);
+            div.setAttribute("class", "gallery-img-container");
+            div.appendChild(img);
+            gallery.appendChild(div);
+        });
+
+    }
 }
