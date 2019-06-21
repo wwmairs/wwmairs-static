@@ -426,6 +426,12 @@ p {
 .gallery {
     white-space: nowrap;
     position: relative;
+    overflow-y: hidden;
+}
+
+.gallery-title {
+    position: fixed;
+    margin: 0;
 }
 
 .gallery-img-container {
@@ -434,6 +440,7 @@ p {
     display: inline-block;
     position: relative;
 }
+
 
 .gallery-img {
     max-width: 700px;
